@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴黎圣母院考试知识点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
+        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #666; }
+        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-item { margin: 0 15px; }
+        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .nav-link:hover { background-color: #654321; }
+        .nav-link.active { background-color: #654321; }
+        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
+        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
+        .exam-list { margin-bottom: 30px; }
+        .exam-section { margin-bottom: 40px; }
+        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
+        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
+        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
+        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
+        .expand-icon.open { transform: rotate(180deg); }
+        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
+        .exam-item-content.show { display: block; }
+        .exam-info { margin-bottom: 15px; }
+        .exam-info p { margin-bottom: 5px; }
+        .exam-info .label { font-weight: bold; color: #8B4513; }
+        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .question h5 { color: #8B4513; margin-bottom: 10px; }
+        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
+        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
+        .answer h5 { color: #8B4513; margin-bottom: 10px; }
+        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>巴黎圣母院考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        <nav class="nav-menu">
+            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
+            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
+            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+        </nav>
+        <div class="content">
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>卡西莫多形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《巴黎圣母院》中卡西莫多的人物形象。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对卡西莫多这一经典人物形象的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>外表丑陋：几何形的脸，四面体的鼻子</li><li>内心美好：善良纯洁，感恩报恩</li><li>勇敢追求：对爱斯梅拉达有着纯粹的爱</li><li>悲剧命运：被社会遗弃，最终为爱而死</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>美丑对照原则</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《巴黎圣母院》中的"美丑对照"原则。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对雨果浪漫主义艺术手法的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>美丑对照：</p><ul><li>卡西莫多外丑内美：外表丑陋但心灵美好</li><li>克洛德外美内丑：外表道貌岸然内心阴险</li><li>爱斯梅拉达外在美与内在美统一</li><li>通过对比深化主题</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>爱斯梅拉达形象</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析爱斯梅拉达的人物形象。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对女主人公形象的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>天真纯洁：对爱情充满向往</li><li>善良仁慈：救下饥饿的格兰古瓦</li><li>坚贞不屈：面对威胁不屈服</li><li>悲剧命运：被诬陷处死</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>雨果浪漫主义特色</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《巴黎圣母院》的浪漫主义特色。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品浪漫主义艺术风格的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>浪漫主义特色：</p><ul><li>离奇情节：故事充满巧合和意外</li><li>极端人物：人物性格走极端</li><li>美丑对照：强烈的对比手法</li><li>感情夸张：浓烈的抒情色彩</li><li>异域情调：巴黎圣母院的中世纪背景</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>卡西莫多悲剧意义</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析卡西莫多悲剧的社会意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对卡西莫多悲剧意义的了悟。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>社会意义：</p><ul><li>批判封建专制对底层人民的压迫</li><li>揭示教会虚伪和黑暗</li><li>表达对底层人民的同情</li><li>呼唤真诚善良的人性回归</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>副主教克洛德分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析副主教克洛德的人物形象。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对克洛德这一复杂人物的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>道貌岸然：表面上德行高尚</li><li>阴险虚伪：内心充满私欲</li><li>复杂矛盾：对爱斯梅拉达既有肉欲又有真情</li><li>代表意义：批判教会的虚伪和禁欲主义的失败</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
+        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水浒传人物故事线</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5dc;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* 搜索和筛选区域 */
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.9);
+        }
+        
+        .filter-box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-box select {
+            padding: 10px;
+            border: 2px solid #8B4513;
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+        }
+        
+        /* 星区样式 */
+        .star-section {
+            margin-bottom: 40px;
+        }
+        
+        .star-section h2 {
+            font-size: 1.8rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #8B4513;
+        }
+        
+        /* 人物卡片网格 */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        /* 人物卡片 */
+        .character-card {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #8B4513;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .character-card h3 {
+            font-size: 1.2rem;
+            color: #8B4513;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 4px;
+        }
+        
+        .character-info {
+            margin-bottom: 10px;
+        }
+        
+        .character-info p {
+            margin-bottom: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .character-info .label {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        .view-details {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .view-details:hover {
+            background-color: #654321;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .search-filter {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .filter-box {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .characters-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+            }
+            
+            .character-card {
+                padding: 10px;
+            }
+            
+            .character-card h3 {
+                font-size: 1rem;
+            }
+        }
+        
+        /* 加载动画 */
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #8B4513;
+        }
+        
+        /* 无数据提示 */
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #8B4513;
+        }
+        
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #654321;
+        }
+        
+        .nav-link.active {
+            background-color: #654321;
+        }
+        
+        /* 响应式设计 - 导航菜单 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            
+            .nav-item {
+                margin: 5px;
+            }
+            
+            .nav-item:last-child {
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .nav-item:last-child input {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>水浒传人物故事线</h1>
+            <p class="subtitle">120回本完整人物故事时间线</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+            <div class="nav-item">
+                <a href="#all" class="nav-link active">所有星位</a>
+            </div>
+            <div class="nav-item">
+                <a href="#tian" class="nav-link">天罡星</a>
+            </div>
+            <div class="nav-item">
+                <a href="#di" class="nav-link">地煞星</a>
+            </div>
+            <div class="nav-item" style="margin-left: auto;">
+                <input type="text" id="searchInput" placeholder="搜索人物..." style="padding: 10px; border: 1px solid #8B4513; border-radius: 4px; font-size: 1rem;">
+            </div>
+        </nav>
+        
+        <div id="charactersContainer">
+            <div class="loading">加载中...</div>
+        </div>
+    </div>
+    
+    <script>
+        // 加载排序数据和人物数据
+        Promise.all([
+            fetch('heroes_ranking.json').then(response => response.json()),
+            fetch('shuihu_120_data.json').then(response => response.json())
+        ])
+        .then(([rankingData, characterData]) => {
+            const ranking = rankingData.ranking;
+            const characters = characterData.characters;
+            const charactersContainer = document.getElementById('charactersContainer');
+            
+            // 清空加载动画
+            charactersContainer.innerHTML = '';
+            
+            // 创建排名映射
+            const rankMap = {};
+            ranking.forEach(item => {
+                rankMap[item.name] = item.rank;
+            });
+            
+            // 按照排名排序人物
+            function sortCharactersByRank(charactersList) {
+                return charactersList.sort((a, b) => {
+                    const rankA = rankMap[a.name] || 9999;
+                    const rankB = rankMap[b.name] || 9999;
+                    return rankA - rankB;
+                });
+            }
+            
+            // 渲染人物卡片
+            function renderCharacters(filteredCharacters) {
+                charactersContainer.innerHTML = '';
+                
+                if (filteredCharacters.length === 0) {
+                    charactersContainer.innerHTML = '<div class="no-data">没有找到匹配的人物</div>';
+                    return;
+                }
+                
+                // 按排名排序
+                const sortedCharacters = sortCharactersByRank(filteredCharacters);
+                
+                        // 分离108将和非108将
+                const heroes108 = sortedCharacters.filter(character => rankMap[character.name]);
+                const otherCharacters = sortedCharacters.filter(character => !rankMap[character.name]);
+                
+                // 从108将中分离天罡星和地煞星
+                const tian天罡星 = heroes108.filter(character => character.star.charAt(0) === '天');
+                const di地煞星 = heroes108.filter(character => character.star.charAt(0) === '地');
+                
+                // 渲染天罡星区
+                if (tian天罡星.length > 0) {
+                    const tianSection = document.createElement('div');
+                    tianSection.className = 'star-section';
+                    tianSection.innerHTML = `<h2>天罡星 (${tian天罡星.length}人)</h2>`;
+                    
+                    const tianGrid = document.createElement('div');
+                    tianGrid.className = 'characters-grid';
+                    
+                    tian天罡星.forEach(character => {
+                        const rank = rankMap[character.name] || '';
+                        const card = document.createElement('div');
+                        card.className = 'character-card';
+                        
+                        card.innerHTML = `
+                            <h3>${rank}：${character.name}</h3>
+                            <div class="character-info">
+                                <p><span class="label">绰号：</span>${character.nickname}</p>
+                                <p><span class="label">星位：</span>${character.star}</p>
+                            </div>
+                            <a href="character.html?id=${character.name}" class="view-details">查看详情</a>
+                        `;
+                        
+                        tianGrid.appendChild(card);
+                    });
+                    
+                    tianSection.appendChild(tianGrid);
+                    charactersContainer.appendChild(tianSection);
+                }
+                
+                // 渲染地煞星区
+                if (di地煞星.length > 0) {
+                    const diSection = document.createElement('div');
+                    diSection.className = 'star-section';
+                    diSection.innerHTML = `<h2>地煞星 (${di地煞星.length}人)</h2>`;
+                    
+                    const diGrid = document.createElement('div');
+                    diGrid.className = 'characters-grid';
+                    
+                    di地煞星.forEach(character => {
+                        const rank = rankMap[character.name] || '';
+                        const card = document.createElement('div');
+                        card.className = 'character-card';
+                        
+                        card.innerHTML = `
+                            <h3>${rank}：${character.name}</h3>
+                            <div class="character-info">
+                                <p><span class="label">绰号：</span>${character.nickname}</p>
+                                <p><span class="label">星位：</span>${character.star}</p>
+                            </div>
+                            <a href="character.html?id=${character.name}" class="view-details">查看详情</a>
+                        `;
+                        
+                        diGrid.appendChild(card);
+                    });
+                    
+                    diSection.appendChild(diGrid);
+                    charactersContainer.appendChild(diSection);
+                }
+                
+                // 渲染其他主要人物区
+                if (otherCharacters.length > 0) {
+                    const otherSection = document.createElement('div');
+                    otherSection.className = 'star-section';
+                    otherSection.innerHTML = `<h2>其他主要人物 (${otherCharacters.length}人)</h2>`;
+                    
+                    const otherGrid = document.createElement('div');
+                    otherGrid.className = 'characters-grid';
+                    
+                    otherCharacters.forEach(character => {
+                        const card = document.createElement('div');
+                        card.className = 'character-card';
+                        
+                        card.innerHTML = `
+                            <h3>${character.name}</h3>
+                            <div class="character-info">
+                                <p><span class="label">绰号：</span>${character.nickname}</p>
+                                ${character.star ? `<p><span class="label">星位：</span>${character.star}</p>` : ''}
+                            </div>
+                            <a href="character.html?id=${character.name}" class="view-details">查看详情</a>
+                        `;
+                        
+                        otherGrid.appendChild(card);
+                    });
+                    
+                    otherSection.appendChild(otherGrid);
+                    charactersContainer.appendChild(otherSection);
+                }
+            }
+            
+            // 初始渲染所有人物
+            renderCharacters(characters);
+            
+            // 搜索功能
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const filtered = characters.filter(character => 
+                    character.name.toLowerCase().includes(searchTerm) ||
+                    character.nickname.toLowerCase().includes(searchTerm) ||
+                    character.alias.some(alias => alias.toLowerCase().includes(searchTerm))
+                );
+                renderCharacters(filtered);
+            });
+            
+            // 星位筛选链接
+            document.querySelectorAll('.nav-link[href="#all"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    renderCharacters(characters);
+                    document.getElementById('charactersContainer').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            document.querySelectorAll('.nav-link[href="#tian"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    const filtered = characters.filter(character => character.star.charAt(0) === '天');
+                    renderCharacters(filtered);
+                    document.getElementById('charactersContainer').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            document.querySelectorAll('.nav-link[href="#di"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    const filtered = characters.filter(character => character.star.charAt(0) === '地');
+                    renderCharacters(filtered);
+                    document.getElementById('charactersContainer').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        })
+        .catch(error => {
+            console.error('加载数据失败:', error);
+            document.getElementById('charactersContainer').innerHTML = '<div class="loading">加载失败，请刷新页面重试</div>';
+        });
+    </script>
+</body>
+</html>

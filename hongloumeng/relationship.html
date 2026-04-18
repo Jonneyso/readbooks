@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红楼梦人物关系图</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f8f0e3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #c19a6b;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 8px 16px;
+            background-color: #c19a6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: #8B4513;
+        }
+        
+        /* 控制区域 */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .control-btn {
+            padding: 8px 16px;
+            background-color: #c19a6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .control-btn:hover {
+            background-color: #8B4513;
+        }
+        
+        .control-btn.active {
+            background-color: #8B4513;
+        }
+        
+        /* 关系图容器 */
+        #relationshipGraph {
+            width: 100%;
+            height: 700px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+        }
+        
+        /* 提示框 */
+        .tooltip {
+            position: absolute;
+            background-color: rgba(255,255,255,0.95);
+            border: 1px solid #c19a6b;
+            border-radius: 4px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            pointer-events: none;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        
+        .tooltip h3 {
+            color: #8B4513;
+            margin-bottom: 5px;
+        }
+        
+        .tooltip p {
+            margin-bottom: 3px;
+            font-size: 0.9rem;
+        }
+        
+        /* 图例 */
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border: 1px solid #c19a6b;
+            border-radius: 4px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .legend h3 {
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .legend-text {
+            font-size: 0.8rem;
+        }
+        
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #654321;
+        }
+
+        .nav-link.active {
+            background-color: #654321;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+            
+            #relationshipGraph {
+                height: 500px;
+            }
+            
+            .legend {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>红楼梦人物关系图</h1>
+            <p class="subtitle">120回本人物关系思维导图</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+            <div class="nav-item">
+                <a href="#all" class="nav-link active">所有关系</a>
+            </div>
+            <div class="nav-item">
+                <a href="#family" class="nav-link">家族关系</a>
+            </div>
+            <div class="nav-item">
+                <a href="#love" class="nav-link">宝黛钗感情线</a>
+            </div>
+            <div class="nav-item">
+                <a href="#friendship" class="nav-link">朋友关系</a>
+            </div>
+        </nav>
+        
+        <div id="relationshipGraph"></div>
+        
+        <div class="legend">
+            <h3>图例</h3>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e74c3c;"></div>
+                <div class="legend-text">主要人物</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #3498db;"></div>
+                <div class="legend-text">次要人物</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2ecc71;"></div>
+                <div class="legend-text">家族关系</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f39c12;"></div>
+                <div class="legend-text">感情关系</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #9b59b6;"></div>
+                <div class="legend-text">其他关系</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 人物数据
+        const nodes = [
+            { id: "林黛玉", group: 1, category: "金陵十二钗正册", description: "与贾宝玉是表兄妹关系，前世是绛珠仙草，今生为还泪而来" },
+            { id: "贾宝玉", group: 1, category: "金陵十二钗正册", description: "前世是神瑛侍者，今生投胎贾府，与林黛玉有木石前盟" },
+            { id: "薛宝钗", group: 1, category: "金陵十二钗正册", description: "与贾宝玉是姨表姐弟关系，有金玉良缘之说" },
+            { id: "王熙凤", group: 1, category: "金陵十二钗正册", description: "贾琏之妻，荣国府实际管家" },
+            { id: "史湘云", group: 1, category: "金陵十二钗正册", description: "贾母的侄孙女，父母双亡" },
+            { id: "贾元春", group: 1, category: "金陵十二钗正册", description: "贾宝玉的嫡亲大姐，被封为贵妃" },
+            { id: "贾探春", group: 1, category: "金陵十二钗正册", description: "贾宝玉的庶妹，生母是赵姨娘" },
+            { id: "贾迎春", group: 1, category: "金陵十二钗正册", description: "贾宝玉大伯贾赦的庶女" },
+            { id: "贾惜春", group: 1, category: "金陵十二钗正册", description: "宁府贾珍的胞妹" },
+            { id: "李纨", group: 1, category: "金陵十二钗正册", description: "贾宝玉哥哥贾珠的妻子，丈夫死后一心育儿" },
+            { id: "秦可卿", group: 1, category: "金陵十二钗正册", description: "宁国府贾蓉的妻子，与公公贾珍关系暧昧" },
+            { id: "妙玉", group: 1, category: "金陵十二钗正册", description: "出身高贵，带发修行的尼姑" },
+            { id: "贾政", group: 2, category: "其他人物", description: "贾宝玉的父亲，与宝玉父子关系紧张" },
+            { id: "王夫人", group: 2, category: "其他人物", description: "贾宝玉的母亲，贾政的妻子" },
+            { id: "贾母", group: 2, category: "其他人物", description: "贾府的最高长辈，贾宝玉的祖母" },
+            { id: "贾琏", group: 2, category: "其他人物", description: "王熙凤的丈夫，贾赦的儿子" },
+            { id: "贾赦", group: 2, category: "其他人物", description: "贾政的哥哥，贾琏的父亲" },
+            { id: "贾珍", group: 2, category: "其他人物", description: "宁府当家人，贾惜春的哥哥" },
+            { id: "贾珠", group: 2, category: "其他人物", description: "贾宝玉的哥哥，李纨的丈夫，早逝" },
+            { id: "贾蓉", group: 2, category: "其他人物", description: "贾珍的儿子，秦可卿的丈夫" },
+            { id: "赵姨娘", group: 2, category: "其他人物", description: "贾政的小妾，贾探春的生母" },
+            { id: "薛姨妈", group: 2, category: "其他人物", description: "薛宝钗的母亲，王夫人的妹妹" },
+            { id: "薛蟠", group: 2, category: "其他人物", description: "薛宝钗的哥哥，生性纨绔" },
+            { id: "尤二姐", group: 2, category: "其他人物", description: "尤氏的妹妹，贾琏的二房" },
+            { id: "尤三姐", group: 2, category: "其他人物", description: "尤氏的妹妹，暗恋柳湘莲" },
+            { id: "袭人", group: 2, category: "金陵十二钗又副册", description: "贾宝玉的贴身丫鬟，后嫁给蒋玉菡" },
+            { id: "晴雯", group: 2, category: "金陵十二钗又副册", description: "贾宝玉的丫鬟，被王夫人撵走后病逝" },
+            { id: "紫鹃", group: 2, category: "其他人物", description: "林黛玉的贴身丫鬟" },
+            { id: "平儿", group: 2, category: "其他人物", description: "王熙凤的陪嫁丫鬟，贾琏的通房丫头" },
+            { id: "蒋玉函", group: 2, category: "其他人物", description: "忠顺亲王府的戏子，后娶袭人为妻" },
+            { id: "柳湘莲", group: 2, category: "其他人物", description: "江湖游侠，与尤三姐有婚约" },
+            { id: "甄士隐", group: 2, category: "其他人物", description: "香菱的父亲，红楼梦的线索人物" },
+            { id: "贾雨村", group: 2, category: "其他人物", description: "林黛玉的老师，后成为贪官" },
+            { id: "香菱", group: 2, category: "金陵十二钗副册", description: "甄士隐的女儿，薛蟠的小妾" }
+        ];
+        
+        // 关系数据
+        const links = [
+            { source: "林黛玉", target: "贾宝玉", value: 5, type: "love" },
+            { source: "贾宝玉", target: "薛宝钗", value: 4, type: "love" },
+            { source: "贾宝玉", target: "贾政", value: 3, type: "family" },
+            { source: "贾宝玉", target: "王夫人", value: 3, type: "family" },
+            { source: "贾宝玉", target: "贾母", value: 4, type: "family" },
+            { source: "贾宝玉", target: "贾元春", value: 3, type: "family" },
+            { source: "贾宝玉", target: "贾探春", value: 3, type: "family" },
+            { source: "贾宝玉", target: "贾迎春", value: 2, type: "family" },
+            { source: "贾宝玉", target: "贾惜春", value: 2, type: "family" },
+            { source: "贾宝玉", target: "贾珠", value: 3, type: "family" },
+            { source: "贾宝玉", target: "袭人", value: 4, type: "other" },
+            { source: "贾宝玉", target: "晴雯", value: 3, type: "other" },
+            { source: "林黛玉", target: "贾母", value: 3, type: "family" },
+            { source: "林黛玉", target: "紫鹃", value: 4, type: "other" },
+            { source: "薛宝钗", target: "薛姨妈", value: 3, type: "family" },
+            { source: "薛宝钗", target: "薛蟠", value: 2, type: "family" },
+            { source: "薛宝钗", target: "王夫人", value: 3, type: "family" },
+            { source: "王熙凤", target: "贾琏", value: 3, type: "family" },
+            { source: "王熙凤", target: "王夫人", value: 3, type: "family" },
+            { source: "王熙凤", target: "平儿", value: 3, type: "other" },
+            { source: "史湘云", target: "贾母", value: 3, type: "family" },
+            { source: "史湘云", target: "贾宝玉", value: 3, type: "other" },
+            { source: "贾元春", target: "贾政", value: 3, type: "family" },
+            { source: "贾元春", target: "王夫人", value: 3, type: "family" },
+            { source: "贾探春", target: "贾政", value: 3, type: "family" },
+            { source: "贾探春", target: "赵姨娘", value: 3, type: "family" },
+            { source: "贾迎春", target: "贾赦", value: 3, type: "family" },
+            { source: "贾惜春", target: "贾珍", value: 3, type: "family" },
+            { source: "李纨", target: "贾珠", value: 3, type: "family" },
+            { source: "秦可卿", target: "贾蓉", value: 3, type: "family" },
+            { source: "秦可卿", target: "贾珍", value: 2, type: "other" },
+            { source: "贾政", target: "王夫人", value: 3, type: "family" },
+            { source: "贾政", target: "贾母", value: 3, type: "family" },
+            { source: "贾赦", target: "贾母", value: 3, type: "family" },
+            { source: "贾琏", target: "贾赦", value: 3, type: "family" },
+            { source: "贾琏", target: "尤二姐", value: 3, type: "other" },
+            { source: "贾琏", target: "平儿", value: 2, type: "other" },
+            { source: "尤三姐", target: "柳湘莲", value: 4, type: "love" },
+            { source: "袭人", target: "蒋玉函", value: 3, type: "family" },
+            { source: "薛蟠", target: "香菱", value: 3, type: "other" },
+            { source: "甄士隐", target: "香菱", value: 4, type: "family" },
+            { source: "贾雨村", target: "甄士隐", value: 2, type: "other" },
+            { source: "贾雨村", target: "林黛玉", value: 2, type: "other" }
+        ];
+        
+        // 创建SVG容器
+        const width = document.getElementById('relationshipGraph').clientWidth;
+        const height = document.getElementById('relationshipGraph').clientHeight;
+        
+        const svg = d3.select('#relationshipGraph')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+        
+        // 创建力导向图
+        const simulation = d3.forceSimulation(nodes)
+            .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+            .force('charge', d3.forceManyBody().strength(-300))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collision', d3.forceCollide().radius(30));
+        
+        // 创建箭头标记
+        svg.append('defs').append('marker')
+            .attr('id', 'arrowhead')
+            .attr('viewBox', '-0 -5 10 10')
+            .attr('refX', 20)
+            .attr('refY', 0)
+            .attr('orient', 'auto')
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('xoverflow', 'visible')
+            .append('svg:path')
+            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+            .attr('fill', '#999')
+            .style('stroke', 'none');
+        
+        // 创建连线
+        const link = svg.append('g')
+            .selectAll('line')
+            .data(links)
+            .enter()
+            .append('line')
+            .attr('stroke', d => {
+                if (d.type === 'family') return '#2ecc71';
+                if (d.type === 'love') return '#f39c12';
+                return '#9b59b6';
+            })
+            .attr('stroke-width', d => Math.sqrt(d.value))
+            .attr('marker-end', 'url(#arrowhead)');
+        
+        // 创建节点
+        const node = svg.append('g')
+            .selectAll('circle')
+            .data(nodes)
+            .enter()
+            .append('circle')
+            .attr('r', d => d.group === 1 ? 15 : 10)
+            .attr('fill', d => d.group === 1 ? '#e74c3c' : '#3498db')
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+        
+        // 添加节点标签
+        const label = svg.append('g')
+            .selectAll('text')
+            .data(nodes)
+            .enter()
+            .append('text')
+            .text(d => d.id)
+            .attr('font-size', '12px')
+            .attr('dx', 15)
+            .attr('dy', 5)
+            .attr('fill', '#333');
+        
+        // 创建提示框
+        const tooltip = d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip')
+            .style('opacity', 0);
+        
+        // 节点鼠标事件
+        node.on('mouseover', function(event, d) {
+            tooltip.transition()
+                .duration(200)
+                .style('opacity', .9);
+            tooltip.html(`
+                <h3>${d.id}</h3>
+                <p><strong>类别：</strong>${d.category}</p>
+                <p><strong>描述：</strong>${d.description}</p>
+            `)
+                .style('left', (event.pageX + 10) + 'px')
+                .style('top', (event.pageY - 28) + 'px');
+        })
+        .on('mouseout', function() {
+            tooltip.transition()
+                .duration(500)
+                .style('opacity', 0);
+        })
+        .on('click', function(event, d) {
+            // 点击节点时，将其居中显示
+            simulation.force('center', d3.forceCenter(width / 2, height / 2));
+            simulation.alphaTarget(0.3).restart();
+        });
+        
+        // 力导向图更新
+        simulation.on('tick', () => {
+            link
+                .attr('x1', d => d.source.x)
+                .attr('y1', d => d.source.y)
+                .attr('x2', d => d.target.x)
+                .attr('y2', d => d.target.y);
+            
+            node
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y);
+            
+            label
+                .attr('x', d => d.x)
+                .attr('y', d => d.y);
+        });
+        
+        // 拖拽函数
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+        
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+        
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+        
+        // 控制按钮事件
+        document.querySelectorAll('.nav-link[href="#all"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                // 显示所有关系
+                d3.selectAll('line').style('display', 'block');
+                d3.selectAll('circle').style('display', 'block');
+                d3.selectAll('text').style('display', 'block');
+                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        document.querySelectorAll('.nav-link[href="#family"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                // 只显示家族关系
+                d3.selectAll('line').style('display', d => d.type === 'family' ? 'block' : 'none');
+                // 显示所有节点
+                d3.selectAll('circle').style('display', 'block');
+                d3.selectAll('text').style('display', 'block');
+                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        document.querySelectorAll('.nav-link[href="#love"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                // 只显示宝黛钗感情线
+                d3.selectAll('line').style('display', d => d.type === 'love' ? 'block' : 'none');
+                // 只显示相关节点
+                d3.selectAll('circle').style('display', d => (d.id === '林黛玉' || d.id === '贾宝玉' || d.id === '薛宝钗') ? 'block' : 'none');
+                d3.selectAll('text').style('display', d => (d.id === '林黛玉' || d.id === '贾宝玉' || d.id === '薛宝钗') ? 'block' : 'none');
+                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        document.querySelectorAll('.nav-link[href="#friendship"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                // 重置视图
+                simulation.force('center', d3.forceCenter(width / 2, height / 2));
+                simulation.alphaTarget(0.3).restart();
+                
+                // 显示所有关系
+                d3.selectAll('line').style('display', 'block');
+                d3.selectAll('circle').style('display', 'block');
+                d3.selectAll('text').style('display', 'block');
+                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // 窗口大小变化时调整SVG大小
+        window.addEventListener('resize', function() {
+            const newWidth = document.getElementById('relationshipGraph').clientWidth;
+            const newHeight = document.getElementById('relationshipGraph').clientHeight;
+            
+            svg.attr('width', newWidth).attr('height', newHeight);
+            simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2));
+            simulation.alphaTarget(0.3).restart();
+        });
+    </script>
+</body>
+</html>

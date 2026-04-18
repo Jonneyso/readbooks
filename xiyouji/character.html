@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西游记人物详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #fdf5e6;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #cd853f;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 8px 16px;
+            background-color: #cd853f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: #8B4513;
+        }
+        
+        .character-info-card {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #cd853f;
+        }
+        
+        .character-info-card h2 {
+            font-size: 2rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .character-intro {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .character-portrait-section {
+            flex: 0 0 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .character-portrait-section .character-image {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .character-portrait-section .character-image img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border: 3px solid #cd853f;
+            border-radius: 8px;
+        }
+        
+        .character-portrait-section .image-caption {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .character-details-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .info-card {
+            padding: 15px;
+            border: 1px solid #cd853f;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .info-card .label {
+            font-weight: bold;
+            color: #8B4513;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .info-card .value {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        
+        .info-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .info-cards-grid .info-card.full-width {
+            grid-column: span 2;
+        }
+        
+        @media (max-width: 768px) {
+            .character-intro {
+                flex-direction: column;
+            }
+            
+            .character-portrait-section {
+                flex: none;
+                width: 100%;
+            }
+            
+            .character-portrait-section .character-image img {
+                max-height: 300px;
+            }
+            
+            .info-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-cards-grid .info-card.full-width {
+                grid-column: span 1;
+            }
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #cd853f;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item.left {
+            left: 0;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #cd853f;
+        }
+        
+        .timeline-content h3 {
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-chapter {
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-event {
+            line-height: 1.5;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #fdf5e6;
+            border: 4px solid #cd853f;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item.right::after {
+            left: -10px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item.right {
+                left: 0%;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+                right: auto;
+            }
+            
+            .timeline-item.right::after {
+                left: 21px;
+            }
+            
+            .character-info-card [style*="display: flex"] {
+                flex-direction: column;
+            }
+            
+            .character-info-card [style*="display: flex"] > div:first-child {
+                flex: 0 0 100%;
+                margin-right: 0 !important;
+                margin-bottom: 20px;
+            }
+            
+            .character-info-card [style*="display: flex"] > div:last-child {
+                flex: 0 0 100%;
+            }
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #cd853f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #8B4513;
+        }
+        
+        .nav-link.active {
+            background-color: #8B4513;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #8B4513;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #8B4513;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>西游记人物详情</h1>
+            <p class="subtitle">师徒四人西天取经的故事</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="characters.html" class="nav-link">返回人物列表</a>
+            </div>
+        </nav>
+        
+        <div id="characterInfo" class="character-info-card">
+            <div class="loading">加载中...</div>
+        </div>
+        
+        <h2 style="text-align: center; margin-bottom: 30px; color: #8B4513;">人物故事时间线</h2>
+        
+        <div id="timeline" class="timeline">
+            <div class="loading">加载中...</div>
+        </div>
+    </div>
+    
+    <script>
+        function getCharacterId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+        
+        fetch('xiyouji_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const characterId = getCharacterId();
+                const character = data.characters.find(c => c.name === characterId);
+                
+                if (!character) {
+                    document.getElementById('characterInfo').innerHTML = '<div class="no-data">未找到该人物信息</div>';
+                    document.getElementById('timeline').innerHTML = '';
+                    return;
+                }
+                
+                const characterInfo = document.getElementById('characterInfo');
+                
+                let imageHtml = '';
+                if (character.name) {
+                    const localImagePath = `images/${character.name}.jpg`;
+                    const prompt = `${character.name} ${character.nickname} 西游记 人物 肖像 中国古典风格 电视剧造型`;
+                    const encodedPrompt = encodeURIComponent(prompt);
+                    const networkImageUrl = `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodedPrompt}&image_size=square`;
+                    const defaultBase64Image = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzMzMzt9LmNscy0ze2ZpbGw6I2Y3Yzc3Nzt9PC9zdHlsZT48Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjEwMCIgY3k9IjEwMCIgcj0iOTAiLz48Y2lyY2xlIGNsYXNzPSJjbHMtMiIgY3g9IjEwMCIgY3k9IjcwIiBzdHJva2U9IiNmN2Y3NzciIHN0cm9rZS13aWR0aD0iMiIgcj0iNTAiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik03NSAxMzBDODAgMTQwIDkwIDE0NSAxMDAgMTQ1QzExMCAxNDUgMTIwIDE0MCAxMjUgMTMwTDE1MCAxMTBDMTQ1IDEyMCAxMzAgMTI1IDEyMCAxMjVIMTAwSDAgMTAwQzAgMTAwIDAgMTMwIDAgMTQwTDI1IDE2MEw1MCAxNDBMNzUgMTMwWiIgLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTAgMTQwSDE5ME0xMCAxNjBMMTkwIDE2ME0xMCAxODBMMTkwIDE4MCIvPjwvc3ZnPg==';
+                    
+                    console.log(`加载 ${character.name} 的画像`);
+                    console.log(`本地图片路径: ${localImagePath}`);
+                    console.log(`网络图片URL: ${networkImageUrl}`);
+                    
+                    imageHtml = `
+                        <div class="character-image">
+                            <img src="${localImagePath}" alt="${character.name}画像" onload="console.log('本地图片加载成功: ${localImagePath}');" onerror="console.log('本地图片加载失败，尝试网络图片: ${networkImageUrl}'); this.src='${networkImageUrl}'; this.onerror=function() { console.log('网络图片加载失败，使用默认图片'); this.src='${defaultBase64Image}'; };">
+                            <div class="image-caption">西游记人物肖像</div>
+                        </div>
+                    `;
+                }
+                
+                let portraitHtml = '';
+                if (character.portrait) {
+                    portraitHtml = `
+                        <div class="portrait-section" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #cd853f;">
+                            <h3 style="color: #8B4513; margin-bottom: 15px;">人物特征画像</h3>
+                            <div class="portrait-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                                ${character.portrait.appearance ? `<div class="portrait-item"><span class="label">外貌</span><p style="margin-top: 5px;">${character.portrait.appearance}</p></div>` : ''}
+                                ${character.portrait.personality ? `<div class="portrait-item"><span class="label">性格</span><p style="margin-top: 5px;">${character.portrait.personality}</p></div>` : ''}
+                                ${character.portrait.skills ? `<div class="portrait-item"><span class="label">技能</span><p style="margin-top: 5px;">${character.portrait.skills}</p></div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                characterInfo.innerHTML = `
+                    <h2 style="text-align: center; margin-bottom: 30px; color: #8B4513; font-size: 2rem;">${character.name}</h2>
+                    <div class="character-intro">
+                        <div class="character-portrait-section">
+                            ${imageHtml}
+                        </div>
+                        <div class="character-details-section">
+                            <div class="info-cards-grid">
+                                <div class="info-card">
+                                    <span class="label">别号</span>
+                                    <span class="value">${character.nickname}</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">类别</span>
+                                    <span class="value">${character.star || '无'}</span>
+                                </div>
+                                <div class="info-card full-width">
+                                    <span class="label">别名</span>
+                                    <span class="value">${character.alias.length > 0 ? character.alias.join('、') : '无'}</span>
+                                </div>
+                            </div>
+                            ${character.portrait ? `
+                                <div class="info-card full-width">
+                                    <span class="label">人物简介</span>
+                                    <p class="value">${character.portrait.特点 ? character.portrait.特点 : '暂无简介'}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                const timeline = document.getElementById('timeline');
+                
+                if (character.timeline.length === 0) {
+                    timeline.innerHTML = '<div class="no-data">该人物暂无故事记录</div>';
+                    return;
+                }
+                
+                timeline.innerHTML = '';
+                
+                character.timeline.forEach((event, index) => {
+                    const timelineItem = document.createElement('div');
+                    timelineItem.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
+                    
+                    let dateHtml = '';
+                    if (event.year && event.month) {
+                        dateHtml = `<div class="timeline-date" style="font-size: 0.8rem; color: #8B4513; margin-bottom: 5px;">${event.year}年${event.month}</div>`;
+                    } else if (event.year) {
+                        dateHtml = `<div class="timeline-date" style="font-size: 0.8rem; color: #8B4513; margin-bottom: 5px;">${event.year}</div>`;
+                    }
+                    
+                    let eventDescription = event.event;
+                    if (!eventDescription) {
+                        eventDescription = `${character.name}${character.nickname}参与了${event.title}的事件。`;
+                    }
+                    
+                    timelineItem.innerHTML = `
+                        <div class="timeline-content" style="padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            ${dateHtml}
+                            <h4 style="color: #8B4513; margin-bottom: 10px;">${event.chapter} ${event.title}</h4>
+                            <p style="line-height: 1.6;">${eventDescription}</p>
+                        </div>
+                    `;
+                    
+                    timeline.appendChild(timelineItem);
+                });
+            })
+            .catch(error => {
+                console.error('加载数据失败:', error);
+                document.getElementById('characterInfo').innerHTML = '<div class="loading">加载失败，请刷新页面重试</div>';
+                document.getElementById('timeline').innerHTML = '';
+            });
+    </script>
+</body>
+</html>

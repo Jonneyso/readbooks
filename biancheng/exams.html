@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边城考试知识点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
+        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #666; }
+        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-item { margin: 0 15px; }
+        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .nav-link:hover { background-color: #654321; }
+        .nav-link.active { background-color: #654321; }
+        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
+        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
+        .exam-list { margin-bottom: 30px; }
+        .exam-section { margin-bottom: 40px; }
+        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
+        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
+        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
+        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
+        .expand-icon.open { transform: rotate(180deg); }
+        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
+        .exam-item-content.show { display: block; }
+        .exam-info { margin-bottom: 15px; }
+        .exam-info p { margin-bottom: 5px; }
+        .exam-info .label { font-weight: bold; color: #8B4513; }
+        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .question h5 { color: #8B4513; margin-bottom: 10px; }
+        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
+        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
+        .answer h5 { color: #8B4513; margin-bottom: 10px; }
+        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>边城考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        <nav class="nav-menu">
+            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
+            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
+            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+        </nav>
+        <div class="content">
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>翠翠形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《边城》中翠翠的人物形象。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对翠翠这一人物形象的理解，她是沈从文笔下理想女性的代表。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>形象特点：</p><ul><li>天真善良：纯净如水，不谙世事</li><li>感情细腻：情窦初开，对傩送产生朦胧感情</li><li>坚强独立：撑渡船谋生，自尊自爱</li><li>憧憬美好：对爱情有向往和期待</li></ul><p>典型意义：体现作者对美好人性的追求。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>边城环境描写作用</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《边城》中环境描写的作用。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说环境描写的理解和赏析能力。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>环境描写作用：</p><ul><li>营造诗意氛围：湘西边城的山水美景</li><li>烘托人物性格：美好环境映衬淳朴民风</li><li>推动情节发展：端午赛龙舟等习俗贯穿全书</li><li>表达主题：展现"人性美"和"人情美"</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>端午习俗描写</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《边城》中端午习俗描写的意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说中传统习俗描写作用的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>端午描写意义：</p><ul><li>交代社会背景：展现湘西独特的风土人情</li><li>推动情节发展：翠翠与傩送在端午相遇</li><li>塑造人物形象：龙舟竞渡体现当地人的精神风貌</li><li>深化主题：展现和谐淳朴的人际关系</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>边城"人性美"主题</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《边城》中"人性美"的具体体现。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《边城》核心主题"人性美"的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>人性美体现：</p><ul><li>翠翠：天真善良，对爱情的纯真追求</li><li>爷爷：忠厚朴实，对孙女无私的爱</li><li>傩送：正直善良，不贪财</li><li>顺顺：慷慨豪爽，公正无私</li><li>全村人：互帮互助，民风淳朴</li></ul><p>意义：对美好人性的向往和赞美。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>翠翠爱情悲剧分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>8分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《边城》中翠翠爱情悲剧的原因。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对翠翠爱情悲剧原因的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>悲剧原因：</p><ul><li>翠翠性格：害羞矜持，不敢表达心意</li><li>爷爷顾虑：担心翠翠母亲的悲剧重演</li><li>傩送误会：以为翠翠心里只有自己</li><li>命运弄人：碾坊陪嫁与渡船的对比</li><li>社会因素：传统婚恋观念的束缚</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>沈从文创作风格</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>简述沈从文《边城》的创作风格。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对沈从文整体创作风格的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>创作风格：</p><ul><li>诗意现实主义：诗意的语言描写现实</li><li>乡土情怀：充满对湘西故乡的热爱</li><li>人性探索：追寻美好的人性</li><li>婉约笔调：含蓄蕴藉，意境深远</li><li>民族特色：展现独特的湘西风情</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
+        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
+    </script>
+</body>
+</html>

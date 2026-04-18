@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儒林外史考试知识点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
+        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #666; }
+        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-item { margin: 0 15px; }
+        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .nav-link:hover { background-color: #654321; }
+        .nav-link.active { background-color: #654321; }
+        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
+        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
+        .exam-list { margin-bottom: 30px; }
+        .exam-section { margin-bottom: 40px; }
+        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
+        .exam-section h3 { font-size: 1.4rem; color: #8B4513; margin: 20px 0 15px; }
+        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
+        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
+        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
+        .expand-icon.open { transform: rotate(180deg); }
+        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
+        .exam-item-content.show { display: block; }
+        .exam-info { margin-bottom: 15px; }
+        .exam-info p { margin-bottom: 5px; }
+        .exam-info .label { font-weight: bold; color: #8B4513; }
+        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .question h5 { color: #8B4513; margin-bottom: 10px; }
+        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
+        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
+        .answer h5 { color: #8B4513; margin-bottom: 10px; }
+        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>儒林外史考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        <nav class="nav-menu">
+            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
+            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
+            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+        </nav>
+        <div class="content">
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>范进中举人物分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《儒林外史》中范进的人物形象及其典型意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对范进这一人物形象的分析，需结合具体情节，理解其性格特点和社会意义。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>醉心功名：几十年如一日追求科举</li><li>性格懦弱：面对岳父胡屠户唯唯诺诺</li><li>世态炎凉：中举前被人轻视，中举后被人追捧</li></ul><p>典型意义：批判了科举制度对人精神的摧残，揭示了封建社会的人情冷暖。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>周进形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析周进在贡院哭号的情节及其作用。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对关键情节的理解，需分析其表现手法和主题意义。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>情节：周进在贡院看到号舍，悲从中来，哭得口中鲜血直流，撞死在号板。</p><p>作用：</p><ul><li>展现科举制度对读书人的精神摧残</li><li>揭示周进对功名的痴迷程度</li><li>为后文范进中举的疯狂作铺垫</li><li>讽刺科举制度下读书人的悲剧命运</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>严监生形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析严监生的"守财奴"形象。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对严监生这一吝啬鬼形象的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>形象特点：</p><ul><li>极度吝啬：临终前因两根灯芯费油而不肯断气</li><li>胆小怕事：哥哥严贡生欺负他，他只能忍气吞声</li><li>内心复杂：嫂子假意过继儿子，他仍拿出银子</li></ul><p>意义：与严贡生的霸道形成对比，展现人性的多面性。</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>范进中举发疯分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>8分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析范进中举后发疯的情节及其讽刺意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《儒林外史》最经典情节的理解和分析能力。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>情节：范进中举后喜极而疯，被胡屠户一巴掌打醒。</p><p>讽刺意义：</p><ul><li>批判科举制度对读书人心灵的扭曲</li><li>揭示功名利禄对人的异化</li><li>讽刺社会对功名的盲目崇拜</li><li>反映封建科举制度的荒谬与残酷</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>对比手法分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《儒林外史》中对比手法的运用。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品艺术手法的掌握。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>对比手法：</p><ul><li>范进中举前后对比：前被人轻视，后被人追捧</li><li>周进与范进对比：同样痴迷科举，结局不同</li><li>严监生与严贡生对比：一个是守财奴，一个是横行霸道的恶棍</li><li>中举前后社会地位变化对比，揭示世态炎凉</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>讽刺艺术特色</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《儒林外史》的讽刺艺术特色。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品讽刺艺术的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>讽刺特色：</p><ul><li>冷峻峭拔：不动声色地展现人物可笑之处</li><li>夸张与白描结合：运用细节描写突出人物特点</li><li>喜中见悲：在喜剧性情节中蕴含悲剧色彩</li><li>借人物言行自我暴露：通过人物自身的表现揭示其可笑</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>主题思想理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2021年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>选择题</p><p><span class="label">分值：</span>3分</p></div>
+                                <div class="question"><h5>题目：</h5><p>下列关于《儒林外史》的说法，正确的一项是（ ）</p><p>A. 作者是曹雪芹</p><p>B. 主要批判科举制度</p><p>C. 以喜剧结局为主</p><p>D. 主要描写英雄传奇</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题属于文学常识和主题识别题。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>答案：B</p><p>解析：《儒林外史》的作者是吴敬梓，主要批判科举制度，作品以讽刺见长，结局多带有悲剧色彩。</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
+        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
+    </script>
+</body>
+</html>

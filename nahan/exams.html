@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呐喊考试知识点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
+        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #666; }
+        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-item { margin: 0 15px; }
+        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .nav-link:hover { background-color: #654321; }
+        .nav-link.active { background-color: #654321; }
+        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
+        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
+        .exam-list { margin-bottom: 30px; }
+        .exam-section { margin-bottom: 40px; }
+        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
+        .exam-section h3 { font-size: 1.4rem; color: #8B4513; margin: 20px 0 15px; }
+        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
+        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
+        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
+        .expand-icon.open { transform: rotate(180deg); }
+        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
+        .exam-item-content.show { display: block; }
+        .exam-info { margin-bottom: 15px; }
+        .exam-info p { margin-bottom: 5px; }
+        .exam-info .label { font-weight: bold; color: #8B4513; }
+        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .question h5 { color: #8B4513; margin-bottom: 10px; }
+        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
+        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
+        .answer h5 { color: #8B4513; margin-bottom: 10px; }
+        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>呐喊考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        <nav class="nav-menu">
+            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
+            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
+            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+        </nav>
+        <div class="content">
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>孔乙己人物形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《孔乙己》中"站着喝酒而穿长衫"这一细节描写的作用。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对细节描写的赏析能力，这一细节是理解孔乙己形象的关键。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>作用：</p><ul><li>展现身份矛盾："站着喝酒"说明社会地位低下，"穿长衫"说明自视为读书人</li><li>揭示悲剧命运：既无法融入上层，又不愿回归劳动者行列</li><li>批判科举制度：科举制度塑造的"长衫"成了困住孔乙己的枷锁</li><li>深化主题：揭示封建社会对知识分子的精神毒害</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>狂人日记艺术特色</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《狂人日记》的艺术特色。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《狂人日记》这一中国现代文学史上重要作品的艺术手法理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>艺术特色：</p><ul><li>日记体形式：第一人称叙述，增强真实感</li><li>象征手法："吃人"象征封建礼教的罪恶</li><li>现实与象征交织：通过狂人的眼睛看世界</li><li>讽刺手法：通过"仁义道德"字缝里的字，揭露真相</li><li>语言简洁有力，富有战斗性</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>阿Q精神胜利法</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
+                                <div class="question"><h5>题目：</h5><p>论述阿Q"精神胜利法"的内涵及其成因。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题要求深入理解精神胜利法的内涵和社会成因。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>内涵：自欺欺人，自我安慰，在精神上取得胜利</p><p>表现：</p><ul><li>被欺负后说是"儿子打老子"</li><li>癞疮疤被提及时说"你还不配"</li><li>临死前喊"二十年后又是一条好汉"</li></ul><p>成因：</p><ul><li>封建压迫下的弱者生存策略</li><li>长期封建统治造成的国民劣根性</li><li>辛亥革命的不彻底性</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>药的主题分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2026年1月</p><p><span class="label">学校：</span>上海建平中学</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《药》的主题及其双线结构的作用。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《药》的主题和结构艺术的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>主题：</p><ul><li>批判封建统治阶级对革命者的镇压</li><li>揭示革命与群众的隔膜</li><li>批判群众的愚昧和麻木</li></ul><p>双线结构作用：</p><ul><li>明线（华老栓买药）：群众愚昧</li><li>暗线（夏瑜被杀）：革命者孤独</li><li>两线交织：革命者的血成了群众的"药"，讽刺群众不理解革命</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>狂人日记"吃人"主题</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>8分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《狂人日记》中"吃人"主题的深刻含义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对"吃人"主题的深入理解，这是鲁迅小说的核心主题之一。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>含义：</p><ul><li>表面：人吃人的现实（易子而食）</li><li>深层：封建礼教对人的精神控制和压迫</li><li>象征：整个社会制度对人的吞噬</li><li>"吃人者"包括：封建统治者、传统礼教的维护者、以及被同化的群众</li><li>呼唤：打破这"吃人"的循环，呼唤人性的解放</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>看客形象分析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析鲁迅小说中"看客"形象及其意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对鲁迅小说中反复出现的"看客"主题的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>看客特点：</p><ul><li>麻木冷漠：对他人的痛苦无动于衷</li><li>无聊消遣：将别人的不幸当作娱乐</li><li>普遍性：在多部作品中反复出现</li></ul><p>意义：</p><ul><li>批判国民的劣根性</li><li>揭示封建社会对人性的扭曲</li><li>反思辛亥革命的失败</li><li>呼唤民众的觉醒</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>阿Q形象典型性</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>论述阿Q形象的典型性及其"国民劣根性"的代表意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对阿Q形象典型意义的理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>典型性：</p><ul><li>精神胜利法是普遍存在的心理弱点的集中体现</li><li>阿Q生活在未庄，是中国农村社会的缩影</li><li>其经历反映了当时中国社会的普遍现象</li></ul><p>代表意义：</p><ul><li>当时中国农民阶层精神状态的写照</li><li>长期封建统治形成的国民劣根性的集中体现</li><li>辛亥革命脱离群众的深刻教训</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>故乡主题理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2021年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析《故乡》的主题及"我"与闰土关系变化的象征意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《故乡》主题的深入理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>主题：</p><ul><li>批判封建等级观念对人的伤害</li><li>对故乡美好回忆与现实失望的对比</li><li>对农村经济衰败的忧虑</li></ul><p>关系变化象征：</p><ul><li>少年时"迅哥儿"与"闰土"的纯真友谊</li><li>成年后"我"与"老爷"的等级鸿沟</li><li>象征人与人之间被封建观念隔开</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
+        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
+    </script>
+</body>
+</html>

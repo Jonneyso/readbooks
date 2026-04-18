@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水浒传人物思维导图</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5dc;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* 思维导图容器 */
+        .mindmap-container {
+            position: relative;
+            width: 100%;
+            height: 1200px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #8B4513;
+            overflow: auto;
+        }
+        
+        /* Canvas样式 */
+        #mindmapCanvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .mindmap-container {
+                height: 1000px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* 加载动画 */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: #8B4513;
+        }
+        
+        /* 按钮样式 */
+        .view-details {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .view-details:hover {
+            background-color: #654321;
+        }
+
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #654321;
+        }
+
+        .nav-link.active {
+            background-color: #654321;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>水浒传人物聚散线全景</h1>
+            <p class="subtitle">108好汉故事线汇总</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+        </nav>
+        
+        <div class="mindmap-container">
+            <canvas id="mindmapCanvas"></canvas>
+            <div class="loading" id="loading">加载中...</div>
+        </div>
+    </div>
+    
+    <script>
+        // 定义人物批次（根据出场时间和结局时间分组）
+        const characterBatches = {
+            // 第一批出场：1101-1102年
+            batch1: {
+                startYear: 1101,
+                characters: ['史进', '鲁智深', '林冲', '杨志']
+            },
+            // 第二批出场：1102-1103年
+            batch2: {
+                startYear: 1102,
+                characters: ['晁盖', '吴用', '公孙胜', '刘唐', '阮小二', '阮小五', '阮小七']
+            },
+            // 第三批出场：1103-1104年
+            batch3: {
+                startYear: 1103,
+                characters: ['武松', '宋江', '戴宗', '李逵']
+            },
+            // 第四批出场：1104-1105年
+            batch4: {
+                startYear: 1104,
+                characters: ['花荣', '秦明', '黄信', '燕顺', '王英', '郑天寿']
+            },
+            // 第五批出场：1105-1106年
+            batch5: {
+                startYear: 1105,
+                characters: ['柴进', '李应', '朱仝', '雷横', '石秀', '杨雄', '解珍', '解宝']
+            },
+            // 第六批出场：1106-1107年
+            batch6: {
+                startYear: 1106,
+                characters: ['卢俊义', '燕青', '关胜', '呼延灼', '董平', '张清', '徐宁', '索超']
+            },
+            // 第七批出场：1107年
+            batch7: {
+                startYear: 1107,
+                characters: ['其余好汉']
+            },
+            // 第一批结局：1108-1109年
+            endBatch1: {
+                endYear: 1109,
+                characters: ['张顺', '徐宁', '董平', '张清', '刘唐', '史进', '雷横', '石秀', '解珍', '解宝']
+            },
+            // 第二批结局：1109-1110年
+            endBatch2: {
+                endYear: 1110,
+                characters: ['鲁智深', '武松', '林冲', '杨志', '秦明', '呼延灼', '关胜', '索超']
+            },
+            // 第三批结局：1111年
+            endBatch3: {
+                endYear: 1111,
+                characters: ['宋江', '卢俊义', '吴用', '李逵', '花荣', '燕青', '柴进', '李应', '朱仝', '其余好汉']
+            }
+        };
+        
+        // 加载JSON数据
+        fetch('shuihu_120_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const characters = data.characters;
+                const canvas = document.getElementById('mindmapCanvas');
+                const ctx = canvas.getContext('2d');
+                const loading = document.getElementById('loading');
+                
+                // 设置Canvas尺寸
+                canvas.width = 1400;
+                canvas.height = 1200;
+                
+                // 隐藏加载动画
+                loading.style.display = 'none';
+                
+                // 绘制背景
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // 绘制时间轴
+                ctx.beginPath();
+                ctx.moveTo(100, canvas.height / 2);
+                ctx.lineTo(canvas.width - 100, canvas.height / 2);
+                ctx.strokeStyle = '#8B4513';
+                ctx.lineWidth = 4;
+                ctx.stroke();
+                
+                // 定义时间点
+                const timePoints = [
+                    { year: 1101, label: '1101年', position: 100 },
+                    { year: 1102, label: '1102年', position: 200 },
+                    { year: 1103, label: '1103年', position: 300 },
+                    { year: 1104, label: '1104年', position: 400 },
+                    { year: 1105, label: '1105年', position: 500 },
+                    { year: 1106, label: '1106年', position: 600 },
+                    { year: 1107, label: '1107年', position: 700 },
+                    { year: 1108, label: '1108年', position: 800 },
+                    { year: 1109, label: '1109年', position: 900 },
+                    { year: 1110, label: '1110年', position: 1000 },
+                    { year: 1111, label: '1111年', position: 1100 }
+                ];
+                
+                // 绘制时间点
+                timePoints.forEach(point => {
+                    // 绘制时间点
+                    ctx.beginPath();
+                    ctx.arc(point.position, canvas.height / 2, 6, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#8B4513';
+                    ctx.fill();
+                    
+                    // 绘制时间标签
+                    ctx.font = '12px SimSun';
+                    ctx.fillStyle = '#8B4513';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(point.label, point.position, canvas.height / 2 + 20);
+                });
+                
+                // 梁山聚齐节点（1107年）
+                const liangshanX = 700;
+                const liangshanY = canvas.height / 2;
+                
+                // 绘制梁山聚齐节点
+                ctx.beginPath();
+                ctx.arc(liangshanX, liangshanY, 10, 0, 2 * Math.PI);
+                ctx.fillStyle = '#8B4513';
+                ctx.fill();
+                
+                // 绘制梁山聚齐标签
+                ctx.font = '16px SimSun';
+                ctx.fillStyle = '#8B4513';
+                ctx.textAlign = 'center';
+                ctx.fillText('梁山聚齐108好汉', liangshanX, liangshanY - 20);
+                
+                // 绘制批次线条（左半部分）
+                const batches = [characterBatches.batch1, characterBatches.batch2, characterBatches.batch3, characterBatches.batch4, characterBatches.batch5, characterBatches.batch6, characterBatches.batch7];
+                const batchSpacing = 100;
+                
+                batches.forEach((batch, index) => {
+                    const startX = 100 + (batch.startYear - 1101) * 100;
+                    const startY = 200 + index * batchSpacing;
+                    
+                    // 计算线条粗细（根据人物数量）
+                    const lineWidth = Math.max(2, batch.characters.length / 2);
+                    
+                    // 绘制批次线条（左半部分）
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    // 使用贝塞尔曲线绘制曲线
+                    ctx.bezierCurveTo(
+                        startX + (liangshanX - startX) / 2, startY,
+                        liangshanX - 100, liangshanY - 50,
+                        liangshanX, liangshanY
+                    );
+                    ctx.strokeStyle = '#8B4513';
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                    
+                    // 绘制批次起点节点
+                    ctx.beginPath();
+                    ctx.arc(startX, startY, 6, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#8B4513';
+                    ctx.fill();
+                    
+                    // 绘制批次起点标签
+                    ctx.font = '14px SimSun';
+                    ctx.fillStyle = '#8B4513';
+                    ctx.textAlign = 'left';
+                    ctx.fillText(batch.characters.join('、'), startX + 10, startY + 5);
+                });
+                
+                // 绘制结局批次线条（右半部分）
+                const endBatches = [characterBatches.endBatch1, characterBatches.endBatch2, characterBatches.endBatch3];
+                const endBatchSpacing = 150;
+                
+                endBatches.forEach((batch, index) => {
+                    const endX = 700 + (batch.endYear - 1107) * 100;
+                    const endY = 300 + index * endBatchSpacing;
+                    
+                    // 计算线条粗细（根据人物数量）
+                    const lineWidth = Math.max(2, batch.characters.length / 2);
+                    
+                    // 绘制结局批次线条（右半部分）
+                    ctx.beginPath();
+                    ctx.moveTo(liangshanX, liangshanY);
+                    // 使用贝塞尔曲线绘制曲线
+                    ctx.bezierCurveTo(
+                        liangshanX + 100, liangshanY + 50,
+                        endX - (endX - liangshanX) / 2, endY,
+                        endX, endY
+                    );
+                    ctx.strokeStyle = '#8B4513';
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                    
+                    // 绘制结局批次终点节点
+                    ctx.beginPath();
+                    ctx.arc(endX, endY, 6, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#8B4513';
+                    ctx.fill();
+                    
+                    // 绘制结局批次终点标签
+                    ctx.font = '14px SimSun';
+                    ctx.fillStyle = '#8B4513';
+                    ctx.textAlign = 'right';
+                    ctx.fillText(batch.characters.join('、'), endX - 10, endY + 5);
+                });
+                
+                // 绘制主要人物线条
+                const mainCharacters = ['宋江', '卢俊义', '吴用', '鲁智深', '武松', '林冲'];
+                const mainCharacterY = [300, 350, 400, 450, 500, 550];
+                
+                mainCharacters.forEach((character, index) => {
+                    // 固定的起点时间和终点时间
+                    const startX = 100 + (1102 + index) * 50;
+                    const startY = mainCharacterY[index];
+                    const endX = 1100 - index * 50;
+                    const endY = mainCharacterY[index];
+                    
+                    // 绘制人物线条（左半部分）
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    // 使用贝塞尔曲线绘制曲线
+                    ctx.bezierCurveTo(
+                        startX + (liangshanX - startX) / 2, startY,
+                        liangshanX - 50, liangshanY - 30,
+                        liangshanX, liangshanY
+                    );
+                    ctx.strokeStyle = '#654321';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    
+                    // 绘制人物线条（右半部分）
+                    ctx.beginPath();
+                    ctx.moveTo(liangshanX, liangshanY);
+                    // 使用贝塞尔曲线绘制曲线
+                    ctx.bezierCurveTo(
+                        liangshanX + 50, liangshanY + 30,
+                        endX - (endX - liangshanX) / 2, endY,
+                        endX, endY
+                    );
+                    ctx.strokeStyle = '#654321';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    
+                    // 绘制人物起点节点
+                    ctx.beginPath();
+                    ctx.arc(startX, startY, 4, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#654321';
+                    ctx.fill();
+                    
+                    // 绘制人物起点标签
+                    ctx.font = '12px SimSun';
+                    ctx.fillStyle = '#654321';
+                    ctx.textAlign = 'left';
+                    ctx.fillText(character, startX + 10, startY + 5);
+                    
+                    // 绘制人物终点节点
+                    ctx.beginPath();
+                    ctx.arc(endX, endY, 4, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#654321';
+                    ctx.fill();
+                    
+                    // 绘制人物终点标签
+                    ctx.font = '12px SimSun';
+                    ctx.fillStyle = '#654321';
+                    ctx.textAlign = 'right';
+                    ctx.fillText(character + '归宿', endX - 10, endY + 5);
+                });
+            })
+            .catch(error => {
+                console.error('加载数据失败:', error);
+                document.getElementById('loading').textContent = '加载失败，请刷新页面重试';
+            });
+    </script>
+</body>
+</html>

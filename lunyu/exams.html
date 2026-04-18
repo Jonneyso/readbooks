@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论语考试知识点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
+        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .subtitle { font-size: 1.2rem; color: #666; }
+        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-item { margin: 0 15px; }
+        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+        .nav-link:hover { background-color: #654321; }
+        .nav-link.active { background-color: #654321; }
+        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
+        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
+        .exam-list { margin-bottom: 30px; }
+        .exam-section { margin-bottom: 40px; }
+        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
+        .exam-section h3 { font-size: 1.4rem; color: #8B4513; margin: 20px 0 15px; }
+        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
+        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
+        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
+        .expand-icon.open { transform: rotate(180deg); }
+        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
+        .exam-item-content.show { display: block; }
+        .exam-info { margin-bottom: 15px; }
+        .exam-info p { margin-bottom: 5px; }
+        .exam-info .label { font-weight: bold; color: #8B4513; }
+        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .question h5 { color: #8B4513; margin-bottom: 10px; }
+        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
+        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
+        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
+        .answer h5 { color: #8B4513; margin-bottom: 10px; }
+        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>论语考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        <nav class="nav-menu">
+            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
+            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
+            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+        </nav>
+        <div class="content">
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"学而时习之"名句理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>解释"学而时习之，不亦说乎"的含义，并谈谈你的理解。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《论语》名句的理解，属于名句默写与理解类题目。需准确解释字面意思，并结合实际谈理解。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>含义：学习知识后经常复习，不是很快乐吗？</p><p>理解：学习中要有恒心，通过不断复习巩固知识，获得新认识，体会到学习的乐趣。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>孔子"仁"的思想</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析孔子"仁"的核心思想及其在《论语》中的体现。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对孔子核心思想的理解。"仁"是孔子思想的核心，需要从多个角度阐述其含义。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>"仁"的核心：仁者爱人</p><ul><li>"己所不欲，勿施于人"——恕道，推己及人</li><li>"己欲立而立人，己欲达而达人"——忠道，积极助人</li><li>"孝弟也者，其为仁之本与"——孝敬父母、友爱兄弟是仁的基础</li><li>仁者爱人体现在日常伦理中</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>因材施教教育思想</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
+                                <div class="question"><h5>题目：</h5><p>结合《论语》，论述孔子的"因材施教"教育思想。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题要求论述孔子的教育思想，需要结合《论语》中的具体事例来说明。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>因材施教：根据学生不同特点采取不同教学方法</p><ul><li>同一问题不同回答：如问"仁"，答司马牛与颜回各不相同</li><li>同一问题同一学生不同时候回答不同</li><li>特点：有教无类，打破等级；注重个体差异；启发式教学</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"君子"与"小人"对比</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试时间：</span>2026年1月</p><p><span class="label">学校：</span>上海建平中学</p><p><span class="label">考试类型：</span>期末考试</p></div>
+                                <div class="question"><h5>题目：</h5><p>比较《论语》中"君子"与"小人"的区别。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题属于对比分析类题目，君子小人之辨是《论语》重要主题。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>区别：</p><ul><li>"君子喻于义，小人喻于利"——义利观不同</li><li>"君子坦荡荡，小人长戚戚"——胸怀不同</li><li>"君子和而不同，小人同而不和"——处世不同</li><li>"君子求诸己，小人求诸人"——自律不同</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"己所不欲，勿施于人"理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>解释"己所不欲，勿施于人"的含义，并说明其现实意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察名句理解及实际应用能力，需要准确解释并联系现实。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>含义：自己不愿意的事情，不要强加给别人。</p><p>现实意义：</p><ul><li>换位思考的体现</li><li>构建和谐人际关系的基础</li><li>对当代社会道德建设有重要指导价值</li></ul></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"知之者不如好之者"理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>默写题</p><p><span class="label">分值：</span>4分</p></div>
+                                <div class="question"><h5>题目：</h5><p>补写出"知之者不如好之者"的下一句。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题属于直接默写题，考察对《论语》名句的准确记忆。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>下一句是："好之者不如乐之者"。</p><p>此句出自《论语·雍也》，意思是懂得学习的人比不上喜爱学习的人，喜爱学习的人比不上以学习为乐的人。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"岁寒，然后知松柏之后凋也"理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>5分</p></div>
+                                <div class="question"><h5>题目：</h5><p>解释"岁寒，然后知松柏之后凋也"的含义及其象征意义。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题考察名句理解及其象征意义，需要能看出句子的深层含义。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>含义：到了寒冷的时候，才知道松柏是最后凋落的。</p><p>象征意义：比喻在艰难困苦中，才能看出人的坚强品格和高尚节操。也比喻只有在逆境中，才能考验人的意志。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>孔子思想核心辨析</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2021年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>选择题</p><p><span class="label">分值：</span>3分</p></div>
+                                <div class="question"><h5>题目：</h5><p>下列关于《论语》的说法，不正确的一项是（ ）</p><p>A. "仁"是孔子思想的核心</p><p>B. "己所不欲，勿施于人"体现的是"忠"道</p><p>C. 孔子主张"因材施教"</p><p>D. "君子"与"小人"的对比是《论语》的重要主题</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题属于概念辨析题，需要准确理解孔子"仁"与"忠恕"的关系。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>答案：B</p><p>解析："己所不欲，勿施于人"体现的是"恕"道，而非"忠"道。"忠"是"己欲立而立人，己欲达而达人"。</p></div>
+                            </div>
+                        </div>
+                        <div class="exam-item">
+                            <div class="exam-item-header"><h4>"学而不思则罔，思而不学则殆"理解</h4><span class="expand-icon">▼</span></div>
+                            <div class="exam-item-content">
+                                <div class="exam-info"><p><span class="label">考试年份：</span>2020年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
+                                <div class="question"><h5>题目：</h5><p>分析"学而不思则罔，思而不学则殆"的教育启示。</p></div>
+                                <div class="analysis"><h5>题目解析：</h5><p>本题要求从教育角度分析这句话的启示意义。</p></div>
+                                <div class="answer"><h5>参考答案：</h5><p>含义：只学习不思考会迷惑，只思考不学习会疑惑。</p><p>教育启示：</p><ul><li>学习与思考必须相结合</li><li>既要扎实学习基础知识，又要独立思考</li><li>死读书而不思考会迷失方向</li><li>空想而不学习会陷入疑惑</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
+        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
+    </script>
+</body>
+</html>

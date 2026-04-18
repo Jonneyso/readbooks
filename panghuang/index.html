@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彷徨导读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5dc;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #654321;
+        }
+        
+        .nav-link.active {
+            background-color: #654321;
+        }
+        
+        .content-section {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #8B4513;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 10px;
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: #8B4513;
+            margin: 20px 0 10px 0;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .content-section ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .content-section li {
+            margin-bottom: 5px;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background-color: #f9f6f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #8B4513;
+        }
+        
+        .card h4 {
+            font-size: 1.2rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>彷徨导读</h1>
+            <p class="subtitle">鲁迅短篇小说集</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+            <div class="nav-item">
+                <a href="#all" class="nav-link active">全部内容</a>
+            </div>
+            <div class="nav-item">
+                <a href="#introduction" class="nav-link">作品简介</a>
+            </div>
+            <div class="nav-item">
+                <a href="#stories" class="nav-link">名篇精读</a>
+            </div>
+            <div class="nav-item">
+                <a href="#exams" class="nav-link">高考知识点</a>
+            </div>
+        </nav>
+        
+        <div id="contentContainer">
+            <section id="introduction" class="content-section">
+                <h2>作品简介</h2>
+                <p>《彷徨》是鲁迅创作的第二本小说集，1926年由北京北新书局出版。</p>
+                <p>收录了鲁迅从1924年至1925年创作的11篇短篇小说，包括《祝福》《在酒楼上》《伤逝》《离婚》等。</p>
+                <p>与《呐喊》相比，《彷徨》更深入地揭示了知识分子的精神困境，批判的笔触更加冷峻深沉，显示出作者在五四退潮期的孤独与彷徨。</p>
+            </section>
+            
+            <section id="stories" class="content-section">
+                <h2>名篇精读</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h4>祝福</h4>
+                        <p>祥林嫂是旧中国农村劳动妇女的典型，她勤劳、善良，却接连遭受命运的打击，最终在祝福夜死去。</p>
+                    </div>
+                    <div class="card">
+                        <h4>在酒楼上</h4>
+                        <p>"我"与旧友吕纬甫重逢，他曾是一个敏捷精悍的青年，如今却变得敷敷衍衍、消沉颓废。</p>
+                    </div>
+                    <div class="card">
+                        <h4>伤逝</h4>
+                        <p>涓生与子君的爱情悲剧，表达了五四青年追求个性解放却最终失败的苦闷。</p>
+                    </div>
+                    <div class="card">
+                        <h4>离婚</h4>
+                        <p>描写爱姑追求婚姻自主却最终屈服于封建势力的故事。</p>
+                    </div>
+                    <div class="card">
+                        <h4>孤独者</h4>
+                        <p>魏连殳是一个觉醒者的形象，他冷漠、孤独，最终被社会吞噬。</p>
+                    </div>
+                    <div class="card">
+                        <h4>长明灯</h4>
+                        <p>疯子要熄灭长明灯，被村民们视为疯子，最终被关押。</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="exams" class="content-section">
+                <h2>高考知识点</h2>
+                <h3>核心考点</h3>
+                <ul>
+                    <li><strong>《祝福》</strong>：祥林嫂的人物形象，柳妈的言论，死亡意象</li>
+                    <li><strong>《伤逝》</strong>：涓生与子君的爱情悲剧，"人必生活着，爱才有所附丽"</li>
+                    <li><strong>《在酒楼上》</strong>：吕纬甫的形象，知识分子精神困境</li>
+                    <li><strong>《孤独者》</strong>：魏连殳的孤独与绝望</li>
+                </ul>
+                <h3>高频考题</h3>
+                <ul>
+                    <li>祥林嫂的悲剧命运及社会意义</li>
+                    <li>鲁迅笔下的知识分子形象</li>
+                    <li>"娜拉走后怎样"的问题</li>
+                    <li>鲁迅小说中的女性形象</li>
+                    <li>"看客"形象的分析</li>
+                </ul>
+                <h3>典型例题</h3>
+                <p><strong>题目</strong>：分析《祝福》中祥林嫂这一人物形象的悲剧意义。</p>
+                <p><strong>参考答案</strong>：祥林嫂是旧中国农村劳动妇女的典型代表，她勤劳、善良、朴实，却接连遭受命运的打击——丈夫去世、儿子被狼叼走、被迫改嫁。她试图通过劳动获得尊严，却始终无法摆脱封建礼教的压迫。祥林嫂的悲剧深刻揭示了封建制度对底层妇女的残酷压迫，以及整个社会的冷漠与无情。</p>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.nav-link').forEach(navLink => navLink.classList.remove('active'));
+                this.classList.add('active');
+                
+                const target = this.getAttribute('href');
+                const sections = document.querySelectorAll('.content-section');
+                
+                if (target === '#all') {
+                    sections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                } else {
+                    sections.forEach(section => {
+                        if (section.id === target.substring(1)) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+                
+                document.getElementById('contentContainer').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

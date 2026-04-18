@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红楼梦考试知识点</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f8f0e3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #c19a6b;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #654321;
+        }
+
+        .nav-link.active {
+            background-color: #654321;
+        }
+        
+        /* 响应式设计 - 导航菜单 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            
+            .nav-item {
+                margin: 5px;
+            }
+        }
+        
+        /* 内容区域 */
+        .content {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+        }
+        
+        /* 考点列表 */
+        .exam-list {
+            margin-bottom: 30px;
+        }
+        
+        .exam-section {
+            margin-bottom: 40px;
+        }
+        
+        .exam-section h2 {
+            font-size: 1.8rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #c19a6b;
+        }
+        
+        .exam-section h3 {
+            font-size: 1.4rem;
+            color: #8B4513;
+            margin: 20px 0 15px;
+        }
+        
+        /* 考点项 */
+        .exam-item {
+            background-color: #f9f6f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #c19a6b;
+            transition: all 0.3s ease;
+        }
+        
+        .exam-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .exam-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .exam-item-header h4 {
+            font-size: 1.1rem;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        
+        .expand-icon {
+            font-size: 1.2rem;
+            color: #8B4513;
+            transition: transform 0.3s ease;
+        }
+        
+        .expand-icon.open {
+            transform: rotate(180deg);
+        }
+        
+        .exam-item-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #c19a6b;
+            display: none;
+        }
+        
+        .exam-item-content.show {
+            display: block;
+        }
+        
+        .exam-info {
+            margin-bottom: 15px;
+        }
+        
+        .exam-info p {
+            margin-bottom: 5px;
+        }
+        
+        .exam-info .label {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        .question {
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #c19a6b;
+        }
+        
+        .question h5 {
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+        
+        .answer {
+            background-color: rgba(209, 182, 146, 0.1);
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .answer h5 {
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-item {
+                border-right: none;
+                border-bottom: 1px solid #c19a6b;
+                text-align: center;
+            }
+            
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .exam-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .expand-icon {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>红楼梦考试知识点</h1>
+            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+            <div class="nav-item">
+                <a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a>
+            </div>
+            <div class="nav-item">
+                <a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <!-- 高中考试考点 -->
+            <div id="high-school" class="tab-content">
+                <div class="exam-section">
+                    <h2>高中考试考点</h2>
+                    
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>林黛玉形象分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年12月</p>
+                                    <p><span class="label">学校：</span>上海复旦附中</p>
+                                    <p><span class="label">考试类型：</span>期末考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>请结合《红楼梦》中的具体情节，分析林黛玉的性格特点及其悲剧命运的原因。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>林黛玉的性格特点：敏感细腻、多愁善感、才华横溢、孤高自许。</p>
+                                    <p>具体情节：黛玉葬花、《葬花吟》创作、与宝玉的情感互动等。</p>
+                                    <p>悲剧命运原因：</p>
+                                    <ul>
+                                        <li>身体虚弱，早逝的伏笔</li>
+                                        <li>性格敏感，易受伤害</li>
+                                        <li>与宝玉的爱情不被封建礼教所容</li>
+                                        <li>家族衰落，无依无靠</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>大观园建筑象征意义</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年5月</p>
+                                    <p><span class="label">学校：</span>上海交大附中</p>
+                                    <p><span class="label">考试类型：</span>期中考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》中大观园的建筑布局及其象征意义。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>大观园的建筑布局：潇湘馆、蘅芜苑、怡红院、稻香村等各具特色的建筑。</p>
+                                    <p>象征意义：</p>
+                                    <ul>
+                                        <li>潇湘馆：象征林黛玉的幽僻、敏感性格</li>
+                                        <li>蘅芜苑：象征薛宝钗的朴素、端庄</li>
+                                        <li>怡红院：象征贾宝玉的多情、率真</li>
+                                        <li>稻香村：象征李纨的守节、淡泊</li>
+                                        <li>整体布局：象征理想的封建大家庭，最终的衰败预示着封建制度的崩溃</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>《葬花吟》赏析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年10月</p>
+                                    <p><span class="label">学校：</span>上海华师大二附中</p>
+                                    <p><span class="label">考试类型：</span>月考</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>赏析《红楼梦》中林黛玉的《葬花吟》，分析其艺术特色和思想内涵。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>艺术特色：</p>
+                                    <ul>
+                                        <li>以花喻人，借景抒情</li>
+                                        <li>语言优美，意境凄美</li>
+                                        <li>情感真挚，感染力强</li>
+                                    </ul>
+                                    <p>思想内涵：</p>
+                                    <ul>
+                                        <li>表达了对生命短暂、美好易逝的感慨</li>
+                                        <li>反映了林黛玉的孤独、敏感和对命运的无奈</li>
+                                        <li>体现了对封建礼教的反抗和对自由的向往</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>抄检大观园情节分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2026年1月</p>
+                                    <p><span class="label">学校：</span>上海建平中学</p>
+                                    <p><span class="label">考试类型：</span>期末考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》中“抄检大观园”情节的作用和意义。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>情节作用：</p>
+                                    <ul>
+                                        <li>推动故事情节发展，为后续悲剧结局埋下伏笔</li>
+                                        <li>展现不同人物的性格特点</li>
+                                        <li>揭示贾府内部的矛盾和衰败</li>
+                                    </ul>
+                                    <p>意义：</p>
+                                    <ul>
+                                        <li>反映了封建家族的内部倾轧和腐朽</li>
+                                        <li>体现了对弱势群体的同情</li>
+                                        <li>预示了贾府的最终崩溃</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>宝黛钗爱情悲剧分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年6月</p>
+                                    <p><span class="label">学校：</span>上海七宝中学</p>
+                                    <p><span class="label">考试类型：</span>期中考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》中宝黛钗爱情悲剧的原因和意义。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>悲剧原因：</p>
+                                    <ul>
+                                        <li>封建礼教的束缚</li>
+                                        <li>家族利益的冲突</li>
+                                        <li>人物性格的差异</li>
+                                        <li>命运的无常</li>
+                                    </ul>
+                                    <p>意义：</p>
+                                    <ul>
+                                        <li>批判了封建礼教对人性的压抑</li>
+                                        <li>歌颂了真挚的爱情</li>
+                                        <li>反映了封建社会的黑暗和腐朽</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>红楼梦回目概括</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年11月</p>
+                                    <p><span class="label">学校：</span>上海格致中学</p>
+                                    <p><span class="label">考试类型：</span>月考</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>请简要概括《红楼梦》前八十回的主要情节脉络。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>前八十回主要情节脉络：</p>
+                                    <ul>
+                                        <li>林黛玉进贾府，与贾宝玉初次见面</li>
+                                        <li>贾宝玉梦游太虚幻境，看到金陵十二钗判词</li>
+                                        <li>元春省亲，贾府建造大观园</li>
+                                        <li>宝玉挨打，众人探视</li>
+                                        <li>大观园里结海棠诗社</li>
+                                        <li>抄检大观园，晴雯被撵</li>
+                                        <li>林黛玉焚稿断情，薛宝钗与贾宝玉成婚</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>红楼梦主题思想</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2026年1月</p>
+                                    <p><span class="label">学校：</span>上海南洋模范中学</p>
+                                    <p><span class="label">考试类型：</span>期末考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》的主题思想及其现实意义。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>主题思想：</p>
+                                    <ul>
+                                        <li>封建家族衰败</li>
+                                        <li>封建礼教吃人</li>
+                                        <li>女性命运悲剧</li>
+                                        <li>繁华落尽的虚无</li>
+                                    </ul>
+                                    <p>现实意义：</p>
+                                    <ul>
+                                        <li>批判了封建社会的黑暗和腐朽</li>
+                                        <li>歌颂了人性的美好和自由</li>
+                                        <li>提醒人们珍惜当下，看淡功名利禄</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>红楼梦艺术特色</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年4月</p>
+                                    <p><span class="label">学校：</span>上海复兴高级中学</p>
+                                    <p><span class="label">考试类型：</span>期中考试</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》的艺术特色。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>艺术特色：</p>
+                                    <ul>
+                                        <li>网状结构：多条线索交织，展现复杂的人物关系和社会生活</li>
+                                        <li>象征手法：通灵宝玉、太虚幻境等象征深化主题</li>
+                                        <li>诗词歌赋：大量诗词丰富内容，反映人物性格和命运</li>
+                                        <li>草蛇灰线：伏笔千里，前后呼应</li>
+                                        <li>春秋笔法：微言大义，暗含褒贬</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>红楼梦诗词鉴赏</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试时间：</span>2025年10月</p>
+                                    <p><span class="label">学校：</span>上海延安中学</p>
+                                    <p><span class="label">考试类型：</span>月考</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>鉴赏《红楼梦》中林黛玉的《葬花吟》。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>《葬花吟》是林黛玉的代表作，通过葬花这一行为，表达了对生命短暂、美好易逝的感慨，反映了她的孤独、敏感和对命运的无奈。</p>
+                                    <p>艺术特色：</p>
+                                    <ul>
+                                        <li>以花喻人，借景抒情</li>
+                                        <li>语言优美，意境凄美</li>
+                                        <li>情感真挚，感染力强</li>
+                                    </ul>
+                                    <p>思想内涵：</p>
+                                    <ul>
+                                        <li>表达了对生命短暂、美好易逝的感慨</li>
+                                        <li>反映了林黛玉的孤独、敏感和对命运的无奈</li>
+                                        <li>体现了对封建礼教的反抗和对自由的向往</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 高考考点 -->
+            <div id="college-entrance" class="tab-content" style="display: none;">
+                <div class="exam-section">
+                    <h2>高考考点</h2>
+                    
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>“金玉良缘”“木石前盟”含义</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2008年</p>
+                                    <p><span class="label">试卷：</span>江苏卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>5分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>请说说“金玉良缘”“木石前盟”的含义。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>“金玉良缘”指薛宝钗有金锁，贾宝玉有宝玉，两人应结成姻缘。</p>
+                                    <p>“木石前盟”指林黛玉的前世是绛珠仙草，贾宝玉的前世是女娲炼石补天余下的石头化成的神瑛侍者，两者有恩有义，今世应结成姻缘。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>诗社别号对应</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2025年</p>
+                                    <p><span class="label">试卷：</span>上海卷</p>
+                                    <p><span class="label">题型：</span>选择题</p>
+                                    <p><span class="label">分值：</span>2分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>《红楼梦》中大观园里曾两次结诗社，下列人物与其诗社的别号对应不正确的一项是（ ）</p>
+                                    <p>A. 贾宝玉——护花使者</p>
+                                    <p>B. 林黛玉——潇湘妃子</p>
+                                    <p>C. 史湘云——枕霞旧友</p>
+                                    <p>D. 贾探春——蕉下客</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>答案：A</p>
+                                    <p>解析：贾宝玉的别号是“怡红公子”，而非“护花使者”。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>抄检大观园分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2025年</p>
+                                    <p><span class="label">试卷：</span>北京卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>10分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>从抄检大观园分析探春“百足之虫”演讲的悲剧预见性。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>探春在抄检大观园时发表了“百足之虫，死而不僵”的演讲，她预见了贾府虽然表面繁荣，但内部已经腐朽，必然走向衰败。</p>
+                                    <p>具体分析：</p>
+                                    <ul>
+                                        <li>探春指出贾府内部的矛盾和倾轧</li>
+                                        <li>她认识到家族制度的不合理性</li>
+                                        <li>她预见到贾府的衰败是不可避免的</li>
+                                        <li>她的演讲反映了对封建家族制度的批判</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>人物形象分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2020年</p>
+                                    <p><span class="label">试卷：</span>北京卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>8分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>请从《红楼梦》中选择一个既可悲又可叹的人物，简述这个人物形象。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>示例：晴雯</p>
+                                    <p>可悲之处：</p>
+                                    <ul>
+                                        <li>美丽聪慧，却被诬陷为狐狸精</li>
+                                        <li>被王夫人撵出贾府，最终病逝</li>
+                                        <li>死后宝玉为她写《芙蓉女儿诔》</li>
+                                    </ul>
+                                    <p>可叹之处：</p>
+                                    <ul>
+                                        <li>性格刚烈，不向命运低头</li>
+                                        <li>心灵手巧，病补雀金裘</li>
+                                        <li>对宝玉一片真心</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>情节作用分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2024年</p>
+                                    <p><span class="label">试卷：</span>全国卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>6分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》中“刘姥姥进大观园”情节的作用。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>情节作用：</p>
+                                    <ul>
+                                        <li>通过刘姥姥的视角，展现大观园的豪华和贾府的奢侈</li>
+                                        <li>为后续情节埋下伏笔，刘姥姥后来救了巧姐</li>
+                                        <li>对比贾府的奢侈与平民的艰辛</li>
+                                        <li>增添小说的喜剧色彩</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>人物形象分析</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2023年</p>
+                                    <p><span class="label">试卷：</span>全国卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>8分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>分析《红楼梦》中王熙凤的人物形象。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>王熙凤是《红楼梦》中最具鲜明个性的人物之一，她的形象具有多面性：</p>
+                                    <ul>
+                                        <li>精明能干：作为贾府的管家，她管理着庞大的家族事务，处理得井井有条</li>
+                                        <li>心狠手辣：为了达到目的，她不择手段，如害死尤二姐</li>
+                                        <li>八面玲珑：她善于交际，能说会道，深得贾母的喜爱</li>
+                                        <li>贪婪自私：她利用职权谋取私利，放高利贷</li>
+                                    </ul>
+                                    <p>王熙凤的形象反映了封建社会中女性的生存智慧和悲剧命运。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>主题思想理解</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2022年</p>
+                                    <p><span class="label">试卷：</span>北京卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>10分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>结合《红楼梦》的具体内容，分析其主题思想。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>《红楼梦》的主题思想丰富而深刻，主要包括：</p>
+                                    <ul>
+                                        <li>爱情悲剧：宝黛爱情的悲剧，反映了封建礼教对人性的压抑</li>
+                                        <li>家族衰败：贾府的由盛转衰，象征着封建社会的必然灭亡</li>
+                                        <li>女性命运：金陵十二钗的悲剧命运，反映了封建社会对女性的压迫</li>
+                                        <li>人生空幻：繁华落尽的虚无感，表达了对人生意义的思考</li>
+                                    </ul>
+                                    <p>这些主题思想相互交织，构成了《红楼梦》的深层内涵。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>文化常识</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2021年</p>
+                                    <p><span class="label">试卷：</span>上海卷</p>
+                                    <p><span class="label">题型：</span>选择题</p>
+                                    <p><span class="label">分值：</span>2分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>下列关于《红楼梦》的文化常识，表述正确的一项是（ ）</p>
+                                    <p>A. 贾府的最高权威是贾政</p>
+                                    <p>B. 林黛玉的别号是“蘅芜君”</p>
+                                    <p>C. 大观园是为了元春省亲而建造的</p>
+                                    <p>D. 贾宝玉最终考取了功名</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>答案：C</p>
+                                    <p>解析：A项，贾府的最高权威是贾母；B项，林黛玉的别号是“潇湘妃子”，“蘅芜君”是薛宝钗的别号；D项，贾宝玉最终出家为僧，没有考取功名。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-item">
+                            <div class="exam-item-header">
+                                <h4>情节细节理解</h4>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="exam-item-content">
+                                <div class="exam-info">
+                                    <p><span class="label">考试年份：</span>2020年</p>
+                                    <p><span class="label">试卷：</span>江苏卷</p>
+                                    <p><span class="label">题型：</span>简答题</p>
+                                    <p><span class="label">分值：</span>6分</p>
+                                </div>
+                                <div class="question">
+                                    <h5>题目：</h5>
+                                    <p>简述《红楼梦》中“宝玉挨打”的原因和影响。</p>
+                                </div>
+                                <div class="answer">
+                                    <h5>参考答案：</h5>
+                                    <p>原因：</p>
+                                    <ul>
+                                        <li>宝玉与蒋玉菡交往，得罪了忠顺王府</li>
+                                        <li>贾环诬告宝玉强奸金钏儿，导致金钏儿投井自杀</li>
+                                    </ul>
+                                    <p>影响：</p>
+                                    <ul>
+                                        <li>众人探视宝玉，表现了不同人物对宝玉的态度</li>
+                                        <li>黛玉探伤，表达了对宝玉的深情</li>
+                                        <li>宝玉更加坚定了反抗封建礼教的决心</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 页签切换功能
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // 移除所有页签的active类
+                document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active'));
+                // 添加当前页签的active类
+                this.classList.add('active');
+                
+                // 隐藏所有内容
+                document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+                // 显示当前页签对应的内容
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).style.display = 'block';
+            });
+        });
+        
+        // 考点项展开/折叠功能
+        document.querySelectorAll('.exam-item-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.expand-icon');
+                
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                    icon.classList.remove('open');
+                } else {
+                    content.classList.add('show');
+                    icon.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试布局</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5dc;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 人物信息卡片 */
+        .character-info-card {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #8B4513;
+        }
+        
+        .character-info-card h2 {
+            font-size: 2rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            /* 人物信息布局 */
+            .character-info-card [style*="display: flex"] {
+                flex-direction: column;
+            }
+            
+            .character-info-card [style*="display: flex"] > div:first-child {
+                flex: 0 0 100%;
+                margin-right: 0 !important;
+                margin-bottom: 20px;
+            }
+            
+            .character-info-card [style*="display: flex"] > div:last-child {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>测试布局</h1>
+        </header>
+        
+        <div class="character-info-card">
+            <h2>宋江</h2>
+            <div style="display: flex; flex-wrap: wrap; margin-bottom: 30px; align-items: stretch;">
+                <div style="flex: 0 0 35%; margin-right: 30px; display: flex; align-items: stretch;">
+                    <div style="width: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="character-image" style="text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <img src="images/宋江.jpg" alt="宋江画像" style="width: 100%; height: auto; max-height: 90%; border: 3px solid #8B4513;">
+                            <div style="font-size: 0.8rem; color: #666; margin-top: 10px;">戴敦邦老师《水浒人物一百零八图》</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 0 0 65%; padding: 20px; background-color: #f9f6f0; border-radius: 8px; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+                        <div style="padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <span style="display: block; font-weight: bold; color: #8B4513; margin-bottom: 5px;">绰号</span>
+                            <span style="font-size: 1.1rem;">呼保义</span>
+                        </div>
+                        <div style="padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <span style="display: block; font-weight: bold; color: #8B4513; margin-bottom: 5px;">星位</span>
+                            <span style="font-size: 1.1rem;">天魁星</span>
+                        </div>
+                        <div style="padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <span style="display: block; font-weight: bold; color: #8B4513; margin-bottom: 5px;">别名</span>
+                            <span style="font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">及时雨</span>
+                        </div>
+                        <div style="padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <span style="display: block; font-weight: bold; color: #8B4513; margin-bottom: 5px;">特点</span>
+                            <span style="font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">绰号及时雨，为人慷慨，善于结交江湖好汉</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <span style="display: block; font-weight: bold; color: #8B4513; margin-bottom: 5px;">人物简介</span>
+                        <p style="line-height: 1.5;">绰号及时雨，为人慷慨，善于结交江湖好汉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

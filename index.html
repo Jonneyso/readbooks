@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读名著 - 上海高考名著导读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5dc;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #8B4513;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #8B4513;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #8B4513;
+        }
+        
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .book-card {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #8B4513;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .book-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 10px;
+        }
+        
+        .book-card h2.exam-mandatory {
+            color: #C70039;
+        }
+        
+        .book-card h2.exam-high {
+            color: #1E90FF;
+        }
+        
+        .book-card h2.exam-medium {
+            color: #228B22;
+        }
+        
+        .book-card h2.exam-low {
+            color: #8B4513;
+        }
+        
+        .book-card p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+        
+        .book-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .book-link {
+            padding: 8px 12px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .book-link:hover {
+            background-color: #654321;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .books-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .book-links {
+                flex-direction: column;
+            }
+            
+            .book-link {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>读名著</h1>
+            <p class="subtitle">上海高考名著导读 | 必考篇目与高频考点</p>
+        </header>
+        
+        <h2 class="section-title">四大名著</h2>
+        <div class="books-container">
+            <div class="book-card">
+                <h2 class="exam-high">水浒传（高频考）</h2>
+                <p>中国第一部以农民起义为题材的长篇章回体小说，描写了以宋江为首的108位好汉被逼上梁山、聚义造反、接受招安、最终悲剧收场的故事。</p>
+                <div class="book-links">
+                    <a href="shuihu/index.html" class="book-link">导读</a>
+                    <a href="shuihu/characters.html" class="book-link">人物故事线</a>
+                    <a href="shuihu/mindmap_v3.html" class="book-link">人物关系图</a>
+                    <a href="shuihu/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">西游记（次高频考）</h2>
+                <p>中国古代第一部浪漫主义章回体长篇神魔小说，以孙悟空、猪八戒、沙僧保护唐僧西天取经为线索，描写了他们历经九九八十一难的故事。</p>
+                <div class="book-links">
+                    <a href="xiyouji/index.html" class="book-link">导读</a>
+                    <a href="xiyouji/characters.html" class="book-link">人物故事线</a>
+                    <a href="xiyouji/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">三国演义（高频考）</h2>
+                <p>中国第一部长篇章回体历史演义小说，以东汉末年的黄巾起义为开端，描写了魏、蜀、吴三国之间的政治斗争和军事冲突。</p>
+                <div class="book-links">
+                    <a href="sanguo/index.html" class="book-link">导读</a>
+                    <a href="sanguo/characters.html" class="book-link">人物故事线</a>
+                    <a href="sanguo/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-mandatory">红楼梦（必考）</h2>
+                <p>中国古典小说的巅峰之作，以贾、史、王、薛四大家族的兴衰为背景，以贾宝玉、林黛玉、薛宝钗的爱情婚姻悲剧为主线。</p>
+                <div class="book-links">
+                    <a href="hongloumeng/index.html" class="book-link">导读</a>
+                    <a href="hongloumeng/characters.html" class="book-link">人物故事线</a>
+                    <a href="hongloumeng/relationship.html" class="book-link">人物关系图</a>
+                    <a href="hongloumeng/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">中国现代文学</h2>
+        <div class="books-container">
+            <div class="book-card">
+                <h2 class="exam-mandatory">呐喊（必考）</h2>
+                <p>鲁迅第一本小说集，收录《狂人日记》《孔乙己》《药》《阿Q正传》等名篇，揭露了辛亥革命前后中国社会的黑暗。</p>
+                <div class="book-links">
+                    <a href="nahan/index.html" class="book-link">导读</a>
+                    <a href="nahan/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">彷徨（次高频考）</h2>
+                <p>鲁迅第二本小说集，收录《祝福》《在酒楼上》《伤逝》等，深入揭示知识分子的精神困境，批判笔触更加冷峻深沉。</p>
+                <div class="book-links">
+                    <a href="panghuang/index.html" class="book-link">导读</a>
+                    <a href="panghuang/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-mandatory">边城（必考）</h2>
+                <p>沈从文中篇小说，以湘西边城茶峒为背景，描写渡船老人与孙女翠翠的故事，表现"优美、健康、自然"的人生形式。</p>
+                <div class="book-links">
+                    <a href="biancheng/index.html" class="book-link">导读</a>
+                    <a href="biancheng/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">家（高频考）</h2>
+                <p>巴金"激流三部曲"第一部，以五四运动前后成都封建家庭为背景，描写觉新、觉民、觉慧三兄弟的不同人生道路。</p>
+                <div class="book-links">
+                    <a href="jia/index.html" class="book-link">导读</a>
+                    <a href="jia/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">茶馆（高频考）</h2>
+                <p>老舍三幕话剧，以北京茶馆为舞台，展现从戊戌变法到解放前夕近50年的社会风云，是当代戏剧的经典之作。</p>
+                <div class="book-links">
+                    <a href="chaguan/index.html" class="book-link">导读</a>
+                    <a href="chaguan/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">四世同堂（高频考）</h2>
+                <p>老舍长篇小说，以北京小羊圈胡同为背景，描写抗战时期北平市民在亡城困境中的挣扎与抗争，被誉为"平民的史诗"。</p>
+                <div class="book-links">
+                    <a href="sishi_tongtan/index.html" class="book-link">导读</a>
+                    <a href="sishi_tongtan/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-mandatory">雷雨（必考）</h2>
+                <p>曹禺四幕话剧，以1925年前后的中国社会为背景，描写周朴园一家两代人的矛盾冲突，是中国现代戏剧史上最重要的作品之一。</p>
+                <div class="book-links">
+                    <a href="leiyu/index.html" class="book-link">导读</a>
+                    <a href="leiyu/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">乡土中国（次高频考）</h2>
+                <p>费孝通社会学经典著作，系统阐述传统中国基层社会的特点和精神内核，提出"差序格局"等重要概念。</p>
+                <div class="book-links">
+                    <a href="xiuxiangzhongguo/index.html" class="book-link">导读</a>
+                    <a href="xiuxiangzhongguo/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">中国当代文学</h2>
+        <div class="books-container">
+            <div class="book-card">
+                <h2 class="exam-mandatory">平凡的世界（必考）</h2>
+                <p>路遥长篇小说，以改革开放初期为背景，描写孙少安、孙少平两兄弟在时代洪流中的奋斗与追求。</p>
+                <div class="book-links">
+                    <a href="pingfan_de_shijie/index.html" class="book-link">导读</a>
+                    <a href="pingfan_de_shijie/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">红岩（高频考）</h2>
+                <p>罗广斌、杨益言创作，以重庆中美合作所集中营为背景，描写革命先烈在狱中与敌人斗争的故事。</p>
+                <div class="book-links">
+                    <a href="hongyan/index.html" class="book-link">导读</a>
+                    <a href="hongyan/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">外国文学</h2>
+        <div class="books-container">
+            <div class="book-card">
+                <h2 class="exam-mandatory">老人与海（必考）</h2>
+                <p>海明威中篇小说，描写老渔夫圣地亚哥与大海的搏斗，"一个人可以被毁灭，但不能被打败"成为硬汉精神的写照。</p>
+                <div class="book-links">
+                    <a href="laoren_yu_hai/index.html" class="book-link">导读</a>
+                    <a href="laoren_yu_hai/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-high">哈姆雷特（高频考）</h2>
+                <p>莎士比亚四大悲剧之首，描写丹麦王子哈姆雷特为父复仇的故事，"生存还是毁灭"成为人文主义困惑的经典表达。</p>
+                <div class="book-links">
+                    <a href="hanmosate/index.html" class="book-link">导读</a>
+                    <a href="hanmosate/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-mandatory">欧也妮·葛朗台（必考）</h2>
+                <p>巴尔扎克讽刺小说，描写贪婪吝啬的葛朗台老头对金钱的疯狂追逐，揭露资本主义社会中人与人之间赤裸裸的金钱关系。</p>
+                <div class="book-links">
+                    <a href="ouyeini_gelangtai/index.html" class="book-link">导读</a>
+                    <a href="ouyeini_gelangtai/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">巴黎圣母院（次高频考）</h2>
+                <p>雨果浪漫主义代表作，以15世纪巴黎为背景，通过美与丑、善与恶的对比，表达了强烈的人道主义精神。</p>
+                <div class="book-links">
+                    <a href="bali_shengmuyuan/index.html" class="book-link">导读</a>
+                    <a href="bali_shengmuyuan/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-low">复活（低频考）</h2>
+                <p>托尔斯泰批判现实主义杰作，描写贵族青年聂赫留朵夫的精神复活过程，深刻揭露俄国社会的黑暗。</p>
+                <div class="book-links">
+                    <a href="fuhuo/index.html" class="book-link">导读</a>
+                    <a href="fuhuo/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">大卫·科波菲尔（次高频考）</h2>
+                <p>狄更斯自传体小说，描写大卫从幼年到成年的成长经历，展现19世纪英国社会的广阔画卷。</p>
+                <div class="book-links">
+                    <a href="dawen_kebofeiye/index.html" class="book-link">导读</a>
+                    <a href="dawen_kebofeiye/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">中国古典文学</h2>
+        <div class="books-container">
+            <div class="book-card">
+                <h2 class="exam-mandatory">论语（必考）</h2>
+                <p>儒家学派经典著作，由孔子弟子编撰，记录了孔子及其弟子的言行，集中体现了孔子的政治主张、伦理思想和教育原则。</p>
+                <div class="book-links">
+                    <a href="lunyu/index.html" class="book-link">导读</a>
+                    <a href="lunyu/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <h2 class="exam-medium">儒林外史（次高频考）</h2>
+                <p>吴敬梓创作的讽刺小说，以写实手法描绘各类士人为功名富贵的丑态，是中国第一部真正的讽刺小说。</p>
+                <div class="book-links">
+                    <a href="rulinwaishi/index.html" class="book-link">导读</a>
+                    <a href="rulinwaishi/exams.html" class="book-link">高考知识点</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
