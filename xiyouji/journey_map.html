@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西游记取经路线图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f0e3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #c19a6b;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 20px;
+            background-color: #8B4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #654321;
+        }
+        
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group label {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        .filter-group select {
+            padding: 8px 12px;
+            border: 2px solid #c19a6b;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 0.9rem;
+        }
+        
+        .route-container {
+            position: relative;
+            width: 100%;
+            min-height: 800px;
+            max-height: 1200px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+            overflow: auto;
+        }
+        
+        #routeSvg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+        }
+        
+        .location-node {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .location-node:hover {
+            transform: scale(1.1);
+        }
+        
+        .location-name {
+            font-family: 'Microsoft YaHei', 'SimSun', serif;
+            font-size: 18px;
+            font-weight: bold;
+            fill: #8B4513;
+            text-anchor: middle;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .location-desc {
+            font-family: 'Microsoft YaHei', 'SimSun', serif;
+            font-size: 14px;
+            fill: #666;
+            text-anchor: middle;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .route-path {
+            fill: none;
+            stroke: #c19a6b;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .start-end-marker {
+            font-family: 'Microsoft YaHei', 'SimSun', serif;
+            font-size: 20px;
+            font-weight: bold;
+            fill: #e74c3c;
+            text-anchor: middle;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .node-circle {
+            stroke: #8B4513;
+            stroke-width: 3;
+            transition: r 0.3s ease;
+        }
+        
+        .node-circle.start {
+            fill: #e74c3c;
+        }
+        
+        .node-circle.end {
+            fill: #e74c3c;
+        }
+        
+        .node-circle.middle {
+            fill: #3498db;
+        }
+        
+        .location-node:hover .node-circle {
+            r: 16;
+        }
+        
+        .svg-background {
+            fill: #f5f0e3;
+            stroke: #c19a6b;
+            stroke-width: 1;
+        }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .event-list {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .event-list h2 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #c19a6b;
+            padding-bottom: 10px;
+        }
+        
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .event-card {
+            background-color: #f9f6f0;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px solid #c19a6b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .event-card h4 {
+            color: #8B4513;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .event-card p {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .event-card .label {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        
+        .route-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .route-info h2 {
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+        
+        .route-info p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-section {
+                flex-direction: column;
+            }
+            
+            .route-container {
+                height: 600px;
+            }
+            
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>西游记取经路线图</h1>
+            <p class="subtitle">唐僧师徒西天取经路线与八十一难</p>
+        </header>
+        
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="../index.html" class="nav-link">返回主页</a>
+            </div>
+        </nav>
+        
+        <div class="route-info">
+            <h2>取经路线概要</h2>
+            <p><strong>起点：</strong>东土大唐长安（今陕西西安）</p>
+            <p><strong>终点：</strong>西牛贺洲灵山雷音寺（今印度一带）</p>
+            <p><strong>行程：</strong>十万八千里</p>
+            <p><strong>主要人物：</strong>唐僧、孙悟空、猪八戒、沙僧、白龙马</p>
+        </div>
+        
+        <div class="filter-section">
+            <div class="filter-group">
+                <label>筛选难度：</label>
+                <select id="difficultyFilter">
+                    <option value="all">全部难度</option>
+                    <option value="前17难">前17难（取经准备阶段）</option>
+                    <option value="中44难">中44难（取经路上）</option>
+                    <option value="后20难">后20难（灵山受封阶段）</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>按地点：</label>
+                <select id="locationFilter">
+                    <option value="all">全部地点</option>
+                    <option value="长安">长安</option>
+                    <option value="两界山">两界山</option>
+                    <option value="高老庄">高老庄</option>
+                    <option value="流沙河">流沙河</option>
+                    <option value="万寿山">万寿山</option>
+                    <option value="白虎岭">白虎岭</option>
+                    <option value="平顶山">平顶山</option>
+                    <option value="乌鸡国">乌鸡国</option>
+                    <option value="红孩儿">红孩儿</option>
+                    <option value="黑水河">黑水河</option>
+                    <option value="车迟国">车迟国</option>
+                    <option value="通天河">通天河</option>
+                    <option value="女儿国">女儿国</option>
+                    <option value="火焰山">火焰山</option>
+                    <option value="祭赛国">祭赛国</option>
+                    <option value="小雷音寺">小雷音寺</option>
+                    <option value="朱紫国">朱紫国</option>
+                    <option value="狮驼岭">狮驼岭</option>
+                    <option value="比丘国">比丘国</option>
+                    <option value="无底洞">无底洞</option>
+                    <option value="灭法国">灭法国</option>
+                    <option value="凤仙郡">凤仙郡</option>
+                    <option value="玉华州">玉华州</option>
+                    <option value="金平府">金平府</option>
+                    <option value="天竺国">天竺国</option>
+                    <option value="灵山">灵山</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="route-container">
+            <svg id="routeSvg" viewBox="0 0 2000 1500" preserveAspectRatio="xMidYMid meet">
+                <!-- 路线图内容将通过JavaScript动态生成 -->
+            </svg>
+        </div>
+        
+        <div class="legend">
+            <h3 style="width: 100%; color: #8B4513; margin-bottom: 15px;">图例</h3>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e74c3c;"></div>
+                <span>主要人物（唐僧师徒）</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f39c12;"></div>
+                <span>神仙菩萨帮助</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #3498db;"></div>
+                <span>普通凡人</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2ecc71;"></div>
+                <span>妖怪</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #9b59b6;"></div>
+                <span>其他人物</span>
+            </div>
+        </div>
+        
+        <div class="event-list">
+            <h2>八十一难详细列表</h2>
+            <div class="event-grid" id="eventGrid">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 八十一难数据
+        const difficulties = [
+            { num: 1, name: "金蝉遭贬", location: "长安", characters: ["唐僧", "如来", "金蝉子"], description: "如来佛祖座下二弟子金蝉子轻慢佛法，被贬下凡，转世为唐僧" },
+            { num: 2, name: "出胎几杀", location: "长安", characters: ["唐僧", "殷温娇"], description: "唐僧父亲陈光蕊被害，母亲殷温娇被迫嫁于盗贼" },
+            { num: 3, name: "满月抛江", location: "长安", characters: ["唐僧", "殷温娇"], description: "唐僧出生后被母亲抛入江中" },
+            { num: 4, name: "寻亲报冤", location: "长安", characters: ["唐僧", "外婆家"], description: "唐僧被外婆家抚养长大，后与父母相认" },
+            { num: 5, name: "出城逢虎", location: "长安城外", characters: ["唐僧", "寅将军"], description: "唐僧刚出长安就遇虎妖，被太白金星所救" },
+            { num: 6, name: "落坑折从", location: "双叉岭", characters: ["唐僧", "熊山君", "特处士"], description: "唐僧被妖怪捉入坑中" },
+            { num: 7, name: "双叉岭上", location: "双叉岭", characters: ["唐僧", "伯钦"], description: "唐僧被伯钦所救" },
+            { num: 8, name: "两界山头", location: "两界山", characters: ["唐僧", "孙悟空", "如来", "观音"], description: "唐僧收孙悟空为徒，五行山揭帖" },
+            { num: 9, name: "陡涧换马", location: "鹰愁涧", characters: ["唐僧", "孙悟空", "小白龙"], description: "鹰愁涧收小白龙为唐僧坐骑" },
+            { num: 10, name: "夜被火烧", location: "观音院", characters: ["唐僧", "孙悟空", "金池长老", "黑熊精"], description: "观音院失火，锦斓袈裟被偷" },
+            { num: 11, name: "失却袈裟", location: "黑风山", characters: ["孙悟空", "黑熊精", "观音"], description: "黑熊精偷走袈裟，后被观音收服" },
+            { num: 12, name: "收得八戒", location: "高老庄", characters: ["唐僧", "孙悟空", "猪八戒", "高小姐"], description: "高老庄收猪八戒为二徒弟" },
+            { num: 13, name: "收得沙僧", location: "流沙河", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧"], description: "流沙河收沙悟净为三徒弟" },
+            { num: 14, name: "大闹五庄观", location: "万寿山五庄观", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "镇元大仙"], description: "推倒人参树，大闹五庄观" },
+            { num: 15, name: "白虎岭上", location: "白虎岭", characters: ["唐僧", "孙悟空", "白骨精"], description: "三打白骨精，唐僧误会孙悟空" },
+            { num: 16, name: "波崖洞", location: "波崖洞", characters: ["猪八戒", "孙悟空"], description: "猪八戒巡山被捉" },
+            { num: 17, name: "平顶山逢魔", location: "平顶山", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "金角大王", "银角大王"], description: "金角银角大王捉唐僧" },
+            { num: 18, name: "莲花洞高悬", location: "平顶山莲花洞", characters: ["金角大王", "银角大王", "孙悟空"], description: "孙悟空被压在山下" },
+            { num: 19, name: "乌鸡国遇害", location: "乌鸡国", characters: ["唐僧", "孙悟空", "乌鸡国国王", "狮精"], description: "国王被狮精推入井中，狮精变化国王" },
+            { num: 20, name: "被妖压", location: "乌鸡国", characters: ["孙悟空"], description: "孙悟空被妖怪压住" },
+            { num: 21, name: "号山逢魔", location: "号山", characters: ["唐僧", "红孩儿"], description: "红孩儿捉住唐僧" },
+            { num: 22, name: "黑水河遇难", location: "黑水河", characters: ["唐僧", "沙僧", "鼍龙"], description: "鼍龙捉住唐僧" },
+            { num: 23, name: "车迟国斗法", location: "车迟国", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "车迟三仙"], description: "与车迟三仙斗法，大显神通" },
+            { num: 24, name: "路阻通天河", location: "通天河", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "灵感大王"], description: "通天河被灵感大王霸占" },
+            { num: 25, name: "大战红孩儿", location: "号山", characters: ["孙悟空", "红孩儿", "观音"], description: "红孩儿用三昧真火，观音收服" },
+            { num: 26, name: "身落河", location: "通天河", characters: ["唐僧"], description: "唐僧被通天河老鼋驮过河" },
+            { num: 27, name: "风摄微软", location: "黑水河", characters: ["唐僧"], description: "被风吹至软瘫" },
+            { num: 28, name: "金銮殿变虎", location: "宝象国", characters: ["唐僧", "黄袍怪", "百花羞公主"], description: "唐僧变成老虎" },
+            { num: 29, name: "西梁国留婚", location: "女儿国", characters: ["唐僧", "孙悟空", "猪八戒", "女儿国国王"], description: "女儿国国王欲嫁唐僧" },
+            { num: 30, name: "琵琶洞受苦", location: "琵琶洞", characters: ["唐僧", "蝎子精"], description: "蝎子精捉住唐僧欲成亲" },
+            { num: 31, name: "再贬心猿", location: "花果山", characters: ["孙悟空", "唐僧"], description: "孙悟空被打败，六耳猕猴假扮唐僧" },
+            { num: 32, name: "路阻火焰山", location: "火焰山", characters: ["唐僧", "孙悟空", "铁扇公主", "牛魔王"], description: "火焰山阻挡去路" },
+            { num: 33, name: "求妻救亲", location: "祭赛国", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧"], description: "碧波潭万圣公主偷盗祭赛国宝物" },
+            { num: 34, name: "荆棘蓬来", location: "荆棘岭", characters: ["唐僧", "十八公"], description: "荆棘岭遇到十八公" },
+            { num: 35, name: "小雷音寺遇难", location: "小雷音寺", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "黄眉大王"], description: "小雷音寺遇黄眉大王" },
+            { num: 36, name: "七绝山下稀", location: "七绝山", characters: ["孙悟空", "猪八戒"], description: "稀柿衢阻路" },
+            { num: 37, name: "朱紫国设计", location: "朱紫国", characters: ["唐僧", "孙悟空", "猪八戒", "朱紫国国王", "金毛犼"], description: "朱紫国国王患病，赛太岁作乱" },
+            { num: 38, name: "盘丝洞受难", location: "盘丝洞", characters: ["唐僧", "猪八戒", "蜘蛛精", "蜈蚣精"], description: "盘丝洞遇蜘蛛精" },
+            { num: 39, name: "号山遇怪", location: "号山", characters: ["红孩儿"], description: "红孩儿再次出现" },
+            { num: 40, name: "赶捉犀牛", location: "青龙山", characters: ["孙悟空", "猪八戒", "沙僧", "三只犀牛精"], description: "捉拿犀牛精" },
+            { num: 41, name: "连环洞遇妖", location: "连环洞", characters: ["猪八戒", "沙僧", "豹子精"], description: "豹子精捉住猪八戒和沙僧" },
+            { num: 42, name: "狮驼岭遇难", location: "狮驼岭", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "青狮", "白象", "大鹏"], description: "狮驼岭三妖捉住唐僧" },
+            { num: 43, name: "城垣遇妖", location: "狮驼城", characters: ["孙悟空"], description: "孙悟空被装入阴阳瓶" },
+            { num: 44, name: "比丘国救小儿", location: "比丘国", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "白鹿精", "狐狸精"], description: "比丘国国王用小儿心肝做药引" },
+            { num: 45, name: "湿水难渡", location: "黑水河", characters: ["唐僧"], description: "无底洞老鼠精逼婚" },
+            { num: 46, name: "失落兵器", location: "玉华州", characters: ["孙悟空", "猪八戒", "沙僧", "黄狮精"], description: "兵器被黄狮精偷走" },
+            { num: 47, name: "会庆钉钯", location: "玉华州", characters: ["猪八戒"], description: "妖怪开钉钯会" },
+            { num: 48, name: "竹节山遭难", location: "竹节山", characters: ["孙悟空", "九灵元圣"], description: "九灵元圣捉住唐僧" },
+            { num: 49, name: "玄英洞受苦", location: "玄英洞", characters: ["唐僧", "猪八戒", "沙僧", "三只犀牛精"], description: "被三个犀牛精捉住" },
+            { num: 50, name: "赶捉Block", location: "西天", characters: ["孙悟空"], description: "孙悟空上天求助" },
+            { num: 51, name: "王母变饭店", location: "天竺国", characters: ["玉兔精"], description: "玉兔精假扮天竺国公主" },
+            { num: 52, name: "僧房卧染", location: "布金禅寺", characters: ["唐僧"], description: "天竺国公主抛绣球选婿" },
+            { num: 53, name: "郡侯原流", location: "凤仙郡", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "凤仙郡郡侯"], description: "凤仙郡三年不下雨" },
+            { num: 54, name: "大赌求雨", location: "车迟国", characters: ["孙悟空"], description: "与虎力大仙斗法" },
+            { num: 55, name: " ря做完", location: "灭法国", characters: ["唐僧", "孙悟空"], description: "灭法国国王要杀和尚" },
+            { num: 56, name: "内党变", location: "隐雾山", characters: ["唐僧", "蜘蛛精", "蜈蚣精"], description: "遇到豹子精" },
+            { num: 57, name: "凤仙郡求雨", location: "凤仙郡", characters: ["孙悟空", "猪八戒", "沙僧"], description: "帮凤仙郡求雨" },
+            { num: 58, name: "玉华州收徒", location: "玉华州", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "玉华州三王子"], description: "收玉华州三王子为徒" },
+            { num: 59, name: "金平府元夜", location: "金平府", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "三只犀牛精"], description: "金平府观灯，遇三只犀牛精" },
+            { num: 60, name: "天竺干旱", location: "天竺国", characters: ["唐僧"], description: "天竺国干旱" },
+            { num: 61, name: "水难受阻", location: "通天河", characters: ["唐僧", "老鼋"], description: "通天河老鼋托唐僧代问如来" },
+            { num: 62, name: "元夜光痛", location: "天竺国", characters: ["唐僧", "玉兔精"], description: "天竺国元夜抛绣球" },
+            { num: 63, name: "救出婴儿", location: "朱紫国", characters: ["孙悟空", "猪八戒"], description: "救出朱紫国婴儿" },
+            { num: 64, name: "赶到灭法国", location: "灭法国", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧"], description: "到达灭法国" },
+            { num: 65, name: "大赌专 Synop", location: "车迟国", characters: ["孙悟空"], description: "与虎力大仙赌砍头" },
+            { num: 66, name: "游戏 Vos", location: "小雷音寺", characters: ["孙悟空"], description: "孙悟空戏弄黄眉大王" },
+            { num: 67, name: "寻Po", location: "小雷音寺", characters: ["弥勒佛"], description: "弥勒佛收服黄眉大王" },
+            { num: 68, name: "马方便", location: "白虎岭", characters: ["猪八戒"], description: "猪八戒方便时被抓" },
+            { num: 69, name: "凤仙郡求雨", location: "凤仙郡", characters: ["孙悟空"], description: "帮凤仙郡求得甘雨" },
+            { num: 70, name: "玉华州授法", location: "玉华州", characters: ["孙悟空", "猪八戒", "沙僧"], description: "传授玉华州王子武艺" },
+            { num: 71, name: "金平府观灯", location: "金平府", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧"], description: "金平府观灯遇妖" },
+            { num: 72, name: "天竺国招亲", location: "天竺国", characters: ["唐僧", "玉兔精"], description: "天竺国公主招亲" },
+            { num: 73, name: "负泥不服", location: "通天河", characters: ["唐僧"], description: "变成乌龟负泥" },
+            { num: 74, name: "变成美色", location: "白毛角", characters: ["孙悟空"], description: "孙悟空变成牛魔王" },
+            { num: 75, name: "过河", location: "通天河", characters: ["唐僧", "老鼋"], description: "老鼋驮过河" },
+            { num: 76, name: "掉落Block", location: "凌云渡", characters: ["唐僧"], description: "凌云渡脱胎" },
+            { num: 77, name: "手持Object", location: "灵山", characters: ["如来"], description: "如来赐给唐僧经书" },
+            { num: 78, name: "波折又至", location: "通天河", characters: ["唐僧", "老鼋"], description: "老鼋得知唐僧未问如来，将他们打入河中" },
+            { num: 79, name: "希望重燃", location: "灵山", characters: ["如来", "观音"], description: "取得真经" },
+            { num: 80, name: "回归大唐", location: "长安", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "白龙马"], description: "回到长安，功成名就" },
+            { num: 81, name: "圆寂归真", location: "灵山", characters: ["唐僧", "孙悟空", "猪八戒", "沙僧", "白龙马"], description: "成为旃檀功德佛、斗战胜佛等" }
+        ];
+        
+        // 绘制路线图
+        const svg = document.getElementById('routeSvg');
+        
+        function drawRoute() {
+            // 清空SVG内容
+            svg.innerHTML = '';
+            
+            // 添加背景
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', '0');
+            rect.setAttribute('y', '0');
+            rect.setAttribute('width', '2000');
+            rect.setAttribute('height', '1500');
+            rect.setAttribute('class', 'svg-background');
+            svg.appendChild(rect);
+            
+            // 添加标题
+            const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            title.setAttribute('x', '1000');
+            title.setAttribute('y', '80');
+            title.setAttribute('text-anchor', 'middle');
+            title.setAttribute('font-family', 'Microsoft YaHei, SimSun');
+            title.setAttribute('font-size', '40');
+            title.setAttribute('font-weight', 'bold');
+            title.setAttribute('fill', '#8B4513');
+            title.setAttribute('text-shadow', '2px 2px 4px rgba(0,0,0,0.2)');
+            title.textContent = '西游记取经路线图';
+            svg.appendChild(title);
+            
+            // 定义主要地点（重新设计布局，使其更加美观）
+            const locations = [
+                { name: '长安', x: 200, y: 200, desc: '东土大唐起点' },
+                { name: '两界山', x: 400, y: 200, desc: '收孙悟空' },
+                { name: '高老庄', x: 600, y: 200, desc: '收猪八戒' },
+                { name: '流沙河', x: 800, y: 200, desc: '收沙僧' },
+                { name: '万寿山', x: 1000, y: 200, desc: '五庄观' },
+                { name: '白虎岭', x: 1200, y: 150, desc: '三打白骨精' },
+                { name: '平顶山', x: 1400, y: 150, desc: '金角银角' },
+                { name: '乌鸡国', x: 1600, y: 150, desc: '狮精作乱' },
+                { name: '号山', x: 1800, y: 100, desc: '红孩儿' },
+                { name: '黑水河', x: 1800, y: 250, desc: '鼍龙' },
+                { name: '车迟国', x: 1600, y: 300, desc: '斗法三仙' },
+                { name: '通天河', x: 1400, y: 350, desc: '灵感大王' },
+                { name: '女儿国', x: 1200, y: 400, desc: '女儿国国王' },
+                { name: '火焰山', x: 1000, y: 450, desc: '芭蕉扇' },
+                { name: '祭赛国', x: 800, y: 450, desc: '九头虫' },
+                { name: '小雷音寺', x: 600, y: 450, desc: '黄眉大王' },
+                { name: '朱紫国', x: 400, y: 450, desc: '赛太岁' },
+                { name: '盘丝洞', x: 200, y: 450, desc: '蜘蛛精' },
+                { name: '狮驼岭', x: 200, y: 600, desc: '三妖' },
+                { name: '比丘国', x: 400, y: 650, desc: '白鹿精' },
+                { name: '无底洞', x: 600, y: 700, desc: '老鼠精' },
+                { name: '灭法国', x: 800, y: 750, desc: '灭法国' },
+                { name: '凤仙郡', x: 1000, y: 800, desc: '求雨' },
+                { name: '玉华州', x: 1200, y: 850, desc: '收徒' },
+                { name: '金平府', x: 1400, y: 900, desc: '三犀牛' },
+                { name: '天竺国', x: 1600, y: 950, desc: '玉兔精' },
+                { name: '灵山', x: 1800, y: 1000, desc: '取得真经' }
+            ];
+            
+            // 生成路线路径（使用平滑曲线）
+            let pathData = `M ${locations[0].x} ${locations[0].y}`;
+            for (let i = 1; i < locations.length; i++) {
+                const prevLoc = locations[i-1];
+                const currLoc = locations[i];
+                // 使用贝塞尔曲线使路线更加平滑
+                const controlX = (prevLoc.x + currLoc.x) / 2;
+                const controlY = (prevLoc.y + currLoc.y) / 2;
+                pathData += ` Q ${controlX} ${controlY}, ${currLoc.x} ${currLoc.y}`;
+            }
+            
+            // 添加路线
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', pathData);
+            path.setAttribute('class', 'route-path');
+            svg.appendChild(path);
+            
+            // 添加地点节点
+            locations.forEach((loc, index) => {
+                const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                group.setAttribute('class', 'location-node');
+                
+                // 添加节点圆
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', loc.x);
+                circle.setAttribute('cy', loc.y);
+                circle.setAttribute('r', '12');
+                circle.setAttribute('class', `node-circle ${index === 0 ? 'start' : index === locations.length - 1 ? 'end' : 'middle'}`);
+                group.appendChild(circle);
+                
+                // 添加地点名称（根据位置调整文字位置，避免重叠）
+                const name = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                name.setAttribute('x', loc.x);
+                name.setAttribute('y', loc.y - 25);
+                name.setAttribute('class', 'location-name');
+                name.textContent = loc.name;
+                group.appendChild(name);
+                
+                // 添加地点描述
+                const desc = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                desc.setAttribute('x', loc.x);
+                desc.setAttribute('y', loc.y + 35);
+                desc.setAttribute('class', 'location-desc');
+                desc.textContent = loc.desc;
+                group.appendChild(desc);
+                
+                svg.appendChild(group);
+            });
+            
+            // 添加起点标注
+            const startMarker = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            startMarker.setAttribute('x', locations[0].x);
+            startMarker.setAttribute('y', locations[0].y + 70);
+            startMarker.setAttribute('class', 'start-end-marker');
+            startMarker.textContent = '起点';
+            svg.appendChild(startMarker);
+            
+            // 添加终点标注
+            const endMarker = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            endMarker.setAttribute('x', locations[locations.length - 1].x);
+            endMarker.setAttribute('y', locations[locations.length - 1].y + 70);
+            endMarker.setAttribute('class', 'start-end-marker');
+            endMarker.textContent = '终点';
+            svg.appendChild(endMarker);
+            
+            // 添加装饰元素
+            const sun = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            sun.setAttribute('cx', '1900');
+            sun.setAttribute('cy', '100');
+            sun.setAttribute('r', '50');
+            sun.setAttribute('fill', '#f39c12');
+            svg.appendChild(sun);
+            
+            const cloud = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            cloud.setAttribute('d', 'M 150 80 Q 130 60, 110 80 Q 90 60, 70 80 Q 50 60, 30 80 Q 40 100, 30 120 Q 40 140, 70 140 Q 90 140, 110 140 Q 130 140, 150 120 Q 160 140, 190 140 Q 210 140, 230 120 Q 240 100, 230 80 Q 210 60, 190 80 Q 170 60, 150 80');
+            cloud.setAttribute('fill', 'white');
+            cloud.setAttribute('stroke', '#ddd');
+            cloud.setAttribute('stroke-width', '2');
+            cloud.setAttribute('transform', 'translate(1700, 50)');
+            svg.appendChild(cloud);
+        }
+        
+        // 渲染事件列表
+        function renderEventList(filter = 'all', locationFilter = 'all') {
+            const eventGrid = document.getElementById('eventGrid');
+            eventGrid.innerHTML = '';
+            
+            let filteredDiffs = difficulties;
+            
+            if (locationFilter !== 'all') {
+                filteredDiffs = filteredDiffs.filter(d => d.location.includes(locationFilter));
+            }
+            
+            if (filter !== 'all') {
+                if (filter === '前17难') {
+                    filteredDiffs = filteredDiffs.filter(d => d.num <= 17);
+                } else if (filter === '中44难') {
+                    filteredDiffs = filteredDiffs.filter(d => d.num > 17 && d.num <= 61);
+                } else if (filter === '后20难') {
+                    filteredDiffs = filteredDiffs.filter(d => d.num > 61);
+                }
+            }
+            
+            filteredDiffs.forEach(diff => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <h4>第${diff.num}难：${diff.name}</h4>
+                    <p><span class="label">地点：</span>${diff.location}</p>
+                    <p><span class="label">人物：</span>${diff.characters.join('、')}</p>
+                    <p><span class="label">描述：</span>${diff.description}</p>
+                `;
+                eventGrid.appendChild(card);
+            });
+        }
+        
+        // 初始化
+        drawRoute();
+        renderEventList();
+        
+        // 筛选事件
+        document.getElementById('difficultyFilter').addEventListener('change', function() {
+            const locationFilter = document.getElementById('locationFilter').value;
+            renderEventList(this.value, locationFilter);
+        });
+        
+        document.getElementById('locationFilter').addEventListener('change', function() {
+            const difficultyFilter = document.getElementById('difficultyFilter').value;
+            renderEventList(difficultyFilter, this.value);
+        });
+    </script>
+</body>
+</html>

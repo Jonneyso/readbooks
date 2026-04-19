@@ -5,52 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>红楼梦人物关系图</title>
     <style>
-        /* 全局样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'SimSun', serif;
+            font-family: 'Microsoft YaHei', 'SimSun', serif;
             background-color: #f8f0e3;
             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
             color: #333;
             line-height: 1.6;
         }
-        
-        /* 容器样式 */
+
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* 头部样式 */
+
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
+            margin-bottom: 30px;
+            padding: 20px 0;
             border-bottom: 2px solid #c19a6b;
         }
-        
+
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #8B4513;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #666;
         }
-        
-        /* 返回按钮 */
+
         .back-btn {
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding: 8px 16px;
             background-color: #c19a6b;
             color: white;
@@ -58,124 +53,25 @@
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
-        
+
         .back-btn:hover {
             background-color: #8B4513;
         }
-        
-        /* 控制区域 */
-        .controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: rgba(255,255,255,0.8);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .control-btn {
-            padding: 8px 16px;
-            background-color: #c19a6b;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .control-btn:hover {
-            background-color: #8B4513;
-        }
-        
-        .control-btn.active {
-            background-color: #8B4513;
-        }
-        
-        /* 关系图容器 */
-        #relationshipGraph {
-            width: 100%;
-            height: 700px;
-            background-color: rgba(255,255,255,0.9);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #c19a6b;
-        }
-        
-        /* 提示框 */
-        .tooltip {
-            position: absolute;
-            background-color: rgba(255,255,255,0.95);
-            border: 1px solid #c19a6b;
-            border-radius: 4px;
-            padding: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            pointer-events: none;
-            max-width: 300px;
-            z-index: 1000;
-        }
-        
-        .tooltip h3 {
-            color: #8B4513;
-            margin-bottom: 5px;
-        }
-        
-        .tooltip p {
-            margin-bottom: 3px;
-            font-size: 0.9rem;
-        }
-        
-        /* 图例 */
-        .legend {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255,255,255,0.9);
-            border: 1px solid #c19a6b;
-            border-radius: 4px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .legend h3 {
-            color: #8B4513;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        
-        .legend-text {
-            font-size: 0.8rem;
-        }
-        
-        /* 导航菜单 */
+
         .nav-menu {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             background-color: rgba(255,255,255,0.9);
             border-radius: 8px;
             padding: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         .nav-item {
-            margin: 0 15px;
+            margin: 0 10px;
         }
-        
+
         .nav-link {
             display: block;
             padding: 10px 20px;
@@ -184,8 +80,9 @@
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s ease;
+            font-size: 14px;
         }
-        
+
         .nav-link:hover {
             background-color: #654321;
         }
@@ -194,366 +91,650 @@
             background-color: #654321;
         }
 
-        /* 响应式设计 */
+        .graph-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        .family-section {
+            margin-bottom: 40px;
+        }
+
+        .family-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .family-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c19a6b;
+        }
+
+        .family-title.jia { color: #3498db; border-color: #3498db; }
+        .family-title.xue { color: #2ecc71; border-color: #2ecc71; }
+        .family-title.shi { color: #f39c12; border-color: #f39c12; }
+        .family-title.wang { color: #9b59b6; border-color: #9b59b6; }
+        .family-title.core { color: #e74c3c; border-color: #e74c3c; }
+
+        .characters-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .character-card {
+            background-color: #fafafa;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            min-width: 200px;
+            max-width: 280px;
+            flex: 1;
+        }
+
+        .character-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .character-card.jia { border-color: #3498db; background-color: #f5f9ff; }
+        .character-card.xue { border-color: #2ecc71; background-color: #f5fff5; }
+        .character-card.shi { border-color: #f39c12; background-color: #fff9f5; }
+        .character-card.wang { border-color: #9b59b6; background-color: #faf5ff; }
+        .character-card.other { border-color: #95a5a6; background-color: #f5f5f5; }
+        .character-card.core { border-color: #e74c3c; background-color: #fef5f5; }
+
+        .character-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .character-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .character-relations {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .relation-item {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 4px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .relation-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #c19a6b;
+        }
+
+        .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .legend h3 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .legend-text {
+            font-size: 0.9rem;
+        }
+
+        .relationship-diagram {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+        }
+
+        .relationship-diagram h3 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .diagram-svg {
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+        }
+
         @media (max-width: 768px) {
-            .controls {
-                flex-direction: column;
+            .character-card {
+                min-width: 100%;
             }
-            
-            #relationshipGraph {
-                height: 500px;
+
+            .nav-menu {
+                flex-wrap: wrap;
             }
-            
-            .legend {
-                position: relative;
-                top: 0;
-                right: 0;
-                margin-top: 20px;
+
+            .nav-item {
+                margin: 5px;
             }
         }
     </style>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>红楼梦人物关系图</h1>
-            <p class="subtitle">120回本人物关系思维导图</p>
+            <p class="subtitle">120回本人物关系详解</p>
         </header>
-        
+
+        <a href="../index.html" class="back-btn">返回主页</a>
+
         <nav class="nav-menu">
             <div class="nav-item">
-                <a href="../index.html" class="nav-link">返回主页</a>
+                <a href="#overview" class="nav-link active">人物总览</a>
             </div>
             <div class="nav-item">
-                <a href="#all" class="nav-link active">所有关系</a>
-            </div>
-            <div class="nav-item">
-                <a href="#family" class="nav-link">家族关系</a>
-            </div>
-            <div class="nav-item">
-                <a href="#love" class="nav-link">宝黛钗感情线</a>
-            </div>
-            <div class="nav-item">
-                <a href="#friendship" class="nav-link">朋友关系</a>
+                <a href="#diagram" class="nav-link">关系图</a>
             </div>
         </nav>
-        
-        <div id="relationshipGraph"></div>
-        
+
+        <div class="graph-container" id="overview">
+            <div class="family-section">
+                <h2 class="family-title core">核心人物 · 木石前盟 & 金玉良缘</h2>
+                <div class="characters-grid">
+                    <div class="character-card core">
+                        <div class="character-name">贾宝玉</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">家族：贾家</div>
+                        <div class="character-info">描述：神瑛侍者转世，与林黛玉有木石前盟</div>
+                        <div class="character-relations">
+                            <div class="relation-item">林黛玉 — 表兄妹/恋人</div>
+                            <div class="relation-item">薛宝钗 — 妻子</div>
+                            <div class="relation-item">贾政 — 父亲</div>
+                            <div class="relation-item">王夫人 — 母亲</div>
+                            <div class="relation-item">贾母 — 祖母</div>
+                        </div>
+                    </div>
+                    <div class="character-card core">
+                        <div class="character-name">林黛玉</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">家族：贾家（外孙女）</div>
+                        <div class="character-info">描述：绛珠仙草转世，为还泪而来</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 表兄妹/恋人</div>
+                            <div class="relation-item">贾母 — 外祖母</div>
+                            <div class="relation-item">紫鹃 — 丫鬟</div>
+                        </div>
+                    </div>
+                    <div class="character-card core">
+                        <div class="character-name">薛宝钗</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">家族：薛家</div>
+                        <div class="character-info">描述：与贾宝玉有金玉良缘之说</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 丈夫</div>
+                            <div class="relation-item">薛姨妈 — 母亲</div>
+                            <div class="relation-item">薛蟠 — 哥哥</div>
+                            <div class="relation-item">王夫人 — 姨妈</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title jia">贾家 · 宁荣二府</h2>
+                <div class="characters-grid">
+                    <div class="character-card jia">
+                        <div class="character-name">贾政</div>
+                        <div class="character-info">身份：贾宝玉父亲</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 儿子</div>
+                            <div class="relation-item">王夫人 — 妻子</div>
+                            <div class="relation-item">贾母 — 母亲</div>
+                            <div class="relation-item">贾元春 — 女儿</div>
+                            <div class="relation-item">贾探春 — 女儿</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">贾母</div>
+                        <div class="character-info">身份：贾府最高长辈</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 孙子</div>
+                            <div class="relation-item">林黛玉 — 外孙女</div>
+                            <div class="relation-item">史湘云 — 侄孙女</div>
+                            <div class="relation-item">贾赦 — 儿子</div>
+                            <div class="relation-item">贾政 — 儿子</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">王夫人</div>
+                        <div class="character-info">身份：贾政妻子</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 儿子</div>
+                            <div class="relation-item">贾元春 — 女儿</div>
+                            <div class="relation-item">贾探春 — 女儿</div>
+                            <div class="relation-item">王熙凤 — 侄女</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">贾元春</div>
+                        <div class="character-info">身份：贾宝玉姐姐/贵妃</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 弟弟</div>
+                            <div class="relation-item">贾政 — 父亲</div>
+                            <div class="relation-item">王夫人 — 母亲</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">贾探春</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 妹妹</div>
+                            <div class="relation-item">贾政 — 父亲</div>
+                            <div class="relation-item">赵姨娘 — 生母</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">贾迎春</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾赦 — 父亲</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">贾惜春</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾珍 — 哥哥</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">李纨</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾珠 — 丈夫</div>
+                        </div>
+                    </div>
+                    <div class="character-card jia">
+                        <div class="character-name">秦可卿</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾蓉 — 丈夫</div>
+                            <div class="relation-item">贾珍 — 公公</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title xue">薛家 · 皇商世家</h2>
+                <div class="characters-grid">
+                    <div class="character-card xue">
+                        <div class="character-name">薛宝钗</div>
+                        <div class="character-info">详见核心人物</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">薛姨妈</div>
+                        <div class="character-info">身份：王夫人妹妹</div>
+                        <div class="character-relations">
+                            <div class="relation-item">薛宝钗 — 女儿</div>
+                            <div class="relation-item">薛蟠 — 儿子</div>
+                            <div class="relation-item">王夫人 — 姐姐</div>
+                        </div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">薛蟠</div>
+                        <div class="character-info">身份：薛宝钗哥哥</div>
+                        <div class="character-relations">
+                            <div class="relation-item">薛宝钗 — 妹妹</div>
+                            <div class="relation-item">薛姨妈 — 母亲</div>
+                            <div class="relation-item">香菱 — 小妾</div>
+                        </div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">香菱</div>
+                        <div class="character-info">类别：金陵十二钗副册</div>
+                        <div class="character-relations">
+                            <div class="relation-item">甄士隐 — 父亲</div>
+                            <div class="relation-item">薛蟠 — 主人</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title shi">史家 · 保龄侯府</h2>
+                <div class="characters-grid">
+                    <div class="character-card shi">
+                        <div class="character-name">史湘云</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">身份：贾母侄孙女</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾母 — 姑奶奶</div>
+                            <div class="relation-item">贾宝玉 — 表哥</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title wang">王家 · 都太尉统制县</h2>
+                <div class="characters-grid">
+                    <div class="character-card wang">
+                        <div class="character-name">王熙凤</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">身份：贾琏妻子/管家</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾琏 — 丈夫</div>
+                            <div class="relation-item">王夫人 — 姑妈</div>
+                            <div class="relation-item">平儿 — 丫鬟</div>
+                        </div>
+                    </div>
+                    <div class="character-card wang">
+                        <div class="character-name">王夫人</div>
+                        <div class="character-info">详见贾家</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title">其他重要人物</h2>
+                <div class="characters-grid">
+                    <div class="character-card">
+                        <div class="character-name">妙玉</div>
+                        <div class="character-info">类别：金陵十二钗正册</div>
+                        <div class="character-info">身份：带发修行尼姑</div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">袭人</div>
+                        <div class="character-info">类别：金陵十二钗又副册</div>
+                        <div class="character-info">身份：贾宝玉丫鬟</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 主仆</div>
+                            <div class="relation-item">蒋玉函 — 丈夫</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">晴雯</div>
+                        <div class="character-info">类别：金陵十二钗又副册</div>
+                        <div class="character-info">身份：贾宝玉丫鬟</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾宝玉 — 主仆</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">紫鹃</div>
+                        <div class="character-info">身份：林黛玉丫鬟</div>
+                        <div class="character-relations">
+                            <div class="relation-item">林黛玉 — 主仆</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">平儿</div>
+                        <div class="character-info">身份：王熙凤丫鬟</div>
+                        <div class="character-relations">
+                            <div class="relation-item">王熙凤 — 主仆</div>
+                            <div class="relation-item">贾琏 — 通房丫头</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">蒋玉函</div>
+                        <div class="character-info">身份：戏子</div>
+                        <div class="character-relations">
+                            <div class="relation-item">袭人 — 丈夫</div>
+                            <div class="relation-item">贾宝玉 — 好友</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">柳湘莲</div>
+                        <div class="character-info">身份：江湖游侠</div>
+                        <div class="character-relations">
+                            <div class="relation-item">尤三姐 — 恋人</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">尤二姐</div>
+                        <div class="character-info">身份：贾琏二房</div>
+                        <div class="character-relations">
+                            <div class="relation-item">贾琏 — 丈夫</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">尤三姐</div>
+                        <div class="character-info">身份：尤二姐妹妹</div>
+                        <div class="character-relations">
+                            <div class="relation-item">柳湘莲 — 恋人</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">甄士隐</div>
+                        <div class="character-info">身份：香菱父亲</div>
+                        <div class="character-relations">
+                            <div class="relation-item">香菱 — 女儿</div>
+                            <div class="relation-item">贾雨村 — 好友</div>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-name">贾雨村</div>
+                        <div class="character-info">身份：林黛玉老师</div>
+                        <div class="character-relations">
+                            <div class="relation-item">甄士隐 — 好友</div>
+                            <div class="relation-item">林黛玉 — 老师</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relationship-diagram" id="diagram">
+            <h3>人物关系简图</h3>
+            <svg class="diagram-svg" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- 核心三角关系 -->
+                <g id="core-triangle">
+                    <circle cx="600" cy="100" r="40" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
+                    <text x="600" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">贾宝玉</text>
+                    
+                    <circle cx="450" cy="250" r="35" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
+                    <text x="450" y="255" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">林黛玉</text>
+                    
+                    <circle cx="750" cy="250" r="35" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
+                    <text x="750" y="255" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">薛宝钗</text>
+                    
+                    <!-- 连线 -->
+                    <line x1="585" y1="120" x2="465" y2="220" stroke="#c19a6b" stroke-width="2"/>
+                    <text x="510" y="160" text-anchor="middle" font-size="12" fill="#666">表兄妹/恋人</text>
+                    
+                    <line x1="615" y1="120" x2="735" y2="220" stroke="#c19a6b" stroke-width="2"/>
+                    <text x="690" y="160" text-anchor="middle" font-size="12" fill="#666">妻子</text>
+                    
+                    <line x1="480" y1="260" x2="720" y2="260" stroke="#c19a6b" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="600" y="280" text-anchor="middle" font-size="12" fill="#666">金玉良缘 vs 木石前盟</text>
+                </g>
+
+                <!-- 贾家 -->
+                <g id="jia-family">
+                    <rect x="50" y="350" width="150" height="220" fill="#f5f9ff" stroke="#3498db" stroke-width="2" rx="10"/>
+                    <text x="125" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#3498db">贾家</text>
+                    
+                    <circle cx="125" cy="420" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
+                    <text x="125" y="425" text-anchor="middle" font-size="12" fill="#333">贾政</text>
+                    
+                    <circle cx="125" cy="480" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
+                    <text x="125" y="485" text-anchor="middle" font-size="12" fill="#333">贾母</text>
+                    
+                    <circle cx="125" cy="540" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
+                    <text x="125" y="545" text-anchor="middle" font-size="12" fill="#333">王夫人</text>
+                    
+                    <!-- 连线到宝玉 -->
+                    <line x1="150" y1="420" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="150" y1="480" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="150" y1="540" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
+                </g>
+
+                <!-- 薛家 -->
+                <g id="xue-family">
+                    <rect x="250" y="350" width="150" height="180" fill="#f5fff5" stroke="#2ecc71" stroke-width="2" rx="10"/>
+                    <text x="325" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#2ecc71">薛家</text>
+                    
+                    <circle cx="325" cy="420" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
+                    <text x="325" y="425" text-anchor="middle" font-size="12" fill="#333">薛姨妈</text>
+                    
+                    <circle cx="325" cy="480" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
+                    <text x="325" y="485" text-anchor="middle" font-size="12" fill="#333">薛蟠</text>
+                    
+                    <circle cx="325" cy="540" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
+                    <text x="325" y="545" text-anchor="middle" font-size="12" fill="#333">香菱</text>
+                    
+                    <!-- 连线到宝钗 -->
+                    <line x1="355" y1="420" x2="715" y2="265" stroke="#2ecc71" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="355" y1="480" x2="715" y2="265" stroke="#2ecc71" stroke-width="1" stroke-dasharray="3,3"/>
+                </g>
+
+                <!-- 王家 -->
+                <g id="wang-family">
+                    <rect x="450" y="350" width="150" height="150" fill="#faf5ff" stroke="#9b59b6" stroke-width="2" rx="10"/>
+                    <text x="525" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#9b59b6">王家</text>
+                    
+                    <circle cx="525" cy="420" r="25" fill="white" stroke="#9b59b6" stroke-width="2"/>
+                    <text x="525" y="425" text-anchor="middle" font-size="12" fill="#333">王熙凤</text>
+                    
+                    <circle cx="525" cy="480" r="25" fill="white" stroke="#9b59b6" stroke-width="2"/>
+                    <text x="525" y="485" text-anchor="middle" font-size="12" fill="#333">平儿</text>
+                </g>
+
+                <!-- 史家 -->
+                <g id="shi-family">
+                    <rect x="650" y="350" width="150" height="100" fill="#fff9f5" stroke="#f39c12" stroke-width="2" rx="10"/>
+                    <text x="725" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#f39c12">史家</text>
+                    
+                    <circle cx="725" cy="420" r="25" fill="white" stroke="#f39c12" stroke-width="2"/>
+                    <text x="725" y="425" text-anchor="middle" font-size="12" fill="#333">史湘云</text>
+                </g>
+
+                <!-- 其他 -->
+                <g id="other">
+                    <rect x="850" y="350" width="300" height="220" fill="#f5f5f5" stroke="#95a5a6" stroke-width="2" rx="10"/>
+                    <text x="1000" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#95a5a6">其他人物</text>
+                    
+                    <circle cx="920" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="920" y="425" text-anchor="middle" font-size="11" fill="#333">袭人</text>
+                    
+                    <circle cx="1000" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1000" y="425" text-anchor="middle" font-size="11" fill="#333">晴雯</text>
+                    
+                    <circle cx="1080" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1080" y="425" text-anchor="middle" font-size="11" fill="#333">紫鹃</text>
+                    
+                    <circle cx="920" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="920" y="485" text-anchor="middle" font-size="11" fill="#333">蒋玉函</text>
+                    
+                    <circle cx="1000" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1000" y="485" text-anchor="middle" font-size="11" fill="#333">柳湘莲</text>
+                    
+                    <circle cx="1080" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1080" y="485" text-anchor="middle" font-size="11" fill="#333">尤三姐</text>
+                    
+                    <circle cx="920" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="920" y="545" text-anchor="middle" font-size="11" fill="#333">甄士隐</text>
+                    
+                    <circle cx="1000" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1000" y="545" text-anchor="middle" font-size="11" fill="#333">贾雨村</text>
+                    
+                    <circle cx="1080" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
+                    <text x="1080" y="545" text-anchor="middle" font-size="11" fill="#333">妙玉</text>
+                </g>
+
+                <!-- 关系说明 -->
+                <g id="legend" transform="translate(50, 20)">
+                    <rect x="0" y="0" width="200" height="120" fill="white" stroke="#c19a6b" stroke-width="1" rx="5"/>
+                    <text x="100" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4513">图例</text>
+                    <line x1="20" y1="45" x2="60" y2="45" stroke="#c19a6b" stroke-width="2"/>
+                    <text x="70" y="50" font-size="11" fill="#333">家族/婚姻关系</text>
+                    <line x1="20" y1="70" x2="60" y2="70" stroke="#c19a6b" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="70" y="75" font-size="11" fill="#333">主仆/其他关系</text>
+                    <circle cx="40" cy="95" r="8" fill="#fef5f5" stroke="#e74c3c" stroke-width="2"/>
+                    <text x="70" y="100" font-size="11" fill="#333">核心人物</text>
+                </g>
+            </svg>
+        </div>
+
         <div class="legend">
-            <h3>图例</h3>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #e74c3c;"></div>
-                <div class="legend-text">主要人物</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #3498db;"></div>
-                <div class="legend-text">次要人物</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #2ecc71;"></div>
-                <div class="legend-text">家族关系</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #f39c12;"></div>
-                <div class="legend-text">感情关系</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #9b59b6;"></div>
-                <div class="legend-text">其他关系</div>
+            <h3>家族图例</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e74c3c;"></div>
+                    <div class="legend-text">核心人物（宝黛钗）</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #3498db;"></div>
+                    <div class="legend-text">贾家</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #2ecc71;"></div>
+                    <div class="legend-text">薛家</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #f39c12;"></div>
+                    <div class="legend-text">史家</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #9b59b6;"></div>
+                    <div class="legend-text">王家</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #95a5a6;"></div>
+                    <div class="legend-text">其他</div>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script>
-        // 人物数据
-        const nodes = [
-            { id: "林黛玉", group: 1, category: "金陵十二钗正册", description: "与贾宝玉是表兄妹关系，前世是绛珠仙草，今生为还泪而来" },
-            { id: "贾宝玉", group: 1, category: "金陵十二钗正册", description: "前世是神瑛侍者，今生投胎贾府，与林黛玉有木石前盟" },
-            { id: "薛宝钗", group: 1, category: "金陵十二钗正册", description: "与贾宝玉是姨表姐弟关系，有金玉良缘之说" },
-            { id: "王熙凤", group: 1, category: "金陵十二钗正册", description: "贾琏之妻，荣国府实际管家" },
-            { id: "史湘云", group: 1, category: "金陵十二钗正册", description: "贾母的侄孙女，父母双亡" },
-            { id: "贾元春", group: 1, category: "金陵十二钗正册", description: "贾宝玉的嫡亲大姐，被封为贵妃" },
-            { id: "贾探春", group: 1, category: "金陵十二钗正册", description: "贾宝玉的庶妹，生母是赵姨娘" },
-            { id: "贾迎春", group: 1, category: "金陵十二钗正册", description: "贾宝玉大伯贾赦的庶女" },
-            { id: "贾惜春", group: 1, category: "金陵十二钗正册", description: "宁府贾珍的胞妹" },
-            { id: "李纨", group: 1, category: "金陵十二钗正册", description: "贾宝玉哥哥贾珠的妻子，丈夫死后一心育儿" },
-            { id: "秦可卿", group: 1, category: "金陵十二钗正册", description: "宁国府贾蓉的妻子，与公公贾珍关系暧昧" },
-            { id: "妙玉", group: 1, category: "金陵十二钗正册", description: "出身高贵，带发修行的尼姑" },
-            { id: "贾政", group: 2, category: "其他人物", description: "贾宝玉的父亲，与宝玉父子关系紧张" },
-            { id: "王夫人", group: 2, category: "其他人物", description: "贾宝玉的母亲，贾政的妻子" },
-            { id: "贾母", group: 2, category: "其他人物", description: "贾府的最高长辈，贾宝玉的祖母" },
-            { id: "贾琏", group: 2, category: "其他人物", description: "王熙凤的丈夫，贾赦的儿子" },
-            { id: "贾赦", group: 2, category: "其他人物", description: "贾政的哥哥，贾琏的父亲" },
-            { id: "贾珍", group: 2, category: "其他人物", description: "宁府当家人，贾惜春的哥哥" },
-            { id: "贾珠", group: 2, category: "其他人物", description: "贾宝玉的哥哥，李纨的丈夫，早逝" },
-            { id: "贾蓉", group: 2, category: "其他人物", description: "贾珍的儿子，秦可卿的丈夫" },
-            { id: "赵姨娘", group: 2, category: "其他人物", description: "贾政的小妾，贾探春的生母" },
-            { id: "薛姨妈", group: 2, category: "其他人物", description: "薛宝钗的母亲，王夫人的妹妹" },
-            { id: "薛蟠", group: 2, category: "其他人物", description: "薛宝钗的哥哥，生性纨绔" },
-            { id: "尤二姐", group: 2, category: "其他人物", description: "尤氏的妹妹，贾琏的二房" },
-            { id: "尤三姐", group: 2, category: "其他人物", description: "尤氏的妹妹，暗恋柳湘莲" },
-            { id: "袭人", group: 2, category: "金陵十二钗又副册", description: "贾宝玉的贴身丫鬟，后嫁给蒋玉菡" },
-            { id: "晴雯", group: 2, category: "金陵十二钗又副册", description: "贾宝玉的丫鬟，被王夫人撵走后病逝" },
-            { id: "紫鹃", group: 2, category: "其他人物", description: "林黛玉的贴身丫鬟" },
-            { id: "平儿", group: 2, category: "其他人物", description: "王熙凤的陪嫁丫鬟，贾琏的通房丫头" },
-            { id: "蒋玉函", group: 2, category: "其他人物", description: "忠顺亲王府的戏子，后娶袭人为妻" },
-            { id: "柳湘莲", group: 2, category: "其他人物", description: "江湖游侠，与尤三姐有婚约" },
-            { id: "甄士隐", group: 2, category: "其他人物", description: "香菱的父亲，红楼梦的线索人物" },
-            { id: "贾雨村", group: 2, category: "其他人物", description: "林黛玉的老师，后成为贪官" },
-            { id: "香菱", group: 2, category: "金陵十二钗副册", description: "甄士隐的女儿，薛蟠的小妾" }
-        ];
-        
-        // 关系数据
-        const links = [
-            { source: "林黛玉", target: "贾宝玉", value: 5, type: "love" },
-            { source: "贾宝玉", target: "薛宝钗", value: 4, type: "love" },
-            { source: "贾宝玉", target: "贾政", value: 3, type: "family" },
-            { source: "贾宝玉", target: "王夫人", value: 3, type: "family" },
-            { source: "贾宝玉", target: "贾母", value: 4, type: "family" },
-            { source: "贾宝玉", target: "贾元春", value: 3, type: "family" },
-            { source: "贾宝玉", target: "贾探春", value: 3, type: "family" },
-            { source: "贾宝玉", target: "贾迎春", value: 2, type: "family" },
-            { source: "贾宝玉", target: "贾惜春", value: 2, type: "family" },
-            { source: "贾宝玉", target: "贾珠", value: 3, type: "family" },
-            { source: "贾宝玉", target: "袭人", value: 4, type: "other" },
-            { source: "贾宝玉", target: "晴雯", value: 3, type: "other" },
-            { source: "林黛玉", target: "贾母", value: 3, type: "family" },
-            { source: "林黛玉", target: "紫鹃", value: 4, type: "other" },
-            { source: "薛宝钗", target: "薛姨妈", value: 3, type: "family" },
-            { source: "薛宝钗", target: "薛蟠", value: 2, type: "family" },
-            { source: "薛宝钗", target: "王夫人", value: 3, type: "family" },
-            { source: "王熙凤", target: "贾琏", value: 3, type: "family" },
-            { source: "王熙凤", target: "王夫人", value: 3, type: "family" },
-            { source: "王熙凤", target: "平儿", value: 3, type: "other" },
-            { source: "史湘云", target: "贾母", value: 3, type: "family" },
-            { source: "史湘云", target: "贾宝玉", value: 3, type: "other" },
-            { source: "贾元春", target: "贾政", value: 3, type: "family" },
-            { source: "贾元春", target: "王夫人", value: 3, type: "family" },
-            { source: "贾探春", target: "贾政", value: 3, type: "family" },
-            { source: "贾探春", target: "赵姨娘", value: 3, type: "family" },
-            { source: "贾迎春", target: "贾赦", value: 3, type: "family" },
-            { source: "贾惜春", target: "贾珍", value: 3, type: "family" },
-            { source: "李纨", target: "贾珠", value: 3, type: "family" },
-            { source: "秦可卿", target: "贾蓉", value: 3, type: "family" },
-            { source: "秦可卿", target: "贾珍", value: 2, type: "other" },
-            { source: "贾政", target: "王夫人", value: 3, type: "family" },
-            { source: "贾政", target: "贾母", value: 3, type: "family" },
-            { source: "贾赦", target: "贾母", value: 3, type: "family" },
-            { source: "贾琏", target: "贾赦", value: 3, type: "family" },
-            { source: "贾琏", target: "尤二姐", value: 3, type: "other" },
-            { source: "贾琏", target: "平儿", value: 2, type: "other" },
-            { source: "尤三姐", target: "柳湘莲", value: 4, type: "love" },
-            { source: "袭人", target: "蒋玉函", value: 3, type: "family" },
-            { source: "薛蟠", target: "香菱", value: 3, type: "other" },
-            { source: "甄士隐", target: "香菱", value: 4, type: "family" },
-            { source: "贾雨村", target: "甄士隐", value: 2, type: "other" },
-            { source: "贾雨村", target: "林黛玉", value: 2, type: "other" }
-        ];
-        
-        // 创建SVG容器
-        const width = document.getElementById('relationshipGraph').clientWidth;
-        const height = document.getElementById('relationshipGraph').clientHeight;
-        
-        const svg = d3.select('#relationshipGraph')
-            .append('svg')
-            .attr('width', width)
-            .attr('height', height);
-        
-        // 创建力导向图
-        const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(100))
-            .force('charge', d3.forceManyBody().strength(-300))
-            .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('collision', d3.forceCollide().radius(30));
-        
-        // 创建箭头标记
-        svg.append('defs').append('marker')
-            .attr('id', 'arrowhead')
-            .attr('viewBox', '-0 -5 10 10')
-            .attr('refX', 20)
-            .attr('refY', 0)
-            .attr('orient', 'auto')
-            .attr('markerWidth', 6)
-            .attr('markerHeight', 6)
-            .attr('xoverflow', 'visible')
-            .append('svg:path')
-            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-            .attr('fill', '#999')
-            .style('stroke', 'none');
-        
-        // 创建连线
-        const link = svg.append('g')
-            .selectAll('line')
-            .data(links)
-            .enter()
-            .append('line')
-            .attr('stroke', d => {
-                if (d.type === 'family') return '#2ecc71';
-                if (d.type === 'love') return '#f39c12';
-                return '#9b59b6';
-            })
-            .attr('stroke-width', d => Math.sqrt(d.value))
-            .attr('marker-end', 'url(#arrowhead)');
-        
-        // 创建节点
-        const node = svg.append('g')
-            .selectAll('circle')
-            .data(nodes)
-            .enter()
-            .append('circle')
-            .attr('r', d => d.group === 1 ? 15 : 10)
-            .attr('fill', d => d.group === 1 ? '#e74c3c' : '#3498db')
-            .call(d3.drag()
-                .on('start', dragstarted)
-                .on('drag', dragged)
-                .on('end', dragended));
-        
-        // 添加节点标签
-        const label = svg.append('g')
-            .selectAll('text')
-            .data(nodes)
-            .enter()
-            .append('text')
-            .text(d => d.id)
-            .attr('font-size', '12px')
-            .attr('dx', 15)
-            .attr('dy', 5)
-            .attr('fill', '#333');
-        
-        // 创建提示框
-        const tooltip = d3.select('body')
-            .append('div')
-            .attr('class', 'tooltip')
-            .style('opacity', 0);
-        
-        // 节点鼠标事件
-        node.on('mouseover', function(event, d) {
-            tooltip.transition()
-                .duration(200)
-                .style('opacity', .9);
-            tooltip.html(`
-                <h3>${d.id}</h3>
-                <p><strong>类别：</strong>${d.category}</p>
-                <p><strong>描述：</strong>${d.description}</p>
-            `)
-                .style('left', (event.pageX + 10) + 'px')
-                .style('top', (event.pageY - 28) + 'px');
-        })
-        .on('mouseout', function() {
-            tooltip.transition()
-                .duration(500)
-                .style('opacity', 0);
-        })
-        .on('click', function(event, d) {
-            // 点击节点时，将其居中显示
-            simulation.force('center', d3.forceCenter(width / 2, height / 2));
-            simulation.alphaTarget(0.3).restart();
-        });
-        
-        // 力导向图更新
-        simulation.on('tick', () => {
-            link
-                .attr('x1', d => d.source.x)
-                .attr('y1', d => d.source.y)
-                .attr('x2', d => d.target.x)
-                .attr('y2', d => d.target.y);
-            
-            node
-                .attr('cx', d => d.x)
-                .attr('cy', d => d.y);
-            
-            label
-                .attr('x', d => d.x)
-                .attr('y', d => d.y);
-        });
-        
-        // 拖拽函数
-        function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-        
-        function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-        }
-        
-        function dragended(event, d) {
-            if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
-        
-        // 控制按钮事件
-        document.querySelectorAll('.nav-link[href="#all"]').forEach(link => {
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
-                // 显示所有关系
-                d3.selectAll('line').style('display', 'block');
-                d3.selectAll('circle').style('display', 'block');
-                d3.selectAll('text').style('display', 'block');
-                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
             });
-        });
-        
-        document.querySelectorAll('.nav-link[href="#family"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-                // 只显示家族关系
-                d3.selectAll('line').style('display', d => d.type === 'family' ? 'block' : 'none');
-                // 显示所有节点
-                d3.selectAll('circle').style('display', 'block');
-                d3.selectAll('text').style('display', 'block');
-                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
-        document.querySelectorAll('.nav-link[href="#love"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-                // 只显示宝黛钗感情线
-                d3.selectAll('line').style('display', d => d.type === 'love' ? 'block' : 'none');
-                // 只显示相关节点
-                d3.selectAll('circle').style('display', d => (d.id === '林黛玉' || d.id === '贾宝玉' || d.id === '薛宝钗') ? 'block' : 'none');
-                d3.selectAll('text').style('display', d => (d.id === '林黛玉' || d.id === '贾宝玉' || d.id === '薛宝钗') ? 'block' : 'none');
-                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
-        document.querySelectorAll('.nav-link[href="#friendship"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-                // 重置视图
-                simulation.force('center', d3.forceCenter(width / 2, height / 2));
-                simulation.alphaTarget(0.3).restart();
-                
-                // 显示所有关系
-                d3.selectAll('line').style('display', 'block');
-                d3.selectAll('circle').style('display', 'block');
-                d3.selectAll('text').style('display', 'block');
-                document.getElementById('relationshipGraph').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
-        // 窗口大小变化时调整SVG大小
-        window.addEventListener('resize', function() {
-            const newWidth = document.getElementById('relationshipGraph').clientWidth;
-            const newHeight = document.getElementById('relationshipGraph').clientHeight;
-            
-            svg.attr('width', newWidth).attr('height', newHeight);
-            simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2));
-            simulation.alphaTarget(0.3).restart();
         });
     </script>
 </body>
