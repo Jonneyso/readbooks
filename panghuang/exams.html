@@ -3,129 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>彷徨考试知识点</title>
+    <title>彷徨高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #1b5e20;
+        }
+
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #2e7d32;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .answer-label {
+            font-size: 0.95rem;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .source-info p {
+            margin-bottom: 5px;
+        }
+
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .exam-paper {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>彷徨考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>历年高考《彷徨》经典试题</h1>
+            <p class="subtitle">来源：高考真题分类汇编</p>
         </header>
+
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>祝福主题分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《祝福》中祥林嫂的悲剧命运及其社会根源。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《祝福》主题的深入理解，需要分析人物悲剧命运及其社会原因。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>悲剧命运：</p><ul><li>两次丧夫，失去家庭依靠</li><li>儿子阿毛被狼吃掉，精神受到重创</li><li>被迫改嫁，被视为"不洁"</li><li>最后沦为乞丐，在祝福声中死去</li></ul><p>社会根源：</p><ul><li>封建礼教对妇女的压迫</li><li>冷漠的社会环境</li><li>迷信思想对人们的毒害</li></ul></div>
-                            </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">上海高考名著题目及答案</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>上海高考名著题目及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0619/7114122011010122.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 下列属于鲁迅短篇小说集的有（ ）</div>
+                    <div class="question-text">
+                        A. 《彷徨》 B. 《野草》 C. 《朝花夕拾》 D. 《呐喊》
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            AD
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>在酒楼上吕纬甫形象</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《在酒楼上》吕纬甫的人物形象。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对吕纬甫形象的理解，他是鲁迅笔下具有代表性的知识分子形象。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>形象特点：</p><ul><li>曾经的改革者，如今变得意志消沉</li><li>敷敷衍衍，随波逐流</li><li>失去了当年的理想和斗志</li></ul><p>典型意义：</p><ul><li>反映辛亥革命后知识分子的精神状态</li><li>批判现实的无力感</li><li>对知识分子道路的反思</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《彷徨》和《呐喊》是鲁迅的短篇小说集，《野草》是散文诗集，《朝花夕拾》是散文集。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>示众场面分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《示众》中"看客"形象及其批判意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《示众》中看客形象的理解，这是鲁迅小说的重要主题。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>看客特征：</p><ul><li>无聊好奇，将他人痛苦当作消遣</li><li>互相模仿，丧失独立思考</li><li>麻木冷漠，不关心他人</li></ul><p>批判意义：</p><ul><li>批判国民的劣根性</li><li>揭示社会的冷漠</li><li>反思民族精神弱点</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《彷徨》是鲁迅的第几部短篇小说集？</div>
+                    <div class="question-text">
+                        A. 第一部
+                        B. 第二部
+                        C. 第三部
+                        D. 第四部
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            B
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《彷徨》是鲁迅的第二部短篇小说集，第一部是《呐喊》。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>祥林嫂悲剧根源分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《祝福》中造成祥林嫂悲剧的根源。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题要求深入分析祥林嫂悲剧的社会原因和思想根源。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>悲剧根源：</p><ul><li>封建礼教的压迫：政权、族权、夫权、神权四条绳索</li><li>社会冷漠：人们对祥林嫂的遭遇无动于衷</li><li>迷信思想：相信"改嫁有罪"，死后要受罚</li><li>经济剥削：失去劳动权利，沦为乞丐</li><li>精神毒害：柳妈的话加深了她的恐惧</li></ul></div>
-                            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《彷徨》测试题</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《彷徨》(鲁迅)测试题带答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0601/8076065016007073.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《呐喊》中，主人公阿Q 的主要性格特征是什么？</div>
+                    <div class="question-text">
+                        A. 勇敢坚强
+                        B. 自卑怯懦
+                        C. 自大狂妄
+                        D. 自卑与自大并存
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            D
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>祝福结构艺术</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《祝福》的叙事结构及其作用。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品叙事结构的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>结构特点：</p><ul><li>倒叙手法：先写祥林嫂的死亡，再回顾其一生</li><li>首尾呼应：祝福场景贯穿全篇</li><li>嵌套叙事：故事中的故事</li></ul><p>作用：</p><ul><li>造成强烈的对比效果</li><li>深化悲剧主题</li><li>增强艺术感染力</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            阿Q的性格特征是"精神胜利法"，表现为自卑与自大并存。他常用自己比不过的人来安慰自己，或用"先前阔"来麻痹自己。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>知识分子形象对比</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>比较题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>比较《在酒楼上》中吕纬甫与《呐喊》中知识分子的异同。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题属于比较分析题，需要对比鲁迅在不同时期作品中知识分子形象的变化。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>相同点：</p><ul><li>都曾有理想和追求</li><li>都在现实中碰壁</li><li>都表现出精神上的困惑</li></ul><p>不同点：</p><ul><li>《呐喊》中知识分子多表现为愤怒和反抗</li><li>《彷徨》中知识分子多表现为消沉和颓唐</li><li>吕纬甫更加消极，敷衍生涯</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《彷徨》中，鲁迅对人性的理解是怎样的？</div>
+                    <div class="question-text">
+                        A. 人性本善
+                        B. 人性本恶
+                        C. 人性复杂
+                        D. 人性无善恶
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            鲁迅在《彷徨》中通过各个篇目展现了人性的复杂性，既有对国民性的深刻剖析，也有对知识分子命运的思考。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 在鲁迅的小说《彷徨》中，哪位人物最终走向了革命道路？</div>
+                    <div class="question-text">
+                        A. 祥林嫂
+                        B. 孔乙己
+                        C. 闰土
+                        D. 华老栓
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            在《彷徨》中，闰土在经历了生活的磨难后，最终加入了革命队伍。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">4. 《彷徨》主要探讨了哪些社会问题？</div>
+                    <div class="question-text">
+                        A. 农民问题
+                        B. 知识分子问题
+                        C. 妇女问题
+                        D. 以上都是
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            D
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            鲁迅在《彷徨》中探讨了农民问题、知识分子问题、妇女问题等社会广泛关注的问题。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">彷徨试题及答案</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>彷徨试题及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/1020/5002244103013001.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">简答题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 简述《彷徨》中《祝福》的故事情节。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            《祝福》描写了祥林嫂在鲁镇的悲惨遭遇。祥林嫂是一个勤劳善良的农村妇女，她的丈夫死后，她被迫嫁给了贺老六，但贺老六也死了，儿子被狼吃掉。她回到鲁镇做佣工，却因为"寡妇"的身份受到歧视和排斥。最终，祥林嫂在祝福之夜死去，而"我"作为唯一同情她的人，却也无法改变她的命运。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《祝福》故事情节的掌握。《祝福》是《彷徨》中的名篇，深刻揭露了封建礼教对女性的压迫。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 祥林嫂的悲剧原因是什么？</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            祥林嫂的悲剧是社会悲剧、礼教悲剧。她深受封建礼教的迫害，被迫改嫁，被视为"不洁"之人，最终被社会抛弃。她的悲剧反映了旧中国妇女的共同命运。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对祥林嫂悲剧原因的理解。祥林嫂的悲剧深刻揭示了封建礼教吃人的本质。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 简述《彷徨》中阿Q"精神胜利法"的具体表现。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            阿Q的"精神胜利法"主要表现为：①挨打后想"儿子打老子"来安慰自己；②用"先前阔"来麻痹自己；③在被嘲笑时用"第一个能够自轻自贱的人"来解脱；④向打不过的人报仇，欺负小尼姑。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对阿Q"精神胜利法"的理解。这是鲁迅对国民劣根性的深刻批判。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

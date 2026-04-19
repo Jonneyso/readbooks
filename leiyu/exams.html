@@ -3,129 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雷雨考试知识点</title>
+    <title>雷雨高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #1b5e20;
+        }
+        
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #2e7d32;
+        }
+        
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .answer-label {
+            font-size: 0.95rem;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+        
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .source-info p {
+            margin-bottom: 5px;
+        }
+        
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .option-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .option-list li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .exam-paper {
+                padding: 20px;
+            }
+            
+            .nav-menu {
+                gap: 10px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>雷雨考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>《雷雨》高考真题</h1>
+            <p class="subtitle">高中语文名著阅读复习资料</p>
         </header>
+        
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>繁漪人物形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《雷雨》中繁漪的人物形象。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对繁漪这一核心人物形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>"雷雨"式性格：敢爱敢恨，性格极端</li><li>受新思想影响，追求个性解放</li><li>被困在周朴园的专制的牢笼里</li><li>悲剧命运的承受者和推动者</li></ul></div>
-                            </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2022年上海市高考语文试卷</h2>
+                <p class="paper-info">上海高考真题卷</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>原创力文档</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0608/8105027103007075.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">文学类现代文阅读</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 结合选文内容，分析曹禺的人物形象。</div>
+                    <div class="question-text">
+文学类现代文选自作家万方的《你和我》，选文以女儿和读者等多重视角，记叙了著名剧作家曹禺的晚年生活片段，表现出曹禺对生活和生命的热爱。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+曹禺是一个热爱生活、热爱生命的剧作家形象。他虽然晚年身体状况不佳，但仍然保持着对生活的热情和对艺术的追求。他关心家人，与女儿万方有着深厚的感情；他热爱文学和戏剧，即使在晚年也依然关注着戏剧的发展；他对生命有着深刻的理解和感悟，表现出一种豁达和乐观的人生态度。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>周朴园形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析周朴园的人物形象及其社会意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对周朴园形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>封建家长专制：对家人实施精神控制</li><li>伪善自私：表面仁义，内心冷酷</li><li>资本家代表：靠压榨工人起家</li></ul><p>社会意义：</p><ul><li>封建大家庭罪恶的缩影</li><li>资产阶级腐朽性的揭露</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>戏剧冲突分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《雷雨》中的戏剧冲突。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对戏剧冲突设置的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>戏剧冲突：</p><ul><li>周朴园与繁漪的冲突：专制与自由的对抗</li><li>周朴园与鲁大海的冲突：资本家与工人的对立</li><li>繁漪与周萍的冲突：追求与逃避的矛盾</li><li>血缘关系的误会与巧合</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题要求结合选文内容分析曹禺的人物形象。通过选文中的具体描写，我们可以看到曹禺在晚年虽然身体状况不佳，但仍然保持着对生活的热情和对艺术的追求。他与女儿万方的互动表现了他对家人的关爱，他对戏剧的关注表现了他对艺术的执着，他对生命的感悟则表现了他的豁达和乐观。这些特点共同构成了曹禺的人物形象。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>"雷雨"象征意义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《雷雨》中"雷雨"这一象征意象的深刻含义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对象征手法理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>象征意义：</p><ul><li>象征封建专制势力的淫威</li><li>象征被压迫者的反抗情绪</li><li>象征"五四"以来社会的剧烈动荡</li><li>预示着革命风暴的到来</li><li>渲染悲剧气氛，深化主题</li></ul></div>
-                            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《雷雨》(曹禺)阅读理解及答案</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>原创力文档</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0809/7024140152010143.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、选择题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 下列对《雷雨》中人物关系的表述，正确的一项是（）</div>
+                    
+                    <ol class="option-list">
+                        <li>A. 周朴园是周萍和周冲的父亲，蘩漪是周萍和周冲的母亲。</li>
+                        <li>B. 鲁侍萍是鲁大海和四凤的母亲，周朴园是鲁大海的继父。</li>
+                        <li>C. 周萍是周冲的哥哥，四凤是鲁大海的妹妹。</li>
+                        <li>D. 蘩漪是周朴园的第二任妻子，鲁侍萍是周朴园的第一任妻子。</li>
+                    </ol>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+C
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>繁漪悲剧意义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析繁漪悲剧的深刻意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对繁漪悲剧意义的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>悲剧意义：</p><ul><li>揭示封建专制对女性的压迫</li><li>个性解放道路在半封建社会的艰难</li><li>"雷雨"式性格的悲剧性</li><li>对封建礼教“吃人”本质的控诉</li></ul></div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+A选项中，蘩漪是周冲的母亲，但周萍是周朴园和鲁侍萍所生，蘩漪不是周萍的母亲；B选项中，周朴园是鲁大海的生父，并非继父；D选项中，鲁侍萍当年只是周朴园的女仆，两人有过情感关系并生下孩子，但并没有正式的婚姻关系。所以正确答案是C。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>曹禺戏剧艺术特色</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>简析《雷雨》的戏剧艺术特色。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对曹禺戏剧艺术的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>艺术特色：</p><ul><li>巧合与误会：血缘关系的揭示</li><li>时间高度压缩：三十年的恩怨集中在一天</li><li>象征手法："雷雨"的运用</li><li>人物语言个性化</li><li>紧张激烈的戏剧冲突</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">2. 《雷雨》中，周朴园见到鲁侍萍后，一连串的发问，下面是摘选的五个问句，其顺序排列正确的一项是（）</div>
+                    
+                    <ol class="option-list">
+                        <li>①（忽然立起）你是谁？</li>
+                        <li>②哦，侍萍！（低声）是你？</li>
+                        <li>③你——你贵姓？</li>
+                        <li>④谁指使你来的？</li>
+                        <li>⑤（忽然严厉地）你来干什么？</li>
+                    </ol>
+                    
+                    <ol class="option-list">
+                        <li>A. ③①②⑤④</li>
+                        <li>B. ①③⑤②④</li>
+                        <li>C. ③②①⑤④</li>
+                        <li>D. ⑤④①②③</li>
+                    </ol>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+A
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+周朴园一开始并不知道眼前的人是鲁侍萍，所以先礼貌性地问“你——你贵姓？”，当发现一些端倪后，突然立起问“你是谁？”，接着认出了是侍萍，低声说“哦，侍萍！（低声）是你？”，确认身份后严厉地问“你来干什么？”，最后怀疑有人指使，问“谁指使你来的？”。所以顺序是③①②⑤④，答案选A。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《雷雨》(曹禺)阅读理解</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>原创力文档</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0807/8106104041007120.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、选择题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">2. 《雷雨》的故事背景设定在（ ）</div>
+                    
+                    <ol class="option-list">
+                        <li>A. 20 世纪 20 年代的上海</li>
+                        <li>B. 20 世纪 30 年代的天津</li>
+                        <li>C. 20 世纪 30 年代的上海</li>
+                        <li>D. 20 世纪 20 年代的天津</li>
+                    </ol>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+B
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+《雷雨》以 20 世纪 30 年代的天津为背景，展现了一个带有浓厚封建色彩的资产阶级家庭的悲剧。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《雷雨（节选）》同步练习</h2>
+                <p class="paper-info">统编版高一语文必修下册</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>学科网</p>
+                <p><strong>原文链接：</strong><a href="https://www.zxxk.com/soft/53595821.html" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、必备知识精练</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 曹禺走上戏剧创作之路的原因有哪些？</div>
+                    <div class="question-text">
+曹禺走上戏剧创作之路，与他加入南开新剧团、阅读《易卜生全集》的经历分不开，更与他对社会现实的关注和对人性的深刻洞察有关。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+曹禺走上戏剧创作之路的原因主要包括：
+1. 加入南开新剧团的经历，使他接触到了戏剧艺术，培养了对戏剧的兴趣和热爱。
+2. 阅读《易卜生全集》等经典戏剧作品，受到了深刻的影响，激发了他的创作灵感。
+3. 对社会现实的关注，使他有了表达社会问题的愿望。
+4. 对人性的深刻洞察，使他能够创作出具有深度的戏剧作品。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            曹禺是中国现代戏剧的重要代表人物，他的戏剧创作之路受到多种因素的影响。加入南开新剧团让他接触到了戏剧艺术的实践，阅读经典作品让他受到了理论和艺术上的启发，对社会现实的关注和对人性的洞察则为他的创作提供了深刻的主题和素材。这些因素共同促使曹禺成为了一位杰出的剧作家。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

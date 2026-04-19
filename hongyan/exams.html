@@ -3,129 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>红岩考试知识点</title>
+    <title>红岩高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #c41e3a;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #c41e3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #a01830;
+        }
+
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #c41e3a;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #c41e3a;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .answer-label {
+            font-size: 0.95rem;
+            color: #c41e3a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .source-info p {
+            margin-bottom: 5px;
+        }
+
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .exam-paper {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>红岩考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>历年高考《红岩》经典试题</h1>
+            <p class="subtitle">来源：高考真题分类汇编</p>
         </header>
+
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>江姐人物形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《红岩》中江姐的英雄形象。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对江姐这一英雄人物形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>英雄形象：</p><ul><li>坚定信念：共产主义理想不动摇</li><li>英勇不屈：面对酷刑不屈服</li><li>大义凛然：慷慨赴死，从容就义</li><li>深情厚谊：对战友对亲人充满爱</li></ul></div>
-                            </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">高考名著阅读专项训练</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>五年（2020-2024）高考语文真题分类汇编</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2024/0701/7154045125006126.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">一、单项选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《红岩》的作者是（ ）</div>
+                    <div class="question-text">
+                        A. 罗广斌<br>
+                        B. 杨益言<br>
+                        C. 罗广斌、杨益言<br>
+                        D. 以上都不是
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>许云峰形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析许云峰的人物形象。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对许云峰这一人物形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>高度警觉：识破敌人阴谋</li><li>沉着冷静：面对危机从容应对</li><li>勇于牺牲：保护组织和同志</li><li>领导风范：具有领袖气质</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《红岩》是现代作家罗广斌、杨益言所创作的一部长篇小说，主要讲述了1948年在国民党的统治下，处在黎明前最黑暗的时刻的共产党员在渣滓洞和白公馆中，敌人为了得到口供，妄图用炎热、蚊虫、饥饿和干渴动摇革命者的意志，但在共产党员的坚强意志前，敌人却是一筹莫展，一败涂地的故事。所以正确答案是C。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>红岩精神内涵</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析"红岩精神"的内涵。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对红岩精神内涵的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>精神内涵：</p><ul><li>坚定信念：坚持共产主义理想</li><li>不怕牺牲：为了理想献出生命</li><li>团结奋斗：集体主义精神</li><li>革命乐观主义：在苦难中保持乐观</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《红岩》故事发生的背景是（ ）</div>
+                    <div class="question-text">
+                        A. 抗日战争时期<br>
+                        B. 解放战争时期<br>
+                        C. 新中国成立后<br>
+                        D. 改革开放时期
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            B
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《红岩》以重庆解放前夕（解放战争时期）残酷的地下斗争为背景，描写了国民党统治下的人民生活，以及共产党员在狱中的英勇斗争。所以正确答案是B。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 下列人物中，不属于《红岩》中的人物是（ ）</div>
+                    <div class="question-text">
+                        A. 刘知侠<br>
+                        B. 王愿坚<br>
+                        C. 梁斌<br>
+                        D. 江姐
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            A、B、C
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            江姐是《红岩》中的重要人物之一，原名江竹筠，是中国共产党的重要地下工作者。刘知侠代表作有《铁道游击队》；王愿坚代表作有《党费》等；梁斌代表作是《红旗谱》。所以不属于《红岩》中的人物是A、B、C。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">4. 《红岩》主要描写的人物是（ ）</div>
+                    <div class="question-text">
+                        A. 许云峰<br>
+                        B. 华子良<br>
+                        C. 小萝卜头<br>
+                        D. 以上都是
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            D
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《红岩》成功塑造了众多如江姐、许云峰、华子良、小萝卜头等经典的革命英雄形象。这些人物都是小说中的主要人物，所以正确答案是D。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>革命英雄主义精神</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《红岩》中的革命英雄主义精神。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品核心精神的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>英雄主义精神：</p><ul><li>为理想献身的崇高精神</li><li>在逆境中坚持斗争</li><li>以集体利益为重</li><li>革命气节高于一切</li></ul></div>
-                            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">高考名著练习题</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《红岩》阅读试题及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0617/6155030144011144.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">二、填空题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《红岩》的作者是_________、___________。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            罗广斌、杨益言
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>反面人物分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《红岩》中反面人物的特点。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对反面人物形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>反面人物特点：</p><ul><li>阴险狡诈：使用各种手段</li><li>凶残狠毒：对革命者施以酷刑</li><li>色厉内荏：表面凶恶内心恐惧</li><li>必然失败：反革命势力必然灭亡</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            罗广斌和杨益言在大量走访、查阅资料基础上创作了《红岩》，成功塑造了众多如江姐等经典的革命英雄形象。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>小说艺术特色</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《红岩》的艺术特色。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品艺术特色的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>艺术特色：</p><ul><li>真实再现历史：渣滓洞、白公馆的真实描写</li><li>人物形象鲜明：英雄与反派对比强烈</li><li>情节曲折：悬念迭起</li><li>语言朴实：符合革命题材特点</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《红岩》创作于_______年。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            1961
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《红岩》创作于1961年，是罗广斌、杨益言以自身革命经历为原型创作的长篇小说。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">三、简答题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 简述《红岩》的主要故事情节。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            《红岩》描写了1948年在国民党的统治下，处在黎明前最黑暗的时刻的共产党员在渣滓洞和白公馆中，敌人为了得到口供，妄图用炎热、蚊虫、饥饿和干渴动摇革命者的意志，但在共产党员的坚强意志前，敌人却是一筹莫展，一败涂地。1964年，被捕入狱，关押于渣滓洞、白公馆，1949年11月27日大屠杀中侥幸脱险；杨益言同样于1948年被捕，关押于渣滓洞，重庆解放前夕被营救出狱。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《红岩》基本故事情节的掌握情况。《红岩》是一部描写重庆解放前夕革命者狱中斗争的红色经典长篇小说。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《红岩》中江姐的性格特点是什么？</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            江姐是一个坚定、勇敢、忠诚的共产党员。她面对敌人的酷刑和威胁毫不动摇，始终保持革命者的气节。她既有女性的温柔，又有革命者的坚强意志。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《红岩》中主要人物形象的理解。江姐是《红岩》中塑造的经典革命女性形象，她的事迹激励了无数人。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">高考红岩考试题目及答案</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>高考红岩考试题目及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/1126/8113135140010013.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">四、多项选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 下列关于《红岩》的说法正确的有（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            A、B、C、D
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            A. 以重庆解放前夕残酷的地下斗争为背景；B. 描写了革命者的狱中斗争；C. 塑造了江姐、许云峰等英雄形象；D. 作者是罗广斌、杨益言。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 下列人物中，出自《红岩》的有（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            A、C、D
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            江姐、许云峰、华子良都是《红岩》中的人物，而林道静是《青春之歌》中的人物。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

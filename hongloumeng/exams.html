@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>红楼梦考试知识点</title>
+    <title>红楼梦高考真题</title>
     <style>
-        /* 全局样式 */
         * {
             margin: 0;
             padding: 0;
@@ -14,231 +13,203 @@
         
         body {
             font-family: 'SimSun', serif;
-            background-color: #f8f0e3;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            background-color: #f5f5f5;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
-        /* 容器样式 */
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        /* 头部样式 */
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
-            border-bottom: 2px solid #c19a6b;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
         }
         
         h1 {
-            font-size: 2.5rem;
-            color: #8B4513;
+            font-size: 1.8rem;
+            color: #c41e3a;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #666;
         }
         
-        /* 导航菜单 */
         .nav-menu {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
-            background-color: rgba(255,255,255,0.9);
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-item {
-            margin: 0 15px;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
         
         .nav-link {
-            display: block;
-            padding: 10px 20px;
-            background-color: #8B4513;
+            padding: 8px 20px;
+            background-color: #c41e3a;
             color: white;
             text-decoration: none;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .nav-link:hover {
-            background-color: #654321;
-        }
-
-        .nav-link.active {
-            background-color: #654321;
+            background-color: #a01830;
         }
         
-        /* 响应式设计 - 导航菜单 */
-        @media (max-width: 768px) {
-            .nav-menu {
-                flex-wrap: wrap;
-                align-items: center;
-            }
-            
-            .nav-item {
-                margin: 5px;
-            }
-        }
-        
-        /* 内容区域 */
-        .content {
-            background-color: rgba(255,255,255,0.9);
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
             border-radius: 8px;
-            padding: 30px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #c19a6b;
-        }
-        
-        /* 考点列表 */
-        .exam-list {
             margin-bottom: 30px;
         }
         
-        .exam-section {
-            margin-bottom: 40px;
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
         }
         
-        .exam-section h2 {
-            font-size: 1.8rem;
-            color: #8B4513;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #c19a6b;
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
         }
         
-        .exam-section h3 {
-            font-size: 1.4rem;
-            color: #8B4513;
-            margin: 20px 0 15px;
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
         }
         
-        /* 考点项 */
-        .exam-item {
-            background-color: #f9f6f0;
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #c19a6b;
-            transition: all 0.3s ease;
+        .section {
+            margin-bottom: 30px;
         }
         
-        .exam-item:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-        
-        .exam-item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .exam-item-header h4 {
+        .section-title {
             font-size: 1.1rem;
-            color: #8B4513;
+            color: #c41e3a;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #c41e3a;
+        }
+        
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
             font-weight: bold;
         }
         
-        .expand-icon {
-            font-size: 1.2rem;
-            color: #8B4513;
-            transition: transform 0.3s ease;
-        }
-        
-        .expand-icon.open {
-            transform: rotate(180deg);
-        }
-        
-        .exam-item-content {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #c19a6b;
-            display: none;
-        }
-        
-        .exam-item-content.show {
-            display: block;
-        }
-        
-        .exam-info {
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
             margin-bottom: 15px;
+            line-height: 1.8;
         }
         
-        .exam-info p {
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .answer-label {
+            font-size: 0.95rem;
+            color: #c41e3a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+        
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .source-info p {
             margin-bottom: 5px;
         }
         
-        .exam-info .label {
-            font-weight: bold;
-            color: #8B4513;
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
         }
         
-        .question {
-            background-color: rgba(255,255,255,0.8);
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .reading-material {
+            padding: 20px;
+            background-color: #f5f5f5;
             border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid #c19a6b;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            border-left: 3px solid #c41e3a;
         }
         
-        .question h5 {
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-        
-        .answer {
-            background-color: rgba(209, 182, 146, 0.1);
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .answer h5 {
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-        
-        /* 响应式设计 */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
+            .container {
+                padding: 10px;
             }
             
-            .nav-item {
-                border-right: none;
-                border-bottom: 1px solid #c19a6b;
-                text-align: center;
-            }
-            
-            .nav-item:last-child {
-                border-bottom: none;
-            }
-            
-            .content {
+            .exam-paper {
                 padding: 20px;
             }
             
-            .exam-item-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .nav-menu {
+                gap: 10px;
             }
             
-            .expand-icon {
-                margin-top: 10px;
-                align-self: flex-end;
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -246,631 +217,446 @@
 <body>
     <div class="container">
         <header>
-            <h1>红楼梦考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>历年高考《红楼梦》经典试题</h1>
+            <p class="subtitle">来源：理型语文（微信公众号）</p>
         </header>
         
         <nav class="nav-menu">
-            <div class="nav-item">
-                <a href="../index.html" class="nav-link">返回主页</a>
-            </div>
-            <div class="nav-item">
-                <a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a>
-            </div>
-            <div class="nav-item">
-                <a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a>
-            </div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
         
-        <div class="content">
-            <!-- 高中考试考点 -->
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2024年普通高等学校招生全国统一考试（北京卷）</h2>
+                <p class="paper-info">语文 2024年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">现代文阅读</h3>
+                
+                <div class="reading-material">
+                    <strong>阅读下面的材料，根据要求作答。</strong><br><br>
+                    《红楼梦》第三十五回：<br><br>
+                    贾母听了，笑道："猴儿，把你乖的！拿着官中的钱你做人。"说的大家笑了。凤姐也忙笑道："这不相干。这个小东道我还孝敬的起。"便回头吩咐妇人，"说给厨房里，只管好生添补着做了，在我的帐上来领银子。"妇人答应着去了。宝钗一旁笑道："我来了这么几年，留神看起来，凤丫头凭他怎么巧，再巧不过老太太去。"贾母听说，便答道："我如今老了，那里还巧什么。当日我像凤哥儿这么大年纪，比他还来得呢。他如今虽说不如我们，也就算好了，比你姨娘强远了。你姨娘可怜见的，不大说话，和木头似的，在公婆跟前就不大显好。凤儿嘴乖，怎么怨得人疼他。"
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">（1）贾母和薛宝钗用"乖""巧"评价王熙凤。请结合书中其他情节，谈谈你对王熙凤"乖""巧"的理解。</div>
                     
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>林黛玉形象分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年12月</p>
-                                    <p><span class="label">学校：</span>上海复旦附中</p>
-                                    <p><span class="label">考试类型：</span>期末考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>请结合《红楼梦》中的具体情节，分析林黛玉的性格特点及其悲剧命运的原因。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>林黛玉的性格特点：敏感细腻、多愁善感、才华横溢、孤高自许。</p>
-                                    <p>具体情节：黛玉葬花、《葬花吟》创作、与宝玉的情感互动等。</p>
-                                    <p>悲剧命运原因：</p>
-                                    <ul>
-                                        <li>身体虚弱，早逝的伏笔</li>
-                                        <li>性格敏感，易受伤害</li>
-                                        <li>与宝玉的爱情不被封建礼教所容</li>
-                                        <li>家族衰落，无依无靠</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+王熙凤的"乖""巧"指的是她能说会道，精明能干，八面玲珑，善于笼络人心。例如王熙凤初次见到林黛玉时，携着黛玉的手，上下打量了一圈，仍送至贾母身边坐下，然后说："天下真有这样标致的人物，我今儿才算见了！况且这通身的气派，竟不像老祖宗的外孙女儿，竟是个嫡亲的孙女。"言语中既赞美了黛玉的美貌，又夸赞了在座的迎春姐妹，抬举了她们嫡亲的身份，还奉承了贾母，充分表现了王熙凤的伶牙俐齿、八面玲珑，善于笼络人心。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>大观园建筑象征意义</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年5月</p>
-                                    <p><span class="label">学校：</span>上海交大附中</p>
-                                    <p><span class="label">考试类型：</span>期中考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》中大观园的建筑布局及其象征意义。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>大观园的建筑布局：潇湘馆、蘅芜苑、怡红院、稻香村等各具特色的建筑。</p>
-                                    <p>象征意义：</p>
-                                    <ul>
-                                        <li>潇湘馆：象征林黛玉的幽僻、敏感性格</li>
-                                        <li>蘅芜苑：象征薛宝钗的朴素、端庄</li>
-                                        <li>怡红院：象征贾宝玉的多情、率真</li>
-                                        <li>稻香村：象征李纨的守节、淡泊</li>
-                                        <li>整体布局：象征理想的封建大家庭，最终的衰败预示着封建制度的崩溃</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生分析经典名著中人物形象特点的能力。作答本题时首先要根据选文内容确定王熙凤"乖""巧"具体内涵，然后结合《红楼梦》中的其他情节谈谈自己对王熙凤"乖""巧"的理解。结合"我如今老了，那里还巧什么。当日我像凤哥儿这么大年纪，比他还来得呢。他如今虽说不如我们，也就算好了，比你姨娘强远了"可知，老太太口中的"乖""巧"应是褒义词，是对王熙凤的肯定；而宝钗的"巧"也和老太太联系在了一起，"凤丫头凭他怎么巧，再巧不过老太太去"，所以宝钗口中的"巧"字也是对王熙凤的夸赞，意思都是"她能说会道，精明能干，八面玲珑，善于笼络人心"。王熙凤为了巩固自己在贾府的地位，察言观色，奉承迎合，处处讨取兄弟姐妹、妯娌长辈，特别是贾府最高统治者贾母的欢心。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>《葬花吟》赏析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年10月</p>
-                                    <p><span class="label">学校：</span>上海华师大二附中</p>
-                                    <p><span class="label">考试类型：</span>月考</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>赏析《红楼梦》中林黛玉的《葬花吟》，分析其艺术特色和思想内涵。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>艺术特色：</p>
-                                    <ul>
-                                        <li>以花喻人，借景抒情</li>
-                                        <li>语言优美，意境凄美</li>
-                                        <li>情感真挚，感染力强</li>
-                                    </ul>
-                                    <p>思想内涵：</p>
-                                    <ul>
-                                        <li>表达了对生命短暂、美好易逝的感慨</li>
-                                        <li>反映了林黛玉的孤独、敏感和对命运的无奈</li>
-                                        <li>体现了对封建礼教的反抗和对自由的向往</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">（2）薛宝钗的话体现了她怎样的性格，又反映了贾母怎样的人物特点？请结合书中其他情节，分别予以解说。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+①薛宝钗的话体现了她善于逢迎、圆滑世故的性格。例如，贾母要为薛宝钗作将笄之年的生日，问她爱听何戏、爱吃何物等，宝钗深知年老的贾母喜欢热闹戏文、爱吃甜烂之食，便总依贾母向日素喜者说了出来。
+
+②反映了贾母精明能干，在家族中拥有至高地位的人物特点。例如，书中写贾母在处理大观园婆子聚赌事件时，处理方法老练：一是烧毁骰子牌；二是所有钱入官分散与众人；三是为首者每人四十大板，从者每人二十大板；四是为首者提出，不许再入；五是革去从者三月月钱，并将其拨入圊厕行内。众人心里皆叹服。贾母的处理方式充分体现了她作为封建大家长的精明果决。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>抄检大观园情节分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2026年1月</p>
-                                    <p><span class="label">学校：</span>上海建平中学</p>
-                                    <p><span class="label">考试类型：</span>期末考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》中“抄检大观园”情节的作用和意义。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>情节作用：</p>
-                                    <ul>
-                                        <li>推动故事情节发展，为后续悲剧结局埋下伏笔</li>
-                                        <li>展现不同人物的性格特点</li>
-                                        <li>揭示贾府内部的矛盾和衰败</li>
-                                    </ul>
-                                    <p>意义：</p>
-                                    <ul>
-                                        <li>反映了封建家族的内部倾轧和腐朽</li>
-                                        <li>体现了对弱势群体的同情</li>
-                                        <li>预示了贾府的最终崩溃</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>宝黛钗爱情悲剧分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年6月</p>
-                                    <p><span class="label">学校：</span>上海七宝中学</p>
-                                    <p><span class="label">考试类型：</span>期中考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》中宝黛钗爱情悲剧的原因和意义。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>悲剧原因：</p>
-                                    <ul>
-                                        <li>封建礼教的束缚</li>
-                                        <li>家族利益的冲突</li>
-                                        <li>人物性格的差异</li>
-                                        <li>命运的无常</li>
-                                    </ul>
-                                    <p>意义：</p>
-                                    <ul>
-                                        <li>批判了封建礼教对人性的压抑</li>
-                                        <li>歌颂了真挚的爱情</li>
-                                        <li>反映了封建社会的黑暗和腐朽</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>红楼梦回目概括</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年11月</p>
-                                    <p><span class="label">学校：</span>上海格致中学</p>
-                                    <p><span class="label">考试类型：</span>月考</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>请简要概括《红楼梦》前八十回的主要情节脉络。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>前八十回主要情节脉络：</p>
-                                    <ul>
-                                        <li>林黛玉进贾府，与贾宝玉初次见面</li>
-                                        <li>贾宝玉梦游太虚幻境，看到金陵十二钗判词</li>
-                                        <li>元春省亲，贾府建造大观园</li>
-                                        <li>宝玉挨打，众人探视</li>
-                                        <li>大观园里结海棠诗社</li>
-                                        <li>抄检大观园，晴雯被撵</li>
-                                        <li>林黛玉焚稿断情，薛宝钗与贾宝玉成婚</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>红楼梦主题思想</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2026年1月</p>
-                                    <p><span class="label">学校：</span>上海南洋模范中学</p>
-                                    <p><span class="label">考试类型：</span>期末考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》的主题思想及其现实意义。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>主题思想：</p>
-                                    <ul>
-                                        <li>封建家族衰败</li>
-                                        <li>封建礼教吃人</li>
-                                        <li>女性命运悲剧</li>
-                                        <li>繁华落尽的虚无</li>
-                                    </ul>
-                                    <p>现实意义：</p>
-                                    <ul>
-                                        <li>批判了封建社会的黑暗和腐朽</li>
-                                        <li>歌颂了人性的美好和自由</li>
-                                        <li>提醒人们珍惜当下，看淡功名利禄</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>红楼梦艺术特色</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年4月</p>
-                                    <p><span class="label">学校：</span>上海复兴高级中学</p>
-                                    <p><span class="label">考试类型：</span>期中考试</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》的艺术特色。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>艺术特色：</p>
-                                    <ul>
-                                        <li>网状结构：多条线索交织，展现复杂的人物关系和社会生活</li>
-                                        <li>象征手法：通灵宝玉、太虚幻境等象征深化主题</li>
-                                        <li>诗词歌赋：大量诗词丰富内容，反映人物性格和命运</li>
-                                        <li>草蛇灰线：伏笔千里，前后呼应</li>
-                                        <li>春秋笔法：微言大义，暗含褒贬</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>红楼梦诗词鉴赏</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试时间：</span>2025年10月</p>
-                                    <p><span class="label">学校：</span>上海延安中学</p>
-                                    <p><span class="label">考试类型：</span>月考</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>鉴赏《红楼梦》中林黛玉的《葬花吟》。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>《葬花吟》是林黛玉的代表作，通过葬花这一行为，表达了对生命短暂、美好易逝的感慨，反映了她的孤独、敏感和对命运的无奈。</p>
-                                    <p>艺术特色：</p>
-                                    <ul>
-                                        <li>以花喻人，借景抒情</li>
-                                        <li>语言优美，意境凄美</li>
-                                        <li>情感真挚，感染力强</li>
-                                    </ul>
-                                    <p>思想内涵：</p>
-                                    <ul>
-                                        <li>表达了对生命短暂、美好易逝的感慨</li>
-                                        <li>反映了林黛玉的孤独、敏感和对命运的无奈</li>
-                                        <li>体现了对封建礼教的反抗和对自由的向往</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生分析经典名著中人物形象特点的能力。材料中薛宝钗的话的深层含义是在管事上没有人能比得过贾母，而王熙凤仅次于贾母。据此可知，这反映了薛宝钗善于逢迎、圆滑世故的性格。薛宝钗能够巧妙地处理复杂的人际关系，对待不同的人采取不同的策略。她在贾母面前表现得孝顺恭敬，对待贾宝玉既关心又保持适当的距离，对下人则宽容而有威严。比如薛宝钗在金钏跳井事件后，但极力劝慰王夫人，并提出用自己的新衣为金钏装殓。这一行为不仅体现了她的慷慨，也显示了她善于逢迎、深谙人情世故的形象。
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2023年普通高等学校招生全国统一考试（天津卷）</h2>
+                <p class="paper-info">语文 2023年6月</p>
+            </div>
             
-            <!-- 高考考点 -->
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">23．《红楼梦》中出现了诸多人物，其中有些人物的话，可以给人带来愉悦的感受，请举出1个这样的人物，并结合情节说明。</div>
                     
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>“金玉良缘”“木石前盟”含义</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2008年</p>
-                                    <p><span class="label">试卷：</span>江苏卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>5分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>请说说“金玉良缘”“木石前盟”的含义。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>“金玉良缘”指薛宝钗有金锁，贾宝玉有宝玉，两人应结成姻缘。</p>
-                                    <p>“木石前盟”指林黛玉的前世是绛珠仙草，贾宝玉的前世是女娲炼石补天余下的石头化成的神瑛侍者，两者有恩有义，今世应结成姻缘。</p>
-                                </div>
-                            </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+示例：王熙凤说话八面玲珑，十分讨巧。比如，初见林黛玉时，她说黛玉气派十足，像贾母嫡亲的孙女，就同时奉承了贾母、黛玉、"三春"，令在场诸人都十分愉悦。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>诗社别号对应</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2025年</p>
-                                    <p><span class="label">试卷：</span>上海卷</p>
-                                    <p><span class="label">题型：</span>选择题</p>
-                                    <p><span class="label">分值：</span>2分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>《红楼梦》中大观园里曾两次结诗社，下列人物与其诗社的别号对应不正确的一项是（ ）</p>
-                                    <p>A. 贾宝玉——护花使者</p>
-                                    <p>B. 林黛玉——潇湘妃子</p>
-                                    <p>C. 史湘云——枕霞旧友</p>
-                                    <p>D. 贾探春——蕉下客</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>答案：A</p>
-                                    <p>解析：贾宝玉的别号是“怡红公子”，而非“护花使者”。</p>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生把握文章情节、内容的能力。试题要求分析说明一些人物的讲话可以给人带来愉悦的感受，也就是说其说的话既符合人物的身份，也正好呼应对方的心里所想，因而让人感受到愉悦。比如，在"林黛玉进贾府"一节中，王熙凤初见林黛玉时说的"天下真有这样标致的人物，我今儿才算见了！况且这通身的气派，竟不像老祖宗的外孙女儿，竟是个嫡亲的孙女，怨不得老祖宗天天口头心头一时不忘。"本来，黛玉只是贾母的外孙女，按照中国古代社会的差序格局来划分亲疏，并没有孙女亲。而凤姐"竟是个嫡亲的孙女"这话就有意抬高黛玉身价，说成是贾母亲孙女，还真诚地夸黛玉是"标致的人物""通身的气派"，则也暗指贾母嫡亲的孙女都是有这"通身的气派"的，这也让在场贾母的亲孙女"三春"听来非常亲切舒适。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>抄检大观园分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2025年</p>
-                                    <p><span class="label">试卷：</span>北京卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>10分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>从抄检大观园分析探春“百足之虫”演讲的悲剧预见性。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>探春在抄检大观园时发表了“百足之虫，死而不僵”的演讲，她预见了贾府虽然表面繁荣，但内部已经腐朽，必然走向衰败。</p>
-                                    <p>具体分析：</p>
-                                    <ul>
-                                        <li>探春指出贾府内部的矛盾和倾轧</li>
-                                        <li>她认识到家族制度的不合理性</li>
-                                        <li>她预见到贾府的衰败是不可避免的</li>
-                                        <li>她的演讲反映了对封建家族制度的批判</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2022年普通高等学校招生全国统一考试（天津卷）</h2>
+                <p class="paper-info">语文 2022年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">以下三幅图均取材于古典文学名著《红楼梦》，请从中选择一幅你喜欢的，指出其所涉及的人物和相关情节，并说明喜欢的理由。要求100字左右。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+①宝黛共读：宝玉自进入大观园后更恶读八股，于是僮儿焙茗给宝玉弄来禁书《西厢记》，宝玉欣喜若狂，他和黛玉一起在沁芳桥畔幽避之处偷读《西厢记》，并借西厢之恋，吐露心中之情。喜欢的理由：场景唯美，宝黛两人从此更加心意相通。
+
+②宝钗扑蝶：宝钗到潇湘馆想找黛玉玩，看到宝玉先进去了，为避嫌就往回走。看到两只玉蝴蝶非常可爱，就追上去想捉住玩耍，于是拿着团扇蹑手蹑脚地追逐蝴蝶。喜欢的理由：薛宝钗在滴翠亭附近赏春扑蝶的场景，表现了宝钗活泼的性格。
+
+③刘姥姥初入荣国府：刘姥姥因家计艰难，带着外孙板儿来贾府攀亲。来到贾府门前，刘姥姥蹭到角门前，称呼守门人为"太爷"，极力讨好，最后一位老者善意地告诉她周瑞的住所。喜欢的理由：写出了封建社会等级差别巨大以及刘姥姥的世故和精明。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>人物形象分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2020年</p>
-                                    <p><span class="label">试卷：</span>北京卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>8分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>请从《红楼梦》中选择一个既可悲又可叹的人物，简述这个人物形象。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>示例：晴雯</p>
-                                    <p>可悲之处：</p>
-                                    <ul>
-                                        <li>美丽聪慧，却被诬陷为狐狸精</li>
-                                        <li>被王夫人撵出贾府，最终病逝</li>
-                                        <li>死后宝玉为她写《芙蓉女儿诔》</li>
-                                    </ul>
-                                    <p>可叹之处：</p>
-                                    <ul>
-                                        <li>性格刚烈，不向命运低头</li>
-                                        <li>心灵手巧，病补雀金裘</li>
-                                        <li>对宝玉一片真心</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对经典名著基本内容、人物形象的整体把握能力。第一幅图是宝黛共读西厢记，在《红楼梦》第二十三回，相关情节是：那一日正当三月中浣，早饭后，宝玉携了一套《会真记》，走到沁芳闸桥边桃花底下一块石上坐着，展开《会真记》，从头细玩……只听背后有人说道："你在这里作什么？"宝玉一回头，却是林黛玉来了……第二幅图是宝钗扑蝶，在《红楼梦》第第二十七回，相关情节是：宝钗逶迤往潇湘馆来。忽然抬头见宝玉进去了，宝钗便站住低头想了想……忽见前面一双玉色蝴蝶，大如团扇，一上一下迎风翩跹，十分有趣。宝钗意欲扑了来玩耍……第三幅是刘姥姥初入荣国府，在《红楼梦》第六回，相关情节是：次日天未明，刘姥姥带着才五六岁的板儿进城来，找至宁荣街。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>情节作用分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2024年</p>
-                                    <p><span class="label">试卷：</span>全国卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>6分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》中“刘姥姥进大观园”情节的作用。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>情节作用：</p>
-                                    <ul>
-                                        <li>通过刘姥姥的视角，展现大观园的豪华和贾府的奢侈</li>
-                                        <li>为后续情节埋下伏笔，刘姥姥后来救了巧姐</li>
-                                        <li>对比贾府的奢侈与平民的艰辛</li>
-                                        <li>增添小说的喜剧色彩</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2022年普通高等学校招生全国统一考试（北京卷）</h2>
+                <p class="paper-info">语文 2022年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">微写作</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">根据要求，回答问题。</div>
+                    <div class="question-text">
+《红楼梦》甲戌本第一回开头，作者自道书名说：（空空道人）因空见色，由色生情，传情入色，自色悟空，遂易名为情僧，改《石头记》为《情僧录》。至吴玉峰题曰《红楼梦》。东鲁孔梅溪则题曰《风月宝鉴》。后因曹雪芹于悼红轩中披阅十载，增删五次，纂成目录，分出章回，则题曰《金陵十二钗》，并题一绝云："满纸荒唐言，一把辛酸泪。都云作者痴，谁解其中味。"
+                    </div>
+                    
+                    <div class="question-title" style="margin-top: 15px;">(1)除了《红楼梦》外，这里还提到了小说另外四个书名。请从中任选三个，解释这些书名和作品内容有何关联。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+以《石头记》为名，是因为全书写了石头记录的自己红尘历劫的故事。
+
+以《情僧录》为名，是由于书中人物因情而参透世相，有助人解脱苦恼之意。
+
+以《风月宝鉴》为名，因其是小说中出现的道具，有规劝人去淫向善之意。
+
+以《金陵十二钗》为名，因"十二钗"是小说主要人物，凸显"为闺阁立传"之意。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>人物形象分析</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2023年</p>
-                                    <p><span class="label">试卷：</span>全国卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>8分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>分析《红楼梦》中王熙凤的人物形象。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>王熙凤是《红楼梦》中最具鲜明个性的人物之一，她的形象具有多面性：</p>
-                                    <ul>
-                                        <li>精明能干：作为贾府的管家，她管理着庞大的家族事务，处理得井井有条</li>
-                                        <li>心狠手辣：为了达到目的，她不择手段，如害死尤二姐</li>
-                                        <li>八面玲珑：她善于交际，能说会道，深得贾母的喜爱</li>
-                                        <li>贪婪自私：她利用职权谋取私利，放高利贷</li>
-                                    </ul>
-                                    <p>王熙凤的形象反映了封建社会中女性的生存智慧和悲剧命运。</p>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="question-title" style="margin-top: 15px;">(2)小说第五回中，贾宝玉神游太虚幻境时听到的仙乐套曲就叫《红楼梦》。今天的通行本也多以《红楼梦》为书名。结合作品内容，谈谈《红楼梦》作为书名的合理性。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+①"红楼"既可以象征富贵官宦之家，又可以象征闺阁。
+
+②"梦"象征了作家人生如梦的幻灭感。
+
+③书名中的温柔富贵与梦幻泡影，是对全书贵族家庭之衰亡与红颜薄命之悲剧的整体概括。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>主题思想理解</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2022年</p>
-                                    <p><span class="label">试卷：</span>北京卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>10分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>结合《红楼梦》的具体内容，分析其主题思想。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>《红楼梦》的主题思想丰富而深刻，主要包括：</p>
-                                    <ul>
-                                        <li>爱情悲剧：宝黛爱情的悲剧，反映了封建礼教对人性的压抑</li>
-                                        <li>家族衰败：贾府的由盛转衰，象征着封建社会的必然灭亡</li>
-                                        <li>女性命运：金陵十二钗的悲剧命运，反映了封建社会对女性的压迫</li>
-                                        <li>人生空幻：繁华落尽的虚无感，表达了对人生意义的思考</li>
-                                    </ul>
-                                    <p>这些主题思想相互交织，构成了《红楼梦》的深层内涵。</p>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生把握经典名著基本内容、情节的能力。题目要求分析《石头记》《情僧录》《风月宝鉴》《金陵十二钗》这些书名与作品内容的关联。《石头记》：这部小说在前几个章回里详细叙述了此书由来，有一块被女娲补天弃而未用的石头，搁置在青埂峰下。它因修炼之后已有灵性，能口吐人言，后又遇见一僧一道，求他们带它去红尘中经历了一番。红尘梦尽，这块石头回到青埂峰，石身记满它下凡经历后的种种事情。空空道人将这石头上记述的故事抄了下来，因此才有了这部小说。《情僧录》：红楼梦开篇空空道人说"因空见色，由色生情，传情如色，自色入空"，遂易名为《情僧录》。贾宝玉本是最多情、博情之人，但在经历了一系列家庭变故，以及黛玉香消玉殒之后，他看透了世间种种，最后出家做了和尚。《风月宝鉴》：风月宝鉴，是古典名著《红楼梦》中的一面镜子，出自第十二回。《金陵十二钗》：金陵十二钗是中国古典小说《红楼梦》正册中的十二位女子，分别是：林黛玉、薛宝钗、贾元春、贾探春、史湘云、妙玉、贾迎春、贾惜春、王熙凤、贾巧姐、李纨、秦可卿。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>文化常识</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2021年</p>
-                                    <p><span class="label">试卷：</span>上海卷</p>
-                                    <p><span class="label">题型：</span>选择题</p>
-                                    <p><span class="label">分值：</span>2分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>下列关于《红楼梦》的文化常识，表述正确的一项是（ ）</p>
-                                    <p>A. 贾府的最高权威是贾政</p>
-                                    <p>B. 林黛玉的别号是“蘅芜君”</p>
-                                    <p>C. 大观园是为了元春省亲而建造的</p>
-                                    <p>D. 贾宝玉最终考取了功名</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>答案：C</p>
-                                    <p>解析：A项，贾府的最高权威是贾母；B项，林黛玉的别号是“潇湘妃子”，“蘅芜君”是薛宝钗的别号；D项，贾宝玉最终出家为僧，没有考取功名。</p>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2022年普通高等学校招生全国统一考试（全国甲卷）</h2>
+                <p class="paper-info">语文 2022年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">写作</h3>
+                
+                <div class="question-block">
+                    <div class="question-text">
+阅读下面的材料，根据要求写作。<br><br>
+《红楼梦》写到"大观园试才题对额"时有一个情节，为元妃（贾元春）省亲修建的大观园竣工后，众人给园中桥上亭子的匾额题名。有人主张从欧阳修《醉翁亭记》"有亭翼然"一句中，取"翼然"二字；贾政认为"此亭压水而成"，题名"还须偏于水"，主张从"泻出于两峰之间"中拈出一个"泻"字，有人即附和题为"泻玉"；贾宝玉则觉得用"沁芳"更为新雅，贾政点头默许。"沁芳"二字，点出了花木映水的佳境，不落俗套；也契合元妃省亲之事，蕴藉含蓄，思虑周全。<br><br>
+以上材料中，众人给匾额题名，或直接移用，或借鉴化用，或根据情境独创，产生了不同的艺术效果。这个现象也能在更广泛的领域给人以启示，引发深入思考。请你结合自己的学习和生活经验，写一篇文章。<br><br>
+要求：选准角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【例文】在传承中锐意创新</div>
+                        <div class="answer-content">
+在《红楼梦》"大观园试才题对额"的情节中，众人给匾额题名有着不同的做法。有人直接移用欧阳修《醉翁亭记》中"翼然"二字；有人借鉴化用"泻出于两峰之间"中的"泻"字，并题名为"泻玉"；也有人根据情境独创"沁芳"二字。三种题名皆有不同艺术效果，"翼然""泻玉""沁芳"，对优秀传统文化或"直接移用"，或"借鉴化用"，或"根据情境独创"，即创造性地传承。
+
+如果说中华文化是一座大厦，那么"移用"与"化用"的文化就是水泥，是大厦成型的基础，而"独创"的文化则是钢筋，是使大厦永葆活力、处于不倒之境的关键。时代发展如江河奔涌向前，我们既要有"移用""化用"这类简单直接的文化传承，也要有"独创"这类创造性的传承。在传承中锐意创新，方能稳步前行，方能跟上时代的步伐。
+
+文化要发展，传承是必经之路。"移用"为基，"化用"为翼，中华文化固若金汤。文化是民族之基础，国家之根本。假如一个国家缺乏文化的传承，那么民族精神与个体灵魂便会无所依托，便会逐渐走向虚无。正是因为走着文化传承之路，我们才能在《诗经》中感受先秦百姓的生活，才能在《离骚》中体会屈原的爱国情怀，才能在《史记》中了解上至传说中的黄帝时代，下至汉武帝太初四年间共3000多年的历史……若无传承，文化大厦便不复存在。
+
+文化要发展，创新是必备技能。"独创"为魂，中华文化历久弥新。传承是文化的延续，创新是时代的呼唤。上海戏剧学院学生边靖婷，与同学一起通过线上平台向大家展示宣传传统京剧戏腔，让戏腔走出剧院，走上网络，为更多人所了解；故宫，不止步于传统的展示，与现代科技互联网深度融合，积极展现自身的文化魅力。
+
+在传承中锐意创新，不限步于文化领域。在中医药领域，疫情期间，无数医者传承中医药精华，锐意创新，使得中药在抗击疫情中发挥了重要作用；在航天领域，从"神舟"一号到十四号，从"嫦娥"奔月到"天问"探火，从"北斗"造福人类到空间站开门纳客，如此成就，与一代代航空人"移用""化用""独创"技术密不可分……
+
+没有传承，再新的"独创"也不过是无源之水；没有"独创"，再好的传承也不过是一潭死水，让我们在学习中踏实传承，在传承中锐意创新，为社会主义现代化建设积蓄力量，为实现中国梦奋力前行。
                         </div>
-                        
-                        <div class="exam-item">
-                            <div class="exam-item-header">
-                                <h4>情节细节理解</h4>
-                                <span class="expand-icon">▼</span>
-                            </div>
-                            <div class="exam-item-content">
-                                <div class="exam-info">
-                                    <p><span class="label">考试年份：</span>2020年</p>
-                                    <p><span class="label">试卷：</span>江苏卷</p>
-                                    <p><span class="label">题型：</span>简答题</p>
-                                    <p><span class="label">分值：</span>6分</p>
-                                </div>
-                                <div class="question">
-                                    <h5>题目：</h5>
-                                    <p>简述《红楼梦》中“宝玉挨打”的原因和影响。</p>
-                                </div>
-                                <div class="answer">
-                                    <h5>参考答案：</h5>
-                                    <p>原因：</p>
-                                    <ul>
-                                        <li>宝玉与蒋玉菡交往，得罪了忠顺王府</li>
-                                        <li>贾环诬告宝玉强奸金钏儿，导致金钏儿投井自杀</li>
-                                    </ul>
-                                    <p>影响：</p>
-                                    <ul>
-                                        <li>众人探视宝玉，表现了不同人物对宝玉的态度</li>
-                                        <li>黛玉探伤，表达了对宝玉的深情</li>
-                                        <li>宝玉更加坚定了反抗封建礼教的决心</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生的写作能力。审题：本题为记叙性材料作文题。材料的核心事件是给大观园的亭子匾额题名，"翼然""泻玉""沁芳"三个题名的由来，各有其法，各呈其妙。"翼然"是直接移用欧阳修《醉翁亭记》，"泻玉"是借鉴化用经典名句，而"沁芳"则是根据亭子周围的环境氛围独创所得，既合"境"又契"情"，情境俱妙。材料并没有对三个名字进行褒贬。考生审题立意要把思考的重心放在三个亭子的的命名之法上，即"直接移用""借鉴化用"和"根据情境独创"。给匾额题名的例子正好说明中国传统文化的博大精深和鲜活灵动。通过不同的艺术手段可以获得不同的艺术效果，充分体现了中国优秀传统文化的魅力。中华文化之所以灿若星河，源远流长，一个重要原因就是多变的艺术手法。"移用""化用"和"创造"，既是相对独立的关系，也呈现出艺术方法上的"低级""中级"到"高级"的进阶层级，当然，这三者之间更是一个密不可分的整体。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2021年普通高等学校招生全国统一考试（天津卷）</h2>
+                <p class="paper-info">语文 2021年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">校文学社拟从《论语》《三国演义》《红楼梦》中选取一个场景拍摄视频短剧，假如你是导演，会选取哪部书中的哪个经典场景？请说明理由。要求100字左右。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+场景：林黛玉进贾府<br>
+原因：黛玉进贾府，是一部宏篇巨制红楼梦的开端，随着黛玉的进入，贾府的背景，人物一一陈现在我们面前；这也是黛玉下凡还泪，其美丽的悲剧一生之开端；通过对黛玉进府过程的描写，贾府繁紊礼节，奢侈排场的弊端一览无余。同时也是黛玉与宝玉的第一次相会。
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对经典名著基本内容、人物形象、情节等的整体把握能力。作为导演，从三部经典作品中选取哪个场景拍摄，要看对这部作品的整体把握能力，如果没有对作品的全面把握和深层理解，是选不好这个场景的。换句话说，这个场景要么能够体现人物的典型性格，展现人物的精神品质，要么在整部作品中的地位举足轻重，对主题起到揭示作用，或对情节的展现或转折起到关键性的作用。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2021年普通高等学校招生全国统一考试（北京卷）</h2>
+                <p class="paper-info">语文 2021年6月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">微写作</h3>
+                
+                <div class="question-block">
+                    <div class="question-text">
+根据要求，回答问题。<br><br>
+《红楼梦》第十三回，秦可卿去世前向王熙凤托梦，说道：若目今以为荣华不绝，不思后日，终非长策。眼见不日又有一件非常喜事，真是烈火烹油、鲜花着锦之盛。要知道，也不过是瞬息的繁华，一时的欢乐，万不可忘了那"盛筵必散"的俗语。……我与婶子好了一场，临别赠你两句话，须要记着：三春去后诸芳尽，各自须寻各自门。
+                    </div>
+                    
+                    <div class="question-title" style="margin-top: 15px;">(1)这里说的"非常喜事"在小说中指什么？</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+元妃省亲（贾元春才选凤藻宫）
+                        </div>
+                    </div>
+                    
+                    <div class="question-title" style="margin-top: 15px;">(2)画线的部分与小说后续情节有何关系？请结合原著，举例说明。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+是小说后续情节发展的暗示，暗示了青春少女的红颜薄命以及封建家族走向崩溃的悲剧。例如小说写林黛玉泪尽而亡、贾府最后被抄家等。
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对经典名著基本内容的把握能力。这段话出自《红楼梦》第十三回"秦可卿香消玉殒，王熙凤大权在握"，这是秦可卿临终时托梦给王熙凤时所说的话。"非常喜事"是指贾元春晋封为妃，皇帝恩准元春省亲。"三春去后诸芳尽，各自须寻各自门"，"三春"有人认为指贾家的三个女儿，迎春嫁的不如意，后被折磨致死，探春远嫁，惜春出家，这三春离开贾府，贾府已经没落不堪了，再加上唯一显赫的元春病逝，贾府更是彻底落败。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2020年普通高等学校招生全国统一考试（天津卷）</h2>
+                <p class="paper-info">语文 2020年7月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-text">
+在某校读书交流活动中，有同学说"我就读不进《红楼梦》"，有同学说"我就不爱读《三国演义》"，还有同学说"《论语》读起来才没劲呢"。请针对此现象，任选上述三本书中的一本，结合小说情节或《论语》名句，谈谈如何"走进经典"。要求100字左右。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+《红楼梦》中"滴翠亭杨妃戏彩蝶"，写出了宝钗的青春之美。大如团扇的一双蝴蝶，引得宝钗取出扇子，向草地下来扑。宝钗被蝴蝶引得蹑手蹑脚，香汗淋漓，娇喘细细。这个情节里，宝钗不再是那个稳重识大体的宝钗，而是呈现出女孩的青春之美。经典里的艺术形象散发着恒久的艺术芬芳，值得我们去探寻，去汲取其中的营养。
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生语言表达简明、连贯、得体、准确、鲜明、生动的能力。解答此类试题，首先要审清楚题干的要求，如本题"针对此现象，任选上述三本书中的一本，结合小说情节或《论语》名句，谈谈如何'走进经典'"。首先分析名著阅读存在的现象，如"读不进""不爱读""读起来没劲"，之所以会如此，与书籍的特点有关，如《红楼梦》《三国演义》，这两本大部头作品，情节复杂，人物众多，人物性格各异。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2020年普通高等学校招生全国统一考试（江苏卷）</h2>
+                <p class="paper-info">语文 2020年7月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">（1）《红楼梦》第五十回"芦雪庵争联即景诗，暖香坞雅制春灯谜"中，众人联句，起句为王熙凤所作，她说，"你们别笑话我，我只有一句粗话"，"就是'一夜北风紧'"。请结合这句诗简析王熙凤的形象。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+诗句浅白，表明其学识浅薄；诗句能领起全篇，表明其聪明颖悟，有一定领导才能；诗句意境肃杀，表明其心怀忧惧。
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查对人物形象的概括分析能力。赏析人物形象题的答题技巧：从掌握人物描写的方法及作用入手，赏析人物形象，人物描写的方法有外貌、语言、动作、神态、细节等。从分析人物活动的环境入手，探究人物命运与思想性格形成的原因。从分析情节入手，把握人物的性格特征。情节是人物性格的历史。题干为：《红楼梦》第五十回中，众人联句，起句为王熙凤所作，她说，"你们别笑话我，我只有一句粗话"，"就是'一夜北风紧'"。请结合这句诗简析王熙凤的形象。从诗句本身而言：浅白通俗易懂，可见王熙凤文化素养知识水平浅陋；诗句中"夜""北风""紧"等词给人肃杀冷寂的压抑感觉，表明王熙凤心怀忧惧压力满满。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2020年普通高等学校招生全国统一考试（北京卷）</h2>
+                <p class="paper-info">语文 2020年7月</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>理型语文（微信公众号）</p>
+                <p><strong>原文链接：</strong><a href="https://mp.weixin.qq.com/s?__biz=MzA4NjU5OTkxMg==&mid=2652771752&idx=1&sn=d48246da8d4cfef6f55fb30397cb4f0e" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">语言文字运用</h3>
+                
+                <div class="question-block">
+                    <div class="question-text">
+《红楼梦》第五回中晴雯的判词是：<br>
+霁月难逢，彩云易散。心比天高，身为下贱。风流灵巧招人怨。寿夭多因毁谤生，多情公子空牵念。<br><br>
+请从判词的画线部分选择三处，各举出原著中的一个具体情节加以印证。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+①心比天高：晴雯撕扇/晴雯笑骂秋纹。<br><br>
+②灵巧：晴雯病补雀金裘。<br><br>
+③毁谤生：王善保家的毁谤晴雯，王夫人下令抄检大观园。<br><br>
+④多情公子空牵念：晴雯死后宝玉写《芙蓉女儿诔》。
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查名著阅读能力。题目考查的是晴雯的判词，需要考生对应三处画线句举出相应的例子。比如"心比天高"，可从"晴雯撕扇"等情节中体现。端午佳节间，宝玉因金钏儿之事，心情很糟糕。恰巧晴雯给宝玉换衣时失手把他扇子跌折，便训斥了她几句，晴雯的自尊心受到伤害，还击了一通。最后，宝玉一定要回了太太去，至袭人一干丫鬟跪下求情才罢。而宝玉赴宴回来，仍和晴雯有说有笑。听说晴雯喜欢听撕扇子的声音，就任凭她将一大堆名扇痛痛快快撕尽了。"灵巧"可从"晴雯病补雀金裘"中体现。袭人因母病回家，晴雯夜里受寒伤风，身上烧得烫人，宝玉为舅舅庆寿，贾母给了宝玉一件俄罗斯的孔雀毛做的氅衣，宝玉穿时不小心烧了个洞，麝月忙悄悄拿出来叫人织补，谁知道东西太名贵，没有裁缝敢揽活。晴雯心灵手巧，重病中连夜补好。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script>
-        // 页签切换功能
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                // 移除所有页签的active类
-                document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active'));
-                // 添加当前页签的active类
-                this.classList.add('active');
-                
-                // 隐藏所有内容
-                document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
-                // 显示当前页签对应的内容
-                const tabId = this.getAttribute('data-tab');
-                document.getElementById(tabId).style.display = 'block';
-            });
-        });
-        
-        // 考点项展开/折叠功能
-        document.querySelectorAll('.exam-item-header').forEach(header => {
-            header.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('.expand-icon');
-                
-                if (content.classList.contains('show')) {
-                    content.classList.remove('show');
-                    icon.classList.remove('open');
-                } else {
-                    content.classList.add('show');
-                    icon.classList.add('open');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

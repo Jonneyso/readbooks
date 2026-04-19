@@ -3,129 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>四世同堂考试知识点</title>
+    <title>四世同堂高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #5d4037;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #5d4037;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #3e2723;
+        }
+
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #5d4037;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #5d4037;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .answer-label {
+            font-size: 0.95rem;
+            color: #5d4037;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .source-info p {
+            margin-bottom: 5px;
+        }
+
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .exam-paper {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>四世同堂考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>历年高考《四世同堂》经典试题</h1>
+            <p class="subtitle">来源：高考真题分类汇编</p>
         </header>
+
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>老舍京味语言特色</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《四世同堂》中老舍"京味"语言的特点。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对老舍创作语言特色的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>京味语言特点：</p><ul><li>大量使用北京方言俗语</li><li>语言幽默生动，富有生活气息</li><li>人物对话符合身份性格</li><li>对北京风土人情的细腻描写</li></ul></div>
-                            </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《四世同堂》复习题</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>最新《四世同堂》(老舍)复习题及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0807/6205015053011212.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《四世同堂》分为三部，下列不属于这三部的是（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C. 《困兽》
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>祁瑞宣人物形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析祁瑞宣的人物形象及其精神困惑。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对祁瑞宣这一核心人物的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>人物形象：</p><ul><li>有爱国心，关心国家命运</li><li>受传统孝道束缚，责任感强</li><li>在忠与孝之间痛苦挣扎</li><li>最终在钱默吟影响下觉醒</li></ul><p>精神困惑：</p><ul><li>四世同堂的家庭责任</li><li>传统与新时代的冲突</li><li>个人与民族大义的抉择</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《四世同堂》三部曲分别是《惶惑》《偷生》《饥荒》，没有《困兽》，所以选C。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>胡同文化书写</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《四世同堂》中胡同文化书写的意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品文化内涵的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>胡同文化书写意义：</p><ul><li>小羊圈胡同是北平社会的缩影</li><li>通过胡同展现北平市民的生存状态</li><li>胡同的封闭性象征传统社会的困境</li><li>抗战打破胡同的平静生活</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《四世同堂》的主要人物是（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C. 祁瑞宣
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            祁瑞宣是《四世同堂》中的主要人物，他是一个有着传统观念却又渴望新生活的知识分子。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>老舍小说的批判现实主义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《四世同堂》的批判现实主义特色。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品批判现实主义风格的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>批判现实主义特色：</p><ul><li>对汉奸丑态的深刻揭露</li><li>对普通市民劣根性的批判</li><li>对传统文化负面因素的反思</li><li>广阔的社会画面与细腻的心理描写相结合</li></ul></div>
-                            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《四世同堂》阅读测试题</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>最新《四世同堂》(老舍)阅读测试题及参考答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0729/5120223021012303.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《四世同堂》的故事背景设定在（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            A. 抗日战争时期的北平
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>汉奸形象塑造</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《四世同堂》中冠晓荷、大赤包等汉奸形象的意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对老舍汉奸形象塑造的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>汉奸形象意义：</p><ul><li>冠晓荷、大赤包是汉奸的典型代表</li><li>揭露为虎作伥者的丑恶嘴脸</li><li>批判人性的贪婪与无耻</li><li>警示后人勿忘国耻</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《四世同堂》以抗日战争时期的北平为背景，描绘了小羊圈胡同里祁家等几户人家在日本侵略者占领下的痛苦经历。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>抗战书写特色</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>简析《四世同堂》抗战书写的独特视角。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品抗战主题独特性的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>独特视角：</p><ul><li>从普通市民角度写抗战</li><li>不写战场而写沦陷区的生活</li><li>注重人物的精神转变过程</li><li>"平民史诗"的创作追求</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 《四世同堂》的作者是（ ）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            老舍
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            老舍是中国现代著名作家，原名舒庆春，字舍予，他的作品具有浓郁的北京味儿，以深刻的社会洞察和生动的人物刻画著称。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">填空题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 《四世同堂》的作者老舍原名______，字______。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            舒庆春；舍予
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            老舍是中国现代著名作家，原名舒庆春，字舍予。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《四世同堂》简答题练习</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《四世同堂》阅读理解及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0729/7026104014010141.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">简答题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 简述《四世同堂》的主题思想。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            《四世同堂》描写了抗日战争时期北平小羊圈胡同里几户人家的生活，反映了北平市民在日寇占领下的痛苦经历和反抗斗争，表现了中华民族不屈不挠的精神和爱国主义情怀。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《四世同堂》主题思想的理解。《四世同堂》是老舍最具代表性的抗战题材小说。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 简述祁瑞宣的性格特点。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            祁瑞宣是一个有着传统观念却又渴望新生活的知识分子。他重视家庭责任，又有着民族大义。在民族危亡关头，他最终走上了抗日道路。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对祁瑞宣人物形象的理解。祁瑞宣是《四世同堂》中塑造最成功的人物形象之一。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 《四世同堂》的艺术特色是什么？</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            ①结构宏大，以小见大，通过一个小胡同反映整个北平乃至中国的社会面貌；②人物众多而性格鲜明；③语言朴实自然，具有浓郁的北京地方色彩；④深刻揭露了日本侵略者的残暴和汉奸的丑恶嘴脸。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《四世同堂》艺术特色的理解。《四世同堂》是老舍后期创作的精品。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《四世同堂》节选阅读训练</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《四世同堂(节选)》阅读训练及参考答案</p>
+                <p><strong>原文链接：</strong><a href="https://hanchacha.com/yuedu/170557047592762.html" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">阅读理解</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 下列对本文相关内容的理解，不正确的一项是（3分）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            B项，"主要叙写的人物是祁天佑和长顺"理解错误，小说节选部分写的是群体形象。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 写"八一三"淞沪抗战给北平人带来的精神鼓舞，渲染了乐观的情感氛围，为后文情节的展开提供了背景。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            正确
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《四世同堂》情节的理解。"八一三"淞沪抗战是全书的重要背景。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

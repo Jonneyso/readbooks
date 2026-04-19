@@ -3,129 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>复活考试知识点</title>
+    <title>复活高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #1b5e20;
+        }
+        
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #2e7d32;
+        }
+        
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .answer-label {
+            font-size: 0.95rem;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+        
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .source-info p {
+            margin-bottom: 5px;
+        }
+        
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .option-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .option-list li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .exam-paper {
+                padding: 20px;
+            }
+            
+            .nav-menu {
+                gap: 10px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>复活考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>《复活》高考真题</h1>
+            <p class="subtitle">高中语文名著阅读复习资料</p>
         </header>
+        
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>聂赫留朵夫精神复活分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《复活》中聂赫留朵夫的精神转变过程。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对主人公精神复活过程的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>精神转变过程：</p><ul><li>诱骗阶段：年轻时纯洁善良，后来受社会腐蚀</li><li>堕落阶段：成为自私自利的贵族</li><li>忏悔阶段：看到玛丝洛娃后良心发现</li><li>复活阶段：通过帮助玛丝洛娃实现精神重生</li></ul></div>
-                            </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">高二语文下学期统编版期中复习</h2>
+                <p class="paper-info">高中语文期中复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>学科网</p>
+                <p><strong>原文链接：</strong><a href="https://www.zxxk.com/soft/57336654.html" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">现代文阅读</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 简述《复活》中聂赫留朵夫和玛丝洛娃的关系。</div>
+                    <div class="question-text">
+文本一：复活(节选)列夫·托尔斯泰(俄)(玛丝洛娃案件审讯后的第二天)等到聂赫留朵夫同陪审员们一块儿走进法庭，昨天的那种程序就开始了，又是大叫一声："升堂!"那三个衣领绣花的人又登上高台，又是肃静，陪审员们又在高背椅上坐下，又是那几个宪兵，又是那幅画像，又是那个司祭。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+聂赫留朵夫是玛丝洛娃的前主人的侄子，曾经引诱并抛弃了玛丝洛娃，导致她沦为妓女。后来聂赫留朵夫在法庭上再次见到玛丝洛娃，良心受到谴责，开始了他的赎罪之路。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>玛丝洛娃悲剧分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析玛丝洛娃的悲剧命运及其社会根源。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对玛丝洛娃悲剧命运的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>悲剧命运：</p><ul><li>被聂赫留朵夫诱骗后抛弃</li><li>沦落为妓女</li><li>被诬告入狱</li><li>流放西伯利亚</li></ul><p>社会根源：</p><ul><li>沙皇专制制度的黑暗</li><li>贵族阶级的道德堕落</li><li>社会对女性的压迫</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>托尔斯泰批判现实主义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《复活》的批判现实主义特色。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品批判现实主义特色的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>批判现实主义特色：</p><ul><li>对沙皇专制制度的深刻揭露</li><li>对教会虚伪的批判</li><li>对贵族道德堕落的谴责</li><li>对底层人民苦难的认识</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《复活》中主要人物关系的理解。聂赫留朵夫和玛丝洛娃的关系是小说的核心线索，贯穿整个故事。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>复活主题分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《复活》的主题思想。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说深层主题的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>主题思想：</p><ul><li>对沙皇专制制度的全面批判</li><li>对道德复苏和精神解放的探索</li><li>对人性善恶的思考</li><li>对博爱、宽恕的推崇</li></ul></div>
-                            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《复活》(节选)阅读理解</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>高考组卷网</p>
+                <p><strong>原文链接：</strong><a href="https://zujuan.ks5u.com/home.aspx?mod=home&ac=show&op=paper&pID=2644954" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">阅读题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">7. 下列对文本相关内容和艺术特色的分析鉴赏，不正确的一项是（ ）</div>
+                    
+                    <ol class="option-list">
+                        <li>A. 小说开头通过重复"又是"的句式，强调了法庭程序的机械和单调，暗示了司法系统的僵化。</li>
+                        <li>B. 聂赫留朵夫在法庭上的表现，反映了他内心的矛盾和挣扎，他既想赎罪，又害怕面对自己的过去。</li>
+                        <li>C. 玛丝洛娃的悲剧命运是由聂赫留朵夫的个人行为造成的，与当时的社会制度无关。</li>
+                        <li>D. "脸涨得通红""我没有罪""大声叫嚷""放声痛哭"，运用神态、语言、动作描写写出了玛丝洛娃听到判决后的反应。</li>
+                    </ol>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+C
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>小说结构艺术</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《复活》的结构艺术。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说叙事结构的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>结构艺术：</p><ul><li>两条线索交织：聂赫留朵夫的精神历程和玛丝洛娃的命运</li><li>广阔的社会画面：法院、监狱、教堂等场景</li><li>倒叙与插叙的运用</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            玛丝洛娃的悲剧命运不仅是由聂赫留朵夫的个人行为造成的，更是当时社会制度的产物。小说通过玛丝洛娃的遭遇，揭露了沙俄时期司法制度的腐败和社会的不公。所以C选项的分析不正确。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>"复活"内涵理解</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析"复活"的深刻内涵。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说标题含义的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>内涵：</p><ul><li>聂赫留朵夫的精神复活：通过忏悔和行动实现道德复苏</li><li>玛丝洛娃的精神复活：从麻木到重新燃起对生活的希望</li><li>社会复活的希望：对俄国社会改革的期待</li><li>人性复活的永恒主题</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">8. 对玛丝洛娃的定罪，可谓一波三折。请结合文本简要分析。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+玛丝洛娃的定罪过程一波三折：首先，她被指控毒死了商人；然后，陪审员们在讨论时，最初认为她无罪；但最后由于疏忽，在判决书上误写了她有罪；最终，她被判处流放西伯利亚。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《复活》中玛丝洛娃定罪过程的理解。这一过程反映了沙俄时期司法制度的腐败和不公，是小说批判社会现实的重要内容。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">9. 在《复活》中，玛丝洛娃是一个怎样的形象？请结合文本简要分析。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+玛丝洛娃是一个被侮辱、被损害的女性形象。她原本是一个纯洁善良的农家姑娘，被聂赫留朵夫引诱并抛弃后，沦为妓女，过上了悲惨的生活。但她并没有完全堕落，在聂赫留朵夫的帮助下，她逐渐恢复了对生活的希望，最终获得了精神上的复活。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《复活》中玛丝洛娃形象的理解。玛丝洛娃的形象是小说的核心，她的命运反映了当时社会对女性的压迫和不公，她的复活过程体现了小说的主题。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《复活》(列夫托尔斯泰)阅读理解+答案</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>原创力文档</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/0617/6140202144011144.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">二、填空题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 《复活》的作者列夫·托尔斯泰是______（国家）伟大的批判现实主义作家，他的另外两部代表作是《______》和《______》。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+俄国；《战争与和平》；《安娜·卡列尼娜》
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+列夫·托尔斯泰是俄国批判现实主义文学的杰出代表。《战争与和平》以 1812 年俄国卫国战争为中心，描写了俄国社会的重大历史事件和各个阶层的生活。《安娜·卡列尼娜》通过女主人公安娜的悲剧，揭露了俄国上层社会的腐败和道德沦丧。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《复活》(节选)阅读理解</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>高考组卷网</p>
+                <p><strong>原文链接：</strong><a href="https://zujuan.ks5u.com/home.aspx?mod=home&ac=show&op=paper&pID=2707854" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">阅读题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">6. 聂赫留朵夫是一个什么样的人？请结合文本简要分析。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+聂赫留朵夫是一个复杂的人物形象。他原本是一个贵族青年，曾经引诱并抛弃了玛丝洛娃，导致她沦为妓女。但他良心未泯，在法庭上再次见到玛丝洛娃后，开始了他的赎罪之路。他努力为玛丝洛娃争取公正的判决，甚至决定与她结婚，最终获得了精神上的复活。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《复活》中聂赫留朵夫形象的理解。聂赫留朵夫的形象是小说的另一个核心，他的赎罪过程体现了小说的主题，即通过道德自我完善实现精神复活。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">7. 末尾两个农民对话的情节在文中有什么作用？请结合文本简要概括。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+末尾两个农民对话的情节在文中起到了以下作用：1. 反映了当时农村的贫困和农民的苦难生活；2. 与聂赫留朵夫的贵族生活形成对比，突出了社会的不公；3. 为聂赫留朵夫的思想转变提供了社会背景，推动了情节的发展。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《复活》中情节作用的理解。这一情节通过农民的对话，展现了当时社会的底层生活，为小说的主题提供了更广阔的社会背景。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

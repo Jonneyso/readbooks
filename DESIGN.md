@@ -8,7 +8,8 @@
 
 - 展示名著的导读内容（作品简介、主要人物、主题思想、结构特点）
 - 提供高考知识点整理和考试要点梳理
-- 实现人物分类筛选功能
+- 实现人物分类筛选功能（部分名著）
+- 展示人物关系和故事发展（部分名著）
 - 确保网站响应式，适配不同设备
 - 提供统一的导航和页面层级结构
 
@@ -16,9 +17,10 @@
 
 - 名著导读（作品简介、主要人物、主题思想、结构特点）
 - 人物分类展示（部分名著包含人物故事线）
+- 人物详情展示（部分名著）
 - 高考知识点整理（按照高中月考、期中考、期末考、高考分类）
+- 人物关系可视化（部分名著）
 - 分类筛选功能
-- 响应式设计
 
 ## 2. 技术栈
 
@@ -27,6 +29,8 @@
 - HTML5：页面结构
 - CSS3：页面样式（Flexbox、Grid布局）
 - JavaScript：交互逻辑、动态渲染
+- SVG：人物关系图绘制
+- D3.js：人物关系图力导向布局
 
 ### 2.2 数据存储
 
@@ -44,7 +48,9 @@
 
 第二层：名著内容页
     ├── 名著导读
-    └── 高考知识点（部分名著独有）
+    ├── 高考知识点
+    ├── 人物故事线（部分名著）
+    └── 人物详情（部分名著）
 ```
 
 **层级导航规则：**
@@ -66,24 +72,29 @@
 | 页面 | 文件路径 | 说明 |
 |------|----------|------|
 | 水浒传导读 | `shuihu/index.html` | 作品简介、主要人物、主题思想、结构特点 |
+| 水浒传高考知识点 | `shuihu/exams.html` | 高中考试、高考考点整理 |
 | 水浒传人物故事线 | `shuihu/characters.html` | 人物分类筛选、搜索、列表展示 |
 | 水浒传人物详情 | `shuihu/character.html` | 人物肖像、信息卡片、故事时间轴 |
 | 水浒传人物聚散全景 | `shuihu/mindmap_v3.html` | 人物聚散关系思维导图 |
 | 红楼梦导读 | `hongloumeng/index.html` | 作品简介、主要人物、主题思想、结构特点 |
+| 红楼梦高考真题 | `hongloumeng/exams.html` | 高中考试、高考考点整理 |
 | 红楼梦人物故事线 | `hongloumeng/characters.html` | 人物分类筛选、搜索、列表展示 |
 | 红楼梦人物详情 | `hongloumeng/character.html` | 人物肖像、信息卡片、故事时间轴 |
 | 红楼梦人物关系图 | `hongloumeng/relationship.html` | 人物关系可视化 |
-| 红楼梦高考知识点 | `hongloumeng/exams.html` | 高中考试、高考考点整理 |
 | 西游记导读 | `xiyouji/index.html` | 作品简介、主要人物、主题思想、结构特点 |
+| 西游记高考知识点 | `xiyouji/exams.html` | 高中考试、高考考点整理 |
 | 西游记人物故事线 | `xiyouji/characters.html` | 人物分类筛选、搜索、列表展示 |
 | 西游记人物详情 | `xiyouji/character.html` | 人物肖像、信息卡片、故事时间轴 |
 | 三国演义导读 | `sanguo/index.html` | 作品简介、主要人物、主题思想、结构特点 |
+| 三国演义高考知识点 | `sanguo/exams.html` | 高中考试、高考考点整理 |
 | 三国演义人物故事线 | `sanguo/characters.html` | 人物分类筛选、搜索、列表展示 |
 | 三国演义人物详情 | `sanguo/character.html` | 人物肖像、信息卡片、故事时间轴 |
-| 论语导读 | `lunyu/index.html` | 作品简介、主要人物、主题思想、结构特点 |
+| 论语导读 | `lunyu/index.html` | 作品简介、主要人物、主题思想 |
 | 论语高考知识点 | `lunyu/exams.html` | 高中考试、高考考点整理 |
-| 儒林外史导读 | `rulinwaishi/index.html` | 作品简介、主要人物、主题思想、结构特点 |
-| 儒林外史高考知识点 | `rulinwaishi/exams.html` | 高中考试、高考考点整理 |
+| 雷雨导读 | `leiyu/index.html` | 作品简介、主要人物、主题思想 |
+| 雷雨高考知识点 | `leiyu/exams.html` | 高中考试、高考考点整理 |
+| 乡土中国导读 | `xiangtuzhongguo/index.html` | 作品简介、主要人物、主题思想 |
+| 乡土中国高考知识点 | `xiangtuzhongguo/exams.html` | 高中考试、高考考点整理 |
 
 **外国文学名著：**
 
@@ -115,8 +126,6 @@
 | 彷徨高考知识点 | `panghuang/exams.html` | 高中考试、高考考点整理 |
 | 平凡的世界导读 | `pingfan_de_shijie/index.html` | 作品简介、主要人物、主题思想 |
 | 平凡的世界高考知识点 | `pingfan_de_shijie/exams.html` | 高中考试、高考考点整理 |
-| 修养中国导读 | `xiuxiangzhongguo/index.html` | 作品简介、主要人物、主题思想 |
-| 修养中国高考知识点 | `xiuxiangzhongguo/exams.html` | 高中考试、高考考点整理 |
 
 ## 4. 功能模块设计
 
@@ -158,6 +167,12 @@
 - **分类**：高中月考、期中考、期末考、高考
 - **布局**：可折叠的详情列表
 
+### 4.6 关系图模块（部分名著）
+
+- **功能**：展示人物关系或思维导图
+- **实现**：SVG + D3.js力导向布局
+- **交互**：节点拖拽、缩放、点击查看详情
+
 ## 5. 文件结构
 
 ```
@@ -167,6 +182,7 @@ readbooks/
 │
 ├── shuihu/                         # 水浒传
 │   ├── index.html                  # 水浒传导读
+│   ├── exams.html                  # 水浒传高考知识点
 │   ├── characters.html             # 水浒传人物故事线
 │   ├── character.html              # 水浒传人物详情
 │   ├── mindmap_v3.html              # 水浒传人物聚散全景
@@ -176,20 +192,22 @@ readbooks/
 │
 ├── hongloumeng/                    # 红楼梦
 │   ├── index.html                  # 红楼梦导读
+│   ├── exams.html                  # 红楼梦高考真题
 │   ├── characters.html             # 红楼梦人物故事线
 │   ├── character.html              # 红楼梦人物详情
 │   ├── relationship.html           # 红楼梦人物关系图
-│   ├── exams.html                  # 红楼梦高考知识点
 │   └── hongloumeng_data.json        # 红楼梦人物数据
 │
 ├── xiyouji/                        # 西游记
 │   ├── index.html                  # 西游记导读
+│   ├── exams.html                  # 西游记高考知识点
 │   ├── characters.html             # 西游记人物故事线
 │   ├── character.html              # 西游记人物详情
 │   └── xiyouji_data.json           # 西游记人物数据
 │
 ├── sanguo/                         # 三国演义
 │   ├── index.html                  # 三国演义导读
+│   ├── exams.html                  # 三国演义高考知识点
 │   ├── characters.html             # 三国演义人物故事线
 │   ├── character.html              # 三国演义人物详情
 │   └── sanguo_data.json            # 三国演义人物数据
@@ -198,9 +216,13 @@ readbooks/
 │   ├── index.html                  # 论语导读
 │   └── exams.html                  # 论语高考知识点
 │
-├── rulinwaishi/                    # 儒林外史
-│   ├── index.html                  # 儒林外史导读
-│   └── exams.html                  # 儒林外史高考知识点
+├── leiyu/                          # 雷雨
+│   ├── index.html                  # 雷雨导读
+│   └── exams.html                  # 雷雨高考知识点
+│
+├── xiangtuzhongguo/                # 乡土中国
+│   ├── index.html                  # 乡土中国导读
+│   └── exams.html                  # 乡土中国高考知识点
 │
 ├── bali_shengmuyuan/               # 巴黎圣母院
 │   ├── index.html                  # 巴黎圣母院导读
@@ -217,6 +239,9 @@ readbooks/
 ├── dawen_kebofeiye/                # 大卫·科波菲尔
 │   ├── index.html                  # 大卫·科波菲尔导读
 │   └── exams.html                  # 大卫·科波菲尔高考知识点
+│
+├── david/                          # 大卫（仅高考知识点）
+│   └── exams.html                  # 大卫高考知识点
 │
 ├── fuhuo/                          # 复活
 │   ├── index.html                  # 复活导读
@@ -254,9 +279,9 @@ readbooks/
 │   ├── index.html                  # 平凡的世界导读
 │   └── exams.html                  # 平凡的世界高考知识点
 │
-├── xiuxiangzhongguo/               # 修养中国
-│   ├── index.html                  # 修养中国导读
-│   └── exams.html                  # 修养中国高考知识点
+├── sishi_tongtan/                  # 四世同堂
+│   ├── index.html                  # 四世同堂导读
+│   └── exams.html                  # 四世同堂高考知识点
 │
 ├── images/                         # 共享图片资源
 │   └── default.jpg                 # 默认头像
@@ -365,15 +390,16 @@ readbooks/
 
 项目已完成，包含以下名著：
 
-**中国古典文学名著：**
-- 《水浒传》：导读、人物故事线、人物详情、人物聚散全景
-- 《红楼梦》：导读、人物故事线、人物详情、人物关系图、高考知识点
-- 《西游记》：导读、人物故事线、人物详情
-- 《三国演义》：导读、人物故事线、人物详情
+**中国古典文学名著（7部）：**
+- 《水浒传》：导读、高考知识点、人物故事线、人物详情、人物聚散全景
+- 《红楼梦》：导读、高考真题、人物故事线、人物详情、人物关系图
+- 《西游记》：导读、高考知识点、人物故事线、人物详情
+- 《三国演义》：导读、高考知识点、人物故事线、人物详情
 - 《论语》：导读、高考知识点
-- 《儒林外史》：导读、高考知识点
+- 《雷雨》：导读、高考知识点
+- 《乡土中国》：导读、高考知识点
 
-**外国文学名著：**
+**外国文学名著（14部）：**
 - 《巴黎圣母院》：导读、高考知识点
 - 《变形记》：导读、高考知识点
 - 《茶馆》：导读、高考知识点
@@ -387,6 +413,6 @@ readbooks/
 - 《欧也妮·葛朗台》：导读、高考知识点
 - 《彷徨》：导读、高考知识点
 - 《平凡的世界》：导读、高考知识点
-- 《修养中国》：导读、高考知识点
+- 《四世同堂》：导读、高考知识点
 
 网站功能完整，布局统一美观，响应式设计适配不同屏幕尺寸。页面层级清晰，导航逻辑明确。

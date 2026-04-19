@@ -3,129 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欧也妮·葛朗台考试知识点</title>
+    <title>欧也妮·葛朗台高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #c41e3a;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #c41e3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #a01830;
+        }
+
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #c41e3a;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #c41e3a;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .answer-label {
+            font-size: 0.95rem;
+            color: #c41e3a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .source-info p {
+            margin-bottom: 5px;
+        }
+
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .exam-paper {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>欧也妮·葛朗台考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>历年高考《欧也妮·葛朗台》经典试题</h1>
+            <p class="subtitle">来源：高考真题分类汇编</p>
         </header>
+
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>葛朗台贪婪性格分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析葛朗台的贪婪性格及其表现。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对葛朗台这一守财奴形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>贪婪表现：</p><ul><li>对金钱的痴迷：看到金子眼睛就发亮</li><li>极度吝啬：住破旧房子，穿旧衣服</li><li>精于算计：每一个铜板都要计算</li><li>临死前还惦记金子：让女儿把金币拿回来</li></ul></div>
-                            </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2019年普通高等学校招生全国统一考试（江苏卷）</h2>
+                <p class="paper-info">语文 2019年6月</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>(2017-2019)3年语文高考真题分类解析 名著阅读</p>
+                <p><strong>原文链接：</strong><a href="https://www.sohu.com/a/334066332_590414" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">名著阅读</h3>
+
+                <div class="question-block">
+                    <div class="question-title">下列有关名著的说明，不正确的两项是（5分）（选择两项且全答对得5分，选择两项只答对一项得2分，其余情况得0分）</div>
+                    <div class="question-text">
+                        A．《三国演义》中，张飞在长板桥上睁圆环眼厉声大喝，吓退曹兵，然后迅速拆断桥梁，以阻追兵，可见张飞十分勇猛，又很有智谋。<br><br>
+                        B．《家》中，许倩如倡导女子剪发，带头剪掉自己的辫子，还以梅的遭遇来激发琴拒绝包办婚姻，鼓励琴做一个跟着时代走的新女性。<br><br>
+                        C．《狂人日记》中，狂人说将来的社会"容不得吃人的人"，最后喊出"救救孩子"，作者借此表达了对社会变革的强烈渴望。<br><br>
+                        D．《欧也妮·葛朗台》中，夏尔在父亲破产自杀后，不愿拖累心上人安奈特而写了分手信给她，这一良善之举让偷看信件的欧也妮发誓要永远爱他。<br><br>
+                        E．《老人与海》中，圣地亚哥经过生死搏斗最终将大马林鱼残骸拖回港口，有游客把它当成了鲨鱼骨，这一误会让小说结尾更意味深长。
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            AD
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>欧也妮悲剧分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析欧也妮的爱情悲剧。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对欧也妮这一人物悲剧命运的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>爱情悲剧：</p><ul><li>被查理抛弃：查理为了金钱远走他乡</li><li>父亲利用她的爱情：葛朗台利用女儿骗取更多财富</li><li>孤独一生：父亲死后她仍独居</li><li>金钱的受害者：在金钱社会中纯真爱情无法实现</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>巴尔扎克批判现实主义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《欧也妮·葛朗台》的批判现实主义特色。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品批判现实主义艺术特色的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>批判现实主义特色：</p><ul><li>对社会现实的深刻揭露</li><li>对金钱罪恶的批判</li><li>典型人物的塑造</li><li>细节描写的真实</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查识记和理解名著的能力。解答本题，平时一定要熟读名著，识记其中的人物和情节。对于大纲要求的篇目，有时间时就要反复读，只有熟到一定的程度，类似题目才能应对自如。<br><br>
+                            A项，"迅速拆断桥梁""有智谋"错误。如果不拆断桥，曹军害怕其中有埋伏不敢进兵。现在拆断了桥，曹军会料定张飞心虚，必定前来追赶。故A项错误。<br><br>
+                            D项，"这一良善之举让偷看信件的欧也妮发誓要永远爱他"表述错误。欧也妮发誓要永远爱夏尔的原因不止是这一点，还有信中夏尔表达的对欧也妮的好感和赞美。故D项错误。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>葛朗台形象典型意义</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析葛朗台形象的典型意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对葛朗台作为世界文学经典形象的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>典型意义：</p><ul><li>世界文学史上最著名的守财奴形象之一</li><li>集中体现了资产阶级的贪婪本性</li><li>金钱对人性的扭曲和异化</li><li>对19世纪法国社会金钱至上现象的深刻批判</li></ul></div>
-                            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">2018年普通高等学校招生全国统一考试（江苏卷）</h2>
+                <p class="paper-info">语文 2018年6月</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>(2017-2019)3年语文高考真题分类解析 名著阅读</p>
+                <p><strong>原文链接：</strong><a href="https://www.sohu.com/a/334066332_590414" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">名著阅读</h3>
+
+                <div class="question-block">
+                    <div class="question-title">下列对有关名著的说明，不正确的两项是（5分）</div>
+                    <div class="question-text">
+                        A．《三国演义》中，曹操攻陷徐州后，派遣张辽劝降陷入困境中的关羽，关羽提出了"卸甲"的三个条件，这一情节突出了关羽的忠义形象。<br><br>
+                        B．《茶馆》中，秦仲义说："只有那么办，国家才能富强！"他说的"那么办"是指通过收回房子、卖掉土地等途径，筹集资金来开办工厂。<br><br>
+                        C．《风波》中，七斤曾经在喝醉后骂有些遗老臭味的赵七爷是"贱胎"，并在革命后很快剪掉了辫子，这体现了他是一个具有新思想的农民。<br><br>
+                        D．《老人与海》中，老渔夫圣地亚哥奋力捕到的大马林鱼被鲨鱼给毁了，回到港口后，男孩遗憾地对他说，以后他们俩不能一起捕鱼了。<br><br>
+                        E．《欧也妮·葛朗台》中，葛朗台太太的性情极好，从不向丈夫要钱，她有着天使般的温柔，她的善良和忍让反衬了葛朗台的冷漠和贪婪。
+                    </div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            CD
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>金钱主题分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《欧也妮·葛朗台》中金钱的主题。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说核心主题的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>金钱主题：</p><ul><li>金钱是罪恶的根源：破坏家庭、毁灭爱情</li><li>金钱异化人性：人成为金钱的奴隶</li><li>批判拜金主义：揭示金钱至上的社会弊端</li><li>金钱是社会地位的象征</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查识记和理解名著的能力。<br><br>
+                            C项，"并在革命后很快剪掉了辫子"错误，七斤的辫子是在进城时被人剪掉了，不是因为革命。"贱胎"是七斤骂赵七爷的话，但这并不体现他具有新思想。<br><br>
+                            D项，男孩遗憾地对他说，以后他们俩不能一起捕鱼了。这与原文不符，男孩是想继续和他一起捕鱼的。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>艺术手法分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《欧也妮·葛朗台》的讽刺手法。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对作品讽刺艺术的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>讽刺手法：</p><ul><li>夸张与对比：通过葛朗台的极端吝啬讽刺拜金主义</li><li>细节描写：精准展现人物性格</li><li>通过人物言行自我暴露</li><li>喜中见悲的讽刺效果</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">高考名著阅读练习题</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《欧也妮葛朗台》阅读训练题</p>
+                <p><strong>原文链接：</strong><a href="https://www.doc88.com/p-0979082663643.html" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">简答题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1. 简述《欧也妮·葛朗台》中最让人难以忘记的一个情节。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            葛朗台临死前抓住镀金十字架的情节：葛朗台临终时，当神父把镀金的十字架送到他唇边亲吻时，他竟然用他早已失去知觉的手却想把十字架抓到手。这一情节深刻揭示了葛朗台贪婪成性的守财奴形象。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《欧也妮·葛朗台》经典情节的把握。葛朗台是个典型的守财奴，贪婪吝啬，临死前抓十字架的情节是全书最经典的情节之一。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 简述《欧也妮·葛朗台》中葛朗台的发家史。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            葛朗台最初是箍桶匠，后来利用各种机会涉足了酿酒业、银行和面粉生意等多个领域，通过不断地积累财富和精明的算计，成为了索漠城最富有的人之一。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对《欧也妮·葛朗台》基本情节的了解。葛朗台的发家史体现了他的精明和贪婪。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 举一个事例说明葛朗台贪婪的特点。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            葛朗台在临死前，当神父把镀金的十字架送到他唇边亲吻时，他竟然用他早已失去知觉的手却想把十字架抓到手。这一行为充分体现了他的贪婪本性。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对葛朗台性格特点的理解。贪婪是葛朗台最显著的性格特点。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">4. 请举例说明葛朗台吝啬的特点。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            葛朗台从不轻易给妻子和女儿零用钱，当女儿需要钱买梳子时，他总是找借口推脱。即使在妻子生病时，他也舍不得请医生来诊治。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对葛朗台性格特点的理解。吝啬是葛朗台的另一个显著特点。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">5. 请举例说明葛朗台狡猾的特点。</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            葛朗台在骗取女儿对母亲财产的继承权时，故意装聋作哑，用各种手段逼迫女儿放弃继承权，从而独占全部家产。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题考查学生对葛朗台性格特点的理解。狡猾是葛朗台性格的重要组成部分。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《欧也妮·葛朗台》选择题练习</h2>
+                <p class="paper-info">名著阅读复习资料</p>
+            </div>
+
+            <div class="source-info">
+                <p><strong>来源：</strong>《欧也妮葛朗台》(巴尔扎克)阅读测试题及答案</p>
+                <p><strong>原文链接：</strong><a href="https://m.book118.com/html/2025/1112/6012032000012012.shtm" target="_blank">点击访问原文</a></p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">选择题</h3>
+
+                <div class="question-block">
+                    <div class="question-title">1.《欧也妮·葛朗台》中的故事发生在哪个城市？（）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            C. 索漠城
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            小说《欧也妮·葛朗台》的故事背景设定在法国索漠城，这里是葛朗台一家生活的地方，故事围绕着索漠城的人物和社会环境展开。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">2. 葛朗台先生是从事什么行业发家致富的？（）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            D. 以上都是
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            葛朗台最初是箍桶匠，后来利用各种机会涉足了酿酒业、银行和面粉生意等多个领域，通过不断地积累财富和精明的算计，成为了索漠城最富有的人之一。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">3. 查理去印度之前，欧也妮把自己的什么送给了他？（）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            D. 以上都是
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            欧也妮深爱着查理，在查理去印度之前，她把自己的积蓄金币送给查理，还把母亲留给她的梳妆匣也给了查理，同时她还取下了自己的金项链送给查理。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">4. 葛朗台在临死前，做了一个什么令人惊讶的动作？（）</div>
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+                            抓镀金十字架
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            葛朗台临终时，当神父把镀金的十字架送到他唇边亲吻时，他竟然用他早已失去知觉的手却想把十字架抓到手，这一情节深刻揭示了葛朗台贪婪成性的守财奴形象。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>

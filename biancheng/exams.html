@@ -3,129 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>边城考试知识点</title>
+    <title>边城高考真题</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'SimSun', serif; background-color: #f8f0e3; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4='); color: #333; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding: 30px 0; border-bottom: 2px solid #c19a6b; }
-        h1 { font-size: 2.5rem; color: #8B4513; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 1.2rem; color: #666; }
-        .nav-menu { display: flex; justify-content: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { margin: 0 15px; }
-        .nav-link { display: block; padding: 10px 20px; background-color: #8B4513; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.3s ease; border: none; cursor: pointer; }
-        .nav-link:hover { background-color: #654321; }
-        .nav-link.active { background-color: #654321; }
-        @media (max-width: 768px) { .nav-menu { flex-wrap: wrap; align-items: center; } .nav-item { margin: 5px; } }
-        .content { background-color: rgba(255,255,255,0.9); border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #c19a6b; }
-        .exam-list { margin-bottom: 30px; }
-        .exam-section { margin-bottom: 40px; }
-        .exam-section h2 { font-size: 1.8rem; color: #8B4513; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #c19a6b; }
-        .exam-item { background-color: #f9f6f0; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #c19a6b; transition: all 0.3s ease; }
-        .exam-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .exam-item-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .exam-item-header h4 { font-size: 1.1rem; color: #8B4513; font-weight: bold; }
-        .expand-icon { font-size: 1.2rem; color: #8B4513; transition: transform 0.3s ease; }
-        .expand-icon.open { transform: rotate(180deg); }
-        .exam-item-content { margin-top: 15px; padding-top: 15px; border-top: 1px solid #c19a6b; display: none; }
-        .exam-item-content.show { display: block; }
-        .exam-info { margin-bottom: 15px; }
-        .exam-info p { margin-bottom: 5px; }
-        .exam-info .label { font-weight: bold; color: #8B4513; }
-        .question { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .question h5 { color: #8B4513; margin-bottom: 10px; }
-        .analysis { background-color: rgba(255,255,255,0.8); border-radius: 4px; padding: 15px; margin-bottom: 15px; border-left: 4px solid #c19a6b; }
-        .analysis h5 { color: #8B4513; margin-bottom: 10px; }
-        .answer { background-color: rgba(209, 182, 146, 0.1); border-radius: 4px; padding: 15px; margin-bottom: 10px; }
-        .answer h5 { color: #8B4513; margin-bottom: 10px; }
-        @media (max-width: 768px) { .content { padding: 20px; } .exam-item-header { flex-direction: column; align-items: flex-start; } .expand-icon { margin-top: 10px; align-self: flex-end; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 8px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: #1b5e20;
+        }
+        
+        .exam-paper {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .paper-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .paper-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .paper-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #2e7d32;
+        }
+        
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        
+        .question-title {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .answer-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .answer-label {
+            font-size: 0.95rem;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .answer-content {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .analysis-section {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 4px;
+            border-left: 3px solid #ffa000;
+        }
+        
+        .analysis-label {
+            font-size: 0.9rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .analysis-content {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .source-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .source-info p {
+            margin-bottom: 5px;
+        }
+        
+        .source-info a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .option-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .option-list li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .exam-paper {
+                padding: 20px;
+            }
+            
+            .nav-menu {
+                gap: 10px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>边城考试知识点</h1>
-            <p class="subtitle">上海高中月考、期中考、期末考、高考考点整理</p>
+            <h1>《边城》高考真题</h1>
+            <p class="subtitle">高中语文名著阅读复习资料</p>
         </header>
+        
         <nav class="nav-menu">
-            <div class="nav-item"><a href="javascript:history.back()" class="nav-link">返回上一页</a></div>
-            <div class="nav-item"><a href="#high-school" class="nav-link active" data-tab="high-school">高中考试</a></div>
-            <div class="nav-item"><a href="#college-entrance" class="nav-link" data-tab="college-entrance">高考</a></div>
+            <a href="../index.html" class="nav-link" target="_blank">返回主页</a>
         </nav>
-        <div class="content">
-            <div id="high-school" class="tab-content">
-                <div class="exam-section">
-                    <h2>高中考试考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>翠翠形象分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年12月</p><p><span class="label">学校：</span>上海复旦附中</p><p><span class="label">考试类型：</span>期末考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《边城》中翠翠的人物形象。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对翠翠这一人物形象的理解，她是沈从文笔下理想女性的代表。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>形象特点：</p><ul><li>天真善良：纯净如水，不谙世事</li><li>感情细腻：情窦初开，对傩送产生朦胧感情</li><li>坚强独立：撑渡船谋生，自尊自爱</li><li>憧憬美好：对爱情有向往和期待</li></ul><p>典型意义：体现作者对美好人性的追求。</p></div>
-                            </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">湖北武汉2025届高中毕业生四月调研考试</h2>
+                <p class="paper-info">高中语文调研试卷</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>腾讯新闻</p>
+                <p><strong>原文链接：</strong><a href="https://view.inews.qq.com/a/20250422A07YCC00" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">现代文阅读II</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">9. 以翠翠形象入题，要求阐述对“当代翠翠”形象的认识，并分析该形象的当代意义。</div>
+                    <div class="question-text">
+现代文阅读II的散文《边城翠翠》，从内容上紧密关联教材选择性必修下册第二单元沈从文的小说《边城》，而且在风土人情、人物品格上体现出当代的新风貌。
+                    </div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+“当代翠翠”是指具有传统美德同时又融入现代元素的女性形象。她们继承了翠翠的纯真、善良、质朴等传统美德，同时又具有现代女性的独立、自信、进取等特质。
+
+当代意义：
+1. 体现了传统文化与现代文明的融合，为当代女性提供了新的价值参照。
+2. 展示了湘西地区在现代社会中的发展变化，反映了时代的进步。
+3. 强调了人性美、人情美的重要性，在物质化的现代社会中具有重要的精神价值。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>边城环境描写作用</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年11月</p><p><span class="label">学校：</span>上海交大附中</p><p><span class="label">考试类型：</span>期中考试</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《边城》中环境描写的作用。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说环境描写的理解和赏析能力。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>环境描写作用：</p><ul><li>营造诗意氛围：湘西边城的山水美景</li><li>烘托人物性格：美好环境映衬淳朴民风</li><li>推动情节发展：端午赛龙舟等习俗贯穿全书</li><li>表达主题：展现"人性美"和"人情美"</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>端午习俗描写</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试时间：</span>2025年10月</p><p><span class="label">学校：</span>上海华师大二附中</p><p><span class="label">考试类型：</span>月考</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《边城》中端午习俗描写的意义。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对小说中传统习俗描写作用的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>端午描写意义：</p><ul><li>交代社会背景：展现湘西独特的风土人情</li><li>推动情节发展：翠翠与傩送在端午相遇</li><li>塑造人物形象：龙舟竞渡体现当地人的精神风貌</li><li>深化主题：展现和谐淳朴的人际关系</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            本题要求结合《边城》中的翠翠形象，分析“当代翠翠”的特点和意义。翠翠是沈从文笔下的经典形象，她纯真、善良、质朴，具有传统女性的美德。“当代翠翠”则是在传统基础上融入了现代元素的新形象，体现了时代的发展和社会的进步。分析时需要结合传统与现代的对比，以及这种形象在当代社会中的价值和意义。
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="college-entrance" class="tab-content" style="display: none;">
-                <div class="exam-section">
-                    <h2>高考考点</h2>
-                    <div class="exam-list">
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>边城"人性美"主题</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2024年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>分析题</p><p><span class="label">分值：</span>10分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《边城》中"人性美"的具体体现。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对《边城》核心主题"人性美"的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>人性美体现：</p><ul><li>翠翠：天真善良，对爱情的纯真追求</li><li>爷爷：忠厚朴实，对孙女无私的爱</li><li>傩送：正直善良，不贪财</li><li>顺顺：慷慨豪爽，公正无私</li><li>全村人：互帮互助，民风淳朴</li></ul><p>意义：对美好人性的向往和赞美。</p></div>
-                            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《边城》测试题</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>21世纪教育网</p>
+                <p><strong>原文链接：</strong><a href="https://mip.21cnjy.com/mulu/7/184322-1.html" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、简答题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">11. 试分析《边城》中翠翠这一人物形象。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+翠翠是《边城》中的核心人物，她是一个纯真、善良、质朴的湘西少女形象。
+
+1. 纯真无邪：翠翠从小在湘西的自然环境中长大，保持着原始的纯真和善良，对人对事都充满了善意。
+2. 温柔多情：她对傩送的爱情纯真而热烈，表现出少女特有的羞涩和温柔。
+3. 坚韧执着：面对爱情的波折和生活的困难，翠翠表现出坚韧不拔的品质，始终保持着对美好事物的向往。
+4. 与自然融合：翠翠的形象与湘西的自然风光融为一体，她的性格就像湘西的山水一样纯净、自然。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>翠翠爱情悲剧分析</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2023年</p><p><span class="label">试卷：</span>上海卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>8分</p></div>
-                                <div class="question"><h5>题目：</h5><p>分析《边城》中翠翠爱情悲剧的原因。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对翠翠爱情悲剧原因的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>悲剧原因：</p><ul><li>翠翠性格：害羞矜持，不敢表达心意</li><li>爷爷顾虑：担心翠翠母亲的悲剧重演</li><li>傩送误会：以为翠翠心里只有自己</li><li>命运弄人：碾坊陪嫁与渡船的对比</li><li>社会因素：传统婚恋观念的束缚</li></ul></div>
-                            </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            翠翠是沈从文笔下最具代表性的女性形象之一，她的形象体现了湘西人民的传统美德和自然人性。通过分析翠翠的性格特点，可以看出沈从文对理想人性的追求和对传统美德的赞美。翠翠的纯真、善良、质朴正是沈从文所推崇的“自然人性”的体现，也是《边城》主题的核心所在。
                         </div>
-                        <div class="exam-item">
-                            <div class="exam-item-header"><h4>沈从文创作风格</h4><span class="expand-icon">▼</span></div>
-                            <div class="exam-item-content">
-                                <div class="exam-info"><p><span class="label">考试年份：</span>2022年</p><p><span class="label">试卷：</span>全国卷</p><p><span class="label">题型：</span>简答题</p><p><span class="label">分值：</span>6分</p></div>
-                                <div class="question"><h5>题目：</h5><p>简述沈从文《边城》的创作风格。</p></div>
-                                <div class="analysis"><h5>题目解析：</h5><p>本题考察对沈从文整体创作风格的理解。</p></div>
-                                <div class="answer"><h5>参考答案：</h5><p>创作风格：</p><ul><li>诗意现实主义：诗意的语言描写现实</li><li>乡土情怀：充满对湘西故乡的热爱</li><li>人性探索：追寻美好的人性</li><li>婉约笔调：含蓄蕴藉，意境深远</li><li>民族特色：展现独特的湘西风情</li></ul></div>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">13. 简述《边城》中对湘西自然风光和民俗风情的描写及其作用。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+《边城》中对湘西自然风光的描写包括：清澈的沱江、翠绿的山峦、古朴的吊脚楼、溪边的白塔等。对民俗风情的描写包括：端午节的龙舟竞渡、中秋节的赏月、春节的热闹景象等。
+
+作用：
+1. 为故事提供了独特的背景环境，营造了一种宁静、优美的氛围。
+2. 烘托了人物的性格和情感，使人物形象更加生动立体。
+3. 体现了湘西地区的文化特色，增强了作品的地域文化内涵。
+4. 表达了作者对湘西自然环境和传统文化的赞美之情。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            沈从文在《边城》中用大量的笔墨描写了湘西的自然风光和民俗风情，这些描写不仅为故事提供了独特的背景环境，也与人物的性格和命运密切相关。通过对自然环境和民俗风情的描写，沈从文展现了湘西地区的独特魅力，同时也表达了他对理想人性和美好生活的向往。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">语文高考名著阅读题</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>夸克文档</p>
+                <p><strong>原文链接：</strong><a href="https://doc.quark.cn/preview/jiaoyukaoshi-lianxiti-lianxiti/4E7B4B7BE55670314514878C3D5F4AD2" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、《边城》</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">1. 有人说，沈从文小说《边城》中人物形象的共同特点就是“可爱”，即使不属一个阶层的人物也是这样。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+这种说法是有道理的。《边城》中的人物形象都具有“可爱”的特点，具体表现在：
+
+1. 翠翠：纯真、善良、质朴，对爱情充满向往，是一个充满青春活力的少女形象。
+2. 老船夫：勤劳、善良、朴实，对孙女翠翠充满关爱，是一个具有传统美德的老人形象。
+3. 傩送：英俊、善良、勇敢，对翠翠一往情深，是一个充满阳刚之气的青年形象。
+4. 天保：憨厚、善良、真诚，虽然在爱情上遭遇挫折，但依然保持着大度和宽容。
+
+这些人物虽然属于不同的年龄和阶层，但都具有纯真、善良、质朴的品质，给人一种“可爱”的感觉。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            沈从文在《边城》中塑造了一系列具有“可爱”特点的人物形象，这些人物虽然来自不同的阶层，但都保持着纯真、善良、质朴的品质。这种“可爱”的特点不仅体现在人物的外在形象上，更体现在他们的内心世界和行为举止上。通过这些“可爱”的人物形象，沈从文表达了他对理想人性的追求和对传统美德的赞美。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">7. 请用三个四字短语来概括《边城》中的老船夫的性格特征。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+勤劳善良、朴实忠厚、慈爱尽责
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            老船夫是《边城》中的重要人物，他一生勤劳善良，靠摆渡为生，对过往的行人充满善意；他朴实忠厚，不贪图钱财，始终保持着湘西人民的传统美德；他对孙女翠翠充满慈爱，为了翠翠的幸福操碎了心，体现了他的尽责精神。这三个四字短语准确概括了老船夫的性格特征。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">9. 《边城》叙述了怎样一个故事?</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+《边城》叙述了发生在湘西小镇茶峒的一个爱情悲剧故事。老船夫带着孙女翠翠在溪边摆渡，翠翠与当地船总的两个儿子天保和傩送产生了感情纠葛。天保为了成全弟弟傩送和翠翠，外出闯滩不幸遇难，傩送因此离家出走。老船夫也在一个雷雨之夜去世，留下翠翠独自等待傩送的归来。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《边城》是沈从文的代表作，讲述了一个发生在湘西地区的爱情悲剧。故事以翠翠的爱情为主线，展现了湘西人民的生活方式和传统美德，同时也反映了人性的美好和命运的无常。通过这个故事，沈从文表达了他对理想人性的追求和对传统美德的赞美，同时也流露出对美好事物逝去的惋惜之情。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-block">
+                    <div class="question-title">10. 《边城》中的傩送是一个什么样的人?</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+傩送外在俊美，善歌。他也爱上了翠翠，却因哥哥的死而离家出走。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            傩送是《边城》中的重要人物，他是船总的二儿子，英俊潇洒，擅长唱歌，在当地非常受欢迎。他对翠翠的爱情纯真而热烈，但由于哥哥天保的去世，他感到内疚和痛苦，最终选择离家出走。傩送的形象体现了湘西青年的阳刚之气和重情重义的品质，同时也反映了命运的无常和人生的无奈。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-paper">
+            <div class="paper-header">
+                <h2 class="paper-title">《边城》练习题</h2>
+                <p class="paper-info">高中语文复习资料</p>
+            </div>
+            
+            <div class="source-info">
+                <p><strong>来源：</strong>人教社教师之家</p>
+                <p><strong>原文链接：</strong><a href="https://www.renjiaoshe.com/sujiaogaozhongyuwen/bixiu2/280497.html" target="_blank">点击访问原文</a></p>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">一、分析题</h3>
+                
+                <div class="question-block">
+                    <div class="question-title">3. 《边城》通过翠翠父母的爱情悲剧，反映出湘西人民在“自然”、“人事”面前不能把握自己的命运，一代又一代重复着悲剧的人生，寄托了作者民族的和个人的隐痛。</div>
+                    
+                    <div class="answer-section">
+                        <div class="answer-label">【答案】</div>
+                        <div class="answer-content">
+这种说法是正确的。《边城》通过翠翠父母的爱情悲剧和翠翠自己的爱情故事，反映了湘西人民在自然和人事面前的无奈。翠翠的父母因为爱情而双双殉情，翠翠则面临着爱情的波折和亲人的离世，这些悲剧反映了湘西人民在命运面前的无力感。
+
+作者通过这些悲剧，寄托了自己对民族命运的担忧和个人的隐痛。他看到了湘西地区传统生活方式的逐渐消失，以及现代文明对传统社会的冲击，表达了对美好事物逝去的惋惜之情。
+                        </div>
+                    </div>
+                    <div class="analysis-section">
+                        <div class="analysis-label">【解析】</div>
+                        <div class="analysis-content">
+                            《边城》是沈从文的代表作，通过翠翠父母的爱情悲剧和翠翠自己的爱情故事，反映了湘西人民在自然和人事面前的无奈。作者通过这些悲剧，不仅展现了湘西地区的传统生活方式和文化特色，也表达了对民族命运的担忧和个人的隐痛。这种悲剧性的叙事，使得作品具有更深层次的思想内涵和艺术价值。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.nav-link[data-tab]').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); document.querySelectorAll('.nav-link[data-tab]').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none'); document.getElementById(this.getAttribute('data-tab')).style.display = 'block'; }); });
-        document.querySelectorAll('.exam-item-header').forEach(header => { header.addEventListener('click', function() { const content = this.nextElementSibling; const icon = this.querySelector('.expand-icon'); content.classList.contains('show') ? (content.classList.remove('show'), icon.classList.remove('open')) : (content.classList.add('show'), icon.classList.add('open')); }); });
-    </script>
 </body>
 </html>
