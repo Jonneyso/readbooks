@@ -1,0 +1,1746 @@
+{
+  "characters": [
+    {
+      "name": "林黛玉",
+      "nickname": "潇湘妃子",
+      "alias": ["颦儿", "林姑娘"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "容貌清丽，气质脱俗，体弱多病，眉尖若蹙",
+        "personality": "敏感细腻，多愁善感，才华横溢，孤高自许，目无下尘",
+        "skills": "诗词歌赋，琴棋书画，才华横溢",
+        "特点": "与贾宝玉是表兄妹关系，前世是绛珠仙草，今生为还泪而来，是《红楼梦》中最具悲剧色彩的女性形象，象征着封建礼教压迫下的理想主义者"
+      },
+      "timeline": [
+        {
+          "year": "林黛玉初入贾府",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "林黛玉母亲去世后，被接到贾府居住，与贾宝玉初次见面"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第二十三回",
+          "title": "西厢记妙词通戏语",
+          "event": "林黛玉与贾宝玉共读《西厢记》，产生深厚感情"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十七回",
+          "title": "埋香冢飞燕泣残红",
+          "event": "林黛玉葬花，作《葬花吟》"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第九十七回",
+          "title": "林黛玉焚稿断痴情",
+          "event": "林黛玉得知宝玉与宝钗定亲，焚稿断情，泪尽而逝"
+        }
+      ]
+    },
+    {
+      "name": "贾宝玉",
+      "nickname": "怡红公子",
+      "alias": ["宝二爷", "宝玉"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "面如敷粉，唇若施脂，俊俏风流，眉清目秀",
+        "personality": "厌恶功名利禄，尊重女性，率真善良，叛逆反抗，温柔多情",
+        "skills": "诗词歌赋，鉴赏古玩，悟性极高",
+        "特点": "前世是神瑛侍者，今生投胎贾府，与林黛玉有木石前盟，是《红楼梦》的精神中心，反封建、重情、尊女性，最终看破红尘出家"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "贾宝玉出生时口中衔玉，被视为奇事"
+        },
+        {
+          "year": "林黛玉初入贾府",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "与林黛玉初次见面，一见如故"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十三回",
+          "title": "西厢记妙词通戏语",
+          "event": "与林黛玉共读《西厢记》，感情升温"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第九十七回",
+          "title": "林黛玉焚稿断痴情",
+          "event": "被骗与薛宝钗成亲，林黛玉去世后悲痛欲绝"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "看破红尘，出家为僧"
+        }
+      ]
+    },
+    {
+      "name": "薛宝钗",
+      "nickname": "蘅芜君",
+      "alias": ["宝姑娘", "宝钗"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "肌骨莹润，举止娴雅，容貌丰美，唇不点而红，眉不画而翠",
+        "personality": "端庄贤淑，识大体，有城府，世故圆滑，博学多才",
+        "skills": "诗词歌赋，持家理财，深谙处世之道",
+        "特点": "与贾宝玉是姨表姐弟关系，有金锁，与宝玉有金玉良缘之说，是封建淑女的典范，象征着封建礼教下的完美女性形象"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四回",
+          "title": "薄命女偏逢薄命郎",
+          "event": "薛宝钗随母亲和哥哥薛蟠来到贾府居住"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十七回",
+          "title": "秋爽斋偶结海棠社",
+          "event": "加入海棠诗社，号蘅芜君"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第九十七回",
+          "title": "林黛玉焚稿断痴情",
+          "event": "与贾宝玉成亲，但宝玉心系黛玉"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "宝玉出家后，独守空闺"
+        }
+      ]
+    },
+    {
+      "name": "王熙凤",
+      "nickname": "凤姐",
+      "alias": ["凤辣子", "琏二奶奶"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "身量苗条，体格风骚，粉面含春威不露，丹唇未启笑先闻",
+        "personality": "精明能干，泼辣狠毒，善于权谋，两面三刀，八面玲珑",
+        "skills": "理家理财，权谋手腕，管理才能卓越",
+        "特点": "贾琏之妻，荣国府实际管家，脂粉队里的英雄，同时也是美女蛇，命运悲剧与贾府的衰落相始终，是《红楼梦》中塑造得最为成功的人物形象之一"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "初次登场，未见其人先闻其声"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十三回",
+          "title": "秦可卿死封龙禁尉",
+          "event": "协理宁国府，展现理家才能"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十八回",
+          "title": "苦尤娘赚入大观园",
+          "event": "设计害死尤二姐"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十四回",
+          "title": "王熙凤历幻返金陵",
+          "event": "贾府抄后，病死于狱中"
+        }
+      ]
+    },
+    {
+      "name": "史湘云",
+      "nickname": "枕霞旧友",
+      "alias": ["云妹妹", "湘云"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "蜂腰猿背，鹤势螂形，开朗活泼",
+        "personality": "心直口快，豁达豪爽，乐观开朗",
+        "skills": "诗词歌赋，饮酒烤肉",
+        "特点": "贾母的侄孙女，父母双亡，由叔父史鼎抚养"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四十九回",
+          "title": "琉璃世界白雪红梅",
+          "event": "史湘云来到贾府居住"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十回",
+          "title": "芦雪庵争联即景诗",
+          "event": "与众人联诗，表现出才华"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第一百零六回",
+          "title": "史湘云出嫁",
+          "event": "出嫁后丈夫病逝，守寡"
+        }
+      ]
+    },
+    {
+      "name": "贾元春",
+      "nickname": "元妃",
+      "alias": ["元春"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "端庄贤淑，贵气十足",
+        "personality": "雍容华贵，思乡念亲",
+        "skills": "诗词歌赋，宫廷礼仪",
+        "特点": "贾宝玉的嫡亲大姐，被封为贵妃，是贾府最大的靠山"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第十六回",
+          "title": "贾元春才选凤藻宫",
+          "event": "被封为贤德妃"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十八回",
+          "title": "大观园试才题对额",
+          "event": "省亲大观园，与家人团聚"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第九十五回",
+          "title": "因讹成实元妃薨逝",
+          "event": "卷入宫廷权力争斗，惨死宫中"
+        }
+      ]
+    },
+    {
+      "name": "贾探春",
+      "nickname": "蕉下客",
+      "alias": ["探春", "三姑娘"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "削肩细腰，长挑身材，鸭蛋脸面",
+        "personality": "精明能干，有远见，刚强果断",
+        "skills": "理家理财，诗词歌赋",
+        "特点": "贾宝玉的庶妹，生母是赵姨娘，有理家之才"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十七回",
+          "title": "秋爽斋偶结海棠社",
+          "event": "发起海棠诗社，号蕉下客"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十五回",
+          "title": "辱亲女愚妾争闲气",
+          "event": "代理管家，展现理家才能"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零二回",
+          "title": "探春远嫁",
+          "event": "替南安太妃之女远嫁海外"
+        }
+      ]
+    },
+    {
+      "name": "贾迎春",
+      "nickname": "二木头",
+      "alias": ["迎春", "二姑娘"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "肌肤微丰，合中身材，温柔沉默",
+        "personality": "懦弱无能，逆来顺受",
+        "skills": "诵经念佛",
+        "特点": "贾宝玉大伯贾赦的庶女，性格温和"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七十九回",
+          "title": "贾迎春误嫁中山狼",
+          "event": "嫁给孙绍祖"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第八十回",
+          "title": "美香菱屈受贪夫棒",
+          "event": "被孙绍祖虐待"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零九回",
+          "title": "迎春病逝",
+          "event": "被折磨而死"
+        }
+      ]
+    },
+    {
+      "name": "贾惜春",
+      "nickname": "藕榭",
+      "alias": ["惜春", "四姑娘"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "身量未足，形容尚小",
+        "personality": "孤僻冷漠，看破红尘",
+        "skills": "绘画",
+        "特点": "宁府贾珍的胞妹，性格孤僻"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十回",
+          "title": "史太君两宴大观园",
+          "event": "为大观园作画"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十五回",
+          "title": "惜春出家",
+          "event": "出家为尼"
+        }
+      ]
+    },
+    {
+      "name": "李纨",
+      "nickname": "稻香老农",
+      "alias": ["李宫裁", "大奶奶"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "温和娴静，端庄持重",
+        "personality": "贞静淡泊，与世无争",
+        "skills": "诗词歌赋，教子",
+        "特点": "贾宝玉哥哥贾珠的妻子，丈夫死后一心育儿"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十七回",
+          "title": "秋爽斋偶结海棠社",
+          "event": "加入海棠诗社，号稻香老农"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "贾兰中举，李纨守寡"
+        }
+      ]
+    },
+    {
+      "name": "秦可卿",
+      "nickname": "可卿",
+      "alias": ["蓉大奶奶"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "兼具林黛玉和薛宝钗的美",
+        "personality": "温柔贤惠，居安思危",
+        "skills": "理家",
+        "特点": "宁国府贾蓉的妻子，与公公贾珍关系暧昧"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第五回",
+          "title": "游幻境指迷十二钗",
+          "event": "在贾宝玉梦中出现，是金陵十二钗正册之首"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第十三回",
+          "title": "秦可卿死封龙禁尉",
+          "event": "病逝"
+        }
+      ]
+    },
+    {
+      "name": "妙玉",
+      "nickname": "槛外人",
+      "alias": ["妙姑"],
+      "star": "金陵十二钗正册",
+      "portrait": {
+        "appearance": "气质高雅，容貌美丽",
+        "personality": "性情高冷，孤芳自赏",
+        "skills": "品茶，诗词",
+        "特点": "出身高贵，带发修行的尼姑"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十一回",
+          "title": "栊翠庵茶品梅花雪",
+          "event": "请贾母等人品茶"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十二回",
+          "title": "妙玉被劫",
+          "event": "被贼人劫走，下落不明"
+        }
+      ]
+    },
+    {
+      "name": "贾政",
+      "nickname": "政老爷",
+      "alias": ["贾政"],
+      "star": "",
+      "portrait": {
+        "appearance": "端方正直，不苟言笑",
+        "personality": "严厉中正，传统保守",
+        "skills": "读书做官",
+        "特点": "贾宝玉的父亲，与宝玉父子关系紧张"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十三回",
+          "title": "手足耽耽小动唇舌",
+          "event": "痛打贾宝玉"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "见宝玉出家"
+        }
+      ]
+    },
+    {
+      "name": "王夫人",
+      "nickname": "王夫人",
+      "alias": ["太太"],
+      "star": "",
+      "portrait": {
+        "appearance": "慈眉善目，端庄稳重",
+        "personality": "表面慈善，内心狠毒",
+        "skills": "持家",
+        "特点": "贾宝玉的母亲，贾政的妻子"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十二回",
+          "title": "诉肺腑心迷活宝玉",
+          "event": "金钏儿投井事件"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第七十七回",
+          "title": "俏丫鬟抱屈夭风流",
+          "event": "撵走晴雯"
+        }
+      ]
+    },
+    {
+      "name": "贾母",
+      "nickname": "史太君",
+      "alias": ["老祖宗"],
+      "star": "",
+      "portrait": {
+        "appearance": "慈眉善目，精神矍铄",
+        "personality": "慈祥仁爱，见识广博",
+        "skills": "持家，识人",
+        "特点": "贾府的最高长辈，贾宝玉的祖母"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "首次登场，疼爱林黛玉"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十回",
+          "title": "史太君两宴大观园",
+          "event": "带领众人游大观园"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零六回",
+          "title": "贾母病逝",
+          "event": "病逝"
+        }
+      ]
+    },
+    {
+      "name": "贾琏",
+      "nickname": "琏二爷",
+      "alias": ["贾琏"],
+      "star": "",
+      "portrait": {
+        "appearance": "风流倜傥，仪表堂堂",
+        "personality": "浪荡不羁，好色成性",
+        "skills": "管家理事",
+        "特点": "王熙凤的丈夫，贾赦的儿子"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第六回",
+          "title": "贾宝玉初试云雨情",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十五回",
+          "title": "贾二舍偷娶尤二姨",
+          "event": "偷娶尤二姐"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第一百一十四回",
+          "title": "王熙凤历幻返金陵",
+          "event": "王熙凤病逝后，贾琏扶灵回金陵"
+        }
+      ]
+    },
+    {
+      "name": "贾赦",
+      "nickname": "赦老爷",
+      "alias": ["贾赦"],
+      "star": "",
+      "portrait": {
+        "appearance": "须发皆白，面容慈祥",
+        "personality": "贪财好色，昏庸无能",
+        "skills": "",
+        "特点": "贾政的哥哥，贾琏的父亲"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四十六回",
+          "title": "尴尬人难免尴尬事",
+          "event": "欲娶鸳鸯为妾"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零五回",
+          "title": "锦衣军查抄宁国府",
+          "event": "被革职抄家，后流放"
+        }
+      ]
+    },
+    {
+      "name": "贾珍",
+      "nickname": "珍大爷",
+      "alias": ["贾珍"],
+      "star": "",
+      "portrait": {
+        "appearance": "身材魁梧，面容威严",
+        "personality": "荒淫无耻，奢侈浪费",
+        "skills": "",
+        "特点": "宁府当家人，贾惜春的哥哥"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第十三回",
+          "title": "秦可卿死封龙禁尉",
+          "event": "为秦可卿办丧事"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七十五回",
+          "title": "开夜宴异兆发悲音",
+          "event": "聚众赌博"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零五回",
+          "title": "锦衣军查抄宁国府",
+          "event": "被革职抄家"
+        }
+      ]
+    },
+    {
+      "name": "贾蓉",
+      "nickname": "蓉哥儿",
+      "alias": ["贾蓉"],
+      "star": "",
+      "portrait": {
+        "appearance": "面目清秀，细挑身材",
+        "personality": "轻薄放荡，不务正业",
+        "skills": "",
+        "特点": "贾珍的儿子，秦可卿的丈夫"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第六回",
+          "title": "贾宝玉初试云雨情",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第十三回",
+          "title": "秦可卿死封龙禁尉",
+          "event": "秦可卿去世"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十三回",
+          "title": "寿怡红群芳开夜宴",
+          "event": "与尤二姐、尤三姐厮混"
+        }
+      ]
+    },
+    {
+      "name": "赵姨娘",
+      "nickname": "赵姨娘",
+      "alias": ["姨娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "形容猥琐，举止粗俗",
+        "personality": "心胸狭窄，嫉妒心强",
+        "skills": "",
+        "特点": "贾政的小妾，贾探春的生母"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第二十回",
+          "title": "王熙凤正言弹妒意",
+          "event": "与宝玉、凤姐斗气"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十五回",
+          "title": "辱亲女愚妾争闲气",
+          "event": "与探春争吵"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第六十回",
+          "title": "茉莉粉替去蔷薇硝",
+          "event": "挑唆彩云偷玫瑰露"
+        }
+      ]
+    },
+    {
+      "name": "薛姨妈",
+      "nickname": "薛姨妈",
+      "alias": ["姨妈"],
+      "star": "",
+      "portrait": {
+        "appearance": "慈眉善目，端庄稳重",
+        "personality": "善良温和，疼爱子女",
+        "skills": "持家",
+        "特点": "薛宝钗的母亲，王夫人的妹妹"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四回",
+          "title": "薄命女偏逢薄命郎",
+          "event": "带着宝钗、薛蟠来到贾府"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十七回",
+          "title": "慧紫鹃情辞试忙玉",
+          "event": "关心宝玉的病情"
+        }
+      ]
+    },
+    {
+      "name": "薛蟠",
+      "nickname": "呆霸王",
+      "alias": ["薛蟠"],
+      "star": "",
+      "portrait": {
+        "appearance": "五大三粗，面容憨厚",
+        "personality": "纨绔子弟，不学无术",
+        "skills": "",
+        "特点": "薛宝钗的哥哥，打死冯渊后逍遥法外"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四回",
+          "title": "薄命女偏逢薄命郎",
+          "event": "打死冯渊"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十四回",
+          "title": "情中情因情感妹妹",
+          "event": "因调戏柳湘莲被打"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第八十回",
+          "title": "美香菱屈受贪夫棒",
+          "event": "虐待香菱"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "被判死罪，后被放出"
+        }
+      ]
+    },
+    {
+      "name": "尤二姐",
+      "nickname": "尤二姐",
+      "alias": ["二姐"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌美丽，温柔善良",
+        "personality": "软弱无能，逆来顺受",
+        "skills": "",
+        "特点": "尤氏的妹妹，贾琏的二房"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十三回",
+          "title": "寿怡红群芳开夜宴",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十五回",
+          "title": "贾二舍偷娶尤二姨",
+          "event": "被贾琏偷娶"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十九回",
+          "title": "弄小巧用借剑杀人",
+          "event": "被王熙凤逼死"
+        }
+      ]
+    },
+    {
+      "name": "尤三姐",
+      "nickname": "尤三姐",
+      "alias": ["三姐"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌艳丽，性格刚烈",
+        "personality": "敢爱敢恨，宁死不屈",
+        "skills": "",
+        "特点": "尤氏的妹妹，暗恋柳湘莲"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十三回",
+          "title": "寿怡红群芳开夜宴",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十六回",
+          "title": "情小妹耻情归地府",
+          "event": "与柳湘莲定亲"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十六回",
+          "title": "情小妹耻情归地府",
+          "event": "因柳湘莲悔婚而自刎"
+        }
+      ]
+    },
+    {
+      "name": "袭人",
+      "nickname": "袭人",
+      "alias": ["花袭人"],
+      "star": "金陵十二钗又副册",
+      "portrait": {
+        "appearance": "温柔和顺，举止得体",
+        "personality": "贤惠忠诚，克尽职守",
+        "skills": "服侍人，持家",
+        "特点": "贾宝玉的贴身丫鬟，后嫁给蒋玉菡"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第六回",
+          "title": "贾宝玉初试云雨情",
+          "event": "与宝玉发生关系"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十四回",
+          "title": "情中情因情感妹妹",
+          "event": "向王夫人进言"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "嫁给蒋玉菡"
+        }
+      ]
+    },
+    {
+      "name": "晴雯",
+      "nickname": "晴雯",
+      "alias": ["晴姑娘"],
+      "star": "金陵十二钗又副册",
+      "portrait": {
+        "appearance": "容貌美丽，身材苗条",
+        "personality": "聪明伶俐，心高气傲",
+        "skills": "针线活",
+        "特点": "贾宝玉的丫鬟，被王夫人撵走后病逝"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第八回",
+          "title": "比通灵金莺微露意",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十二回",
+          "title": "勇晴雯病补雀金裘",
+          "event": "病中补雀金裘"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第七十七回",
+          "title": "俏丫鬟抱屈夭风流",
+          "event": "被王夫人撵走后病逝"
+        }
+      ]
+    },
+    {
+      "name": "紫鹃",
+      "nickname": "紫鹃",
+      "alias": ["鹦哥"],
+      "star": "",
+      "portrait": {
+        "appearance": "聪明伶俐，活泼可爱",
+        "personality": "忠诚体贴，善解人意",
+        "skills": "服侍人",
+        "特点": "林黛玉的贴身丫鬟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第三回",
+          "title": "林黛玉抛父进京都",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十七回",
+          "title": "慧紫鹃情辞试忙玉",
+          "event": "试探宝玉对黛玉的感情"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十五回",
+          "title": "证同类宝玉失相知",
+          "event": "陪伴惜春出家"
+        }
+      ]
+    },
+    {
+      "name": "平儿",
+      "nickname": "平儿",
+      "alias": ["平姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌俏丽，举止端庄",
+        "personality": "聪明能干，心地善良",
+        "skills": "服侍人，理家",
+        "特点": "王熙凤的陪嫁丫鬟，贾琏的通房丫头"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第六回",
+          "title": "贾宝玉初试云雨情",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十四回",
+          "title": "变生不测凤姐泼醋",
+          "event": "被王熙凤打"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "被扶正"
+        }
+      ]
+    },
+    {
+      "name": "蒋玉函",
+      "nickname": "琪官",
+      "alias": ["蒋玉函"],
+      "star": "",
+      "portrait": {
+        "appearance": "妩媚温柔，容貌俊美",
+        "personality": "重情重义，才华横溢",
+        "skills": "唱戏",
+        "特点": "忠顺亲王府的戏子，后娶袭人为妻"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十八回",
+          "title": "蒋玉菡情赠茜香罗",
+          "event": "与宝玉互换汗巾"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "娶袭人为妻"
+        }
+      ]
+    },
+    {
+      "name": "柳湘莲",
+      "nickname": "冷二郎",
+      "alias": ["柳湘莲"],
+      "star": "",
+      "portrait": {
+        "appearance": "英俊潇洒，武艺高强",
+        "personality": "豪爽仗义，嫉恶如仇",
+        "skills": "武艺，唱戏",
+        "特点": "江湖游侠，与尤三姐有婚约"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十七回",
+          "title": "呆霸王调情遭苦打",
+          "event": "痛打薛蟠"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十六回",
+          "title": "情小妹耻情归地府",
+          "event": "与尤三姐定亲"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十六回",
+          "title": "情小妹耻情归地府",
+          "event": "尤三姐自刎后出家"
+        }
+      ]
+    },
+    {
+      "name": "甄士隐",
+      "nickname": "甄士隐",
+      "alias": ["甄费"],
+      "star": "",
+      "portrait": {
+        "appearance": "慈眉善目，气质儒雅",
+        "personality": "淡泊名利，乐善好施",
+        "skills": "读书，识人",
+        "特点": "香菱的父亲，红楼梦的线索人物"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "首次登场，资助贾雨村"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "女儿英莲丢失"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "家被火烧后出家"
+        }
+      ]
+    },
+    {
+      "name": "贾雨村",
+      "nickname": "贾雨村",
+      "alias": ["贾化"],
+      "star": "",
+      "portrait": {
+        "appearance": "仪表堂堂，气质不凡",
+        "personality": "野心勃勃，忘恩负义",
+        "skills": "读书，做官",
+        "特点": "林黛玉的老师，后成为贪官"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "首次登场，受甄士隐资助"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第二回",
+          "title": "冷子兴演说荣国府",
+          "event": "与冷子兴谈论贾府"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "被革职"
+        }
+      ]
+    },
+    {
+      "name": "香菱",
+      "nickname": "香菱",
+      "alias": ["英莲", "秋菱"],
+      "star": "金陵十二钗副册",
+      "portrait": {
+        "appearance": "容貌秀丽，举止文雅",
+        "personality": "温柔善良，聪明好学",
+        "skills": "写诗",
+        "特点": "甄士隐的女儿，薛蟠的小妾"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第一回",
+          "title": "甄士隐梦幻识通灵",
+          "event": "被拐子拐走"
+        },
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四回",
+          "title": "薄命女偏逢薄命郎",
+          "event": "被薛蟠买为小妾"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十八回",
+          "title": "滥情人情误思游艺",
+          "event": "向黛玉学诗"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "难产而死"
+        }
+      ]
+    },
+    {
+      "name": "刘姥姥",
+      "nickname": "刘姥姥",
+      "alias": ["刘亲家"],
+      "star": "",
+      "portrait": {
+        "appearance": "乡野村妇，满脸皱纹",
+        "personality": "朴实善良，知恩图报，幽默风趣",
+        "skills": "农活，智慧",
+        "特点": "贾府的远房亲戚，三进荣国府，是红楼梦重要线索人物"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六回",
+          "title": "贾宝玉初试云雨情",
+          "event": "一进荣国府，打秋风"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十九回",
+          "title": "村姥姥是信口开河",
+          "event": "二进荣国府，给贾母讲故事"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "三进荣国府，救出巧姐"
+        }
+      ]
+    },
+    {
+      "name": "巧姐",
+      "nickname": "巧姐",
+      "alias": ["大姐儿"],
+      "star": "",
+      "portrait": {
+        "appearance": "年幼体弱，面容清秀",
+        "personality": "年幼，单纯",
+        "skills": "",
+        "特点": "王熙凤的女儿，刘姥姥给她取名"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第二十一回",
+          "title": "贤袭人娇嗔箴宝玉",
+          "event": "出水痘"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十一回",
+          "title": "贾宝玉品茶栊翠庵",
+          "event": "与板儿交换佛手"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "被刘姥姥救出，嫁给板儿"
+        }
+      ]
+    },
+    {
+      "name": "邢夫人",
+      "nickname": "邢夫人",
+      "alias": ["邢太太"],
+      "star": "",
+      "portrait": {
+        "appearance": "面容刻板，不苟言笑",
+        "personality": "生性吝啬凉薄，愚弱顺从",
+        "skills": "",
+        "特点": "贾赦之妻，为人抠搜"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第四十六回",
+          "title": "尴尬人难免尴尬事",
+          "event": "帮贾赦说媒鸳鸯"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百零七回",
+          "title": "散余资贾母明大义",
+          "event": "贾府败落后，随贾赦流放"
+        }
+      ]
+    },
+    {
+      "name": "尤氏",
+      "nickname": "尤氏",
+      "alias": ["珍大奶奶"],
+      "star": "",
+      "portrait": {
+        "appearance": "温柔和顺，端庄持重",
+        "personality": "平和善良，软弱无能",
+        "skills": "持家",
+        "特点": "贾珍的续弦妻子，尤二姐、尤三姐的继母"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十三回",
+          "title": "秦可卿死封龙禁尉",
+          "event": "协理丧事"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第六十三回",
+          "title": "寿怡红群芳开夜宴",
+          "event": "与尤二姐、尤三姐相聚"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十一回",
+          "title": "鸳鸯女殉主登太虚",
+          "event": "贾母丧事中忙碌"
+        }
+      ]
+    },
+    {
+      "name": "贾兰",
+      "nickname": "贾兰",
+      "alias": ["兰哥儿"],
+      "star": "",
+      "portrait": {
+        "appearance": "面目清秀，聪明伶俐",
+        "personality": "勤奋好学，聪明上进",
+        "skills": "读书",
+        "特点": "贾珠与李纨的儿子，贾宝玉的侄儿"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四回",
+          "title": "薄命女偏逢薄命郎",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "中举"
+        }
+      ]
+    },
+    {
+      "name": "贾环",
+      "nickname": "贾环",
+      "alias": ["环哥儿"],
+      "star": "",
+      "portrait": {
+        "appearance": "人物猥琐，举止荒疏",
+        "personality": "嫉妒心强，阴暗卑劣",
+        "skills": "",
+        "特点": "贾政的庶子，贾宝玉的庶弟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十五回",
+          "title": "魇魔法姐弟逢五鬼",
+          "event": "与赵姨娘合谋害宝玉"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第八十四回",
+          "title": "试文字玉兄初提赏",
+          "event": "算计巧姐"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百一十九回",
+          "title": "中乡魁宝玉却尘缘",
+          "event": "中举"
+        }
+      ]
+    },
+    {
+      "name": "司棋",
+      "nickname": "司棋",
+      "alias": ["司棋姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "身材高大，容貌丰满",
+        "personality": "性格刚烈，敢爱敢恨",
+        "skills": "",
+        "特点": "迎春的丫鬟，与潘又安有私情"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七回",
+          "title": "送宫花周瑞叹英灵",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七十一回",
+          "title": "嫌隙人有心生嫌隙",
+          "event": "大闹小厨房"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第九十二回",
+          "title": "评女传巧姐慕贤良",
+          "event": "因私情败露被撵出大观园"
+        }
+      ]
+    },
+    {
+      "name": "鸳鸯",
+      "nickname": "鸳鸯",
+      "alias": ["鸳鸯姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌俏丽，端庄大方",
+        "personality": "忠诚刚烈，勇敢正直",
+        "skills": "服侍人",
+        "特点": "贾母的贴身丫鬟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十九回",
+          "title": "村姥姥是信口开河",
+          "event": "刘姥姥赞其品貌"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十六回",
+          "title": "尴尬人难免尴尬事",
+          "event": "拒绝给贾赦做妾"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第一百一十一回",
+          "title": "鸳鸯女殉主登太虚",
+          "event": "贾母死后殉主"
+        }
+      ]
+    },
+    {
+      "name": "小红",
+      "nickname": "小红",
+      "alias": ["林红玉"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌秀丽，聪明伶俐",
+        "personality": "聪明机敏，有心机",
+        "skills": "说话做事",
+        "特点": "怡红院的丫鬟，后成为王熙凤的干女儿"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十四回",
+          "title": "醉金刚轻财尚义侠",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十七回",
+          "title": "滴翠亭杨妃戏彩蝶",
+          "event": "与坠儿说悄悄话"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第八十八回",
+          "title": "徽犹间事坚督学",
+          "event": "被王熙凤赏识"
+        }
+      ]
+    },
+    {
+      "name": "麝月",
+      "nickname": "麝月",
+      "alias": ["麝月姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌俏丽，温柔和顺",
+        "personality": "温柔和顺，忠诚老实",
+        "skills": "服侍人",
+        "特点": "贾宝玉的丫鬟，袭人后的主要丫鬟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十回",
+          "title": "贤袭人娇嗔箴宝玉",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十二回",
+          "title": "勇晴雯病补雀金裘",
+          "event": "帮忙找人织补"
+        },
+        {
+          "year": "红楼梦结局",
+          "month": "",
+          "chapter": "第一百二十回",
+          "title": "甄士隐详说太虚情",
+          "event": "独自守着宝玉的房子"
+        }
+      ]
+    },
+    {
+      "name": "秋纹",
+      "nickname": "秋纹",
+      "alias": ["秋纹姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌中上",
+        "personality": "势力眼，不讨喜",
+        "skills": "服侍人",
+        "特点": "贾宝玉的丫鬟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第三十七回",
+          "title": "秋爽斋偶结海棠社",
+          "event": "首次登场"
+        }
+      ]
+    },
+    {
+      "name": "贾瑞",
+      "nickname": "贾瑞",
+      "alias": ["瑞大爷"],
+      "star": "",
+      "portrait": {
+        "appearance": "形容猥琐，面目清秀",
+        "personality": "好色贪财，不知自量",
+        "skills": "",
+        "特点": "贾府义学塾贾代儒的长孙"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十一回",
+          "title": "庆寿辰宁府排家宴",
+          "event": "调戏王熙凤"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十二回",
+          "title": "王熙凤毒设相思局",
+          "event": "被凤姐设计，两次被害"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十二回",
+          "title": "王熙凤毒设相思局",
+          "event": "病逝"
+        }
+      ]
+    },
+    {
+      "name": "智能儿",
+      "nickname": "智能儿",
+      "alias": ["智能"],
+      "star": "",
+      "portrait": {
+        "appearance": "年幼清秀",
+        "personality": "天真烂漫",
+        "skills": "",
+        "特点": "水月庵的小尼姑，与秦钟有情"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七回",
+          "title": "送宫花周瑞叹英灵",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十五回",
+          "title": "王熙凤弄权铁槛寺",
+          "event": "与秦钟私会"
+        }
+      ]
+    },
+    {
+      "name": "秦钟",
+      "nickname": "秦钟",
+      "alias": ["鲸卿"],
+      "star": "",
+      "portrait": {
+        "appearance": "眉清目秀，容貌清秀",
+        "personality": "温柔多情，不学无术",
+        "skills": "",
+        "特点": "秦可卿的弟弟，与宝玉交好"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第七回",
+          "title": "送宫花周瑞叹英灵",
+          "event": "首次登场"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第十六回",
+          "title": "秦鲸卿夭逝黄泉路",
+          "event": "与智能儿私会后病死"
+        }
+      ]
+    },
+    {
+      "name": "李贵",
+      "nickname": "李贵",
+      "alias": ["李奶公"],
+      "star": "",
+      "portrait": {
+        "appearance": "体格健壮",
+        "personality": "忠厚老实",
+        "skills": "",
+        "特点": "贾宝玉的奶兄，赖大的儿子"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第九回",
+          "title": "恋风流情友入家塾",
+          "event": "跟随宝玉上学"
+        }
+      ]
+    },
+    {
+      "name": "茗烟",
+      "nickname": "茗烟",
+      "alias": ["焙茗"],
+      "star": "",
+      "portrait": {
+        "appearance": "眉清目秀",
+        "personality": "机灵乖巧，胆大妄为",
+        "skills": "",
+        "特点": "贾宝玉的书童"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦开始",
+          "month": "",
+          "chapter": "第九回",
+          "title": "恋风流情友入家塾",
+          "event": "跟随宝玉上学"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第四十三回",
+          "title": "闲取乐偶攒金庆寿",
+          "event": "为宝玉偷偷外出提供方便"
+        }
+      ]
+    },
+    {
+      "name": "倪二",
+      "nickname": "倪二",
+      "alias": ["醉金刚"],
+      "star": "",
+      "portrait": {
+        "appearance": "模样粗糙",
+        "personality": "侠义心肠",
+        "skills": "",
+        "特点": "贾芸的邻居，放高利贷"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十四回",
+          "title": "醉金刚轻财尚义侠",
+          "event": "借钱给贾芸"
+        }
+      ]
+    },
+    {
+      "name": "贾芸",
+      "nickname": "贾芸",
+      "alias": ["芸哥儿"],
+      "star": "",
+      "portrait": {
+        "appearance": "眉清目秀",
+        "personality": "聪明伶俐，善于逢迎",
+        "skills": "做事",
+        "特点": "贾府旁支子弟，后获得王熙凤赏识"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十四回",
+          "title": "醉金刚轻财尚义侠",
+          "event": "求职成功"
+        },
+        {
+          "year": "红楼梦后期",
+          "month": "",
+          "chapter": "第一百一十七回",
+          "title": "阻超凡佳人双护玉",
+          "event": "与宝玉来往"
+        }
+      ]
+    },
+    {
+      "name": "坠儿",
+      "nickname": "坠儿",
+      "alias": ["坠儿姑娘"],
+      "star": "",
+      "portrait": {
+        "appearance": "年幼",
+        "personality": "单纯年幼",
+        "skills": "",
+        "特点": "小红的朋友，怡红院的丫鬟"
+      },
+      "timeline": [
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第二十七回",
+          "title": "滴翠亭杨妃戏彩蝶",
+          "event": "与小红私语被晴雯撞见"
+        },
+        {
+          "year": "红楼梦中期",
+          "month": "",
+          "chapter": "第五十二回",
+          "title": "勇晴雯病补雀金裘",
+          "event": "被晴雯撵走"
+        }
+      ]
+    },
+    {
+      "name": "金钏儿",
+      "nickname": "金钏儿",
+      "alias": ["金钏"],
+      "star": "",
+      "portrait": {
+        "appearance": "容貌俏丽",
+        "personality": "天真烂漫",
+        "skills": "服侍人",
+        "特点": "王夫人的丫鬟，后被撵投井"
+      },
+      "timeline": []
+    }
+  ]
+}
