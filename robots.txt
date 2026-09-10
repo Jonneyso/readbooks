@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jonneyso.github.io/readbooks/sitemap.xml
