@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>红楼梦人物关系图</title>
-    <meta name="description" content="红楼梦人物关系图 | 读名著·上海高考名著导读">
+    <meta name="description" content="红楼梦贾府合族族谱关系图：宁荣两府五代同谱，以林黛玉进贾府之年为年龄基准，理清贾家男女辈分与主要人物关系 | 读名著·上海高考名著导读">
     <style>
         * {
             margin: 0;
@@ -62,6 +62,7 @@
         .nav-menu {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             margin-bottom: 30px;
             background-color: rgba(255,255,255,0.9);
             border-radius: 8px;
@@ -92,17 +93,288 @@
             background-color: #654321;
         }
 
-        .graph-container {
+        /* ========== 读图说明 ========== */
+        .guide-box {
+            background-color: rgba(255,255,255,0.92);
+            border: 1px solid #c19a6b;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 18px 24px;
+            margin-bottom: 30px;
+            font-size: 0.92rem;
+            color: #555;
+        }
+
+        .guide-box h3 {
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .guide-box ul {
+            list-style: none;
+        }
+
+        .guide-box li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .guide-box li::before {
+            content: "※";
+            position: absolute;
+            left: 0;
+            color: #c19a6b;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 0 6px;
+            border-radius: 3px;
+            background-color: #e8d5b7;
+            color: #7a5230;
+            margin-left: 4px;
+            vertical-align: 1px;
+        }
+
+        .age {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: normal;
+            padding: 0 6px;
+            border-radius: 9px;
+            background-color: #f3e3c3;
+            color: #7a5230;
+            margin-left: 5px;
+            vertical-align: 2px;
+            white-space: nowrap;
+        }
+
+        .age.dead {
+            background-color: #e3e3e3;
+            color: #777;
+        }
+
+        .age.base {
+            background-color: #b03a2e;
+            color: #fff;
+        }
+
+        /* ========== 族谱树（CSS org-chart） ========== */
+        .tree-panel {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border: 1px solid #c19a6b;
             padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tree-panel h2 {
+            font-size: 1.4rem;
+            color: #8B4513;
+            margin-bottom: 6px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c19a6b;
+        }
+
+        .tree-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 18px;
+        }
+
+        .tree-scroll {
             overflow-x: auto;
+            padding: 10px 0 20px;
+        }
+
+        .tree {
+            display: flex;
+            justify-content: center;
+            min-width: max-content;
+            margin: 0 auto;
+        }
+
+        .tree ul {
+            display: flex;
+            justify-content: center;
+            padding-top: 26px;
+            position: relative;
+        }
+
+        .tree li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 26px 6px 0;
+            position: relative;
+        }
+
+        .tree li::before,
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 2px solid #c19a6b;
+            width: 50%;
+            height: 26px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 2px solid #c19a6b;
+        }
+
+        /* 独子/独女：保留一条竖线 */
+        .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:only-child::after {
+            border-top: 0 none;
+            width: 0;
+            height: 26px;
+        }
+
+        .tree li:first-child::before {
+            border: 0 none;
+        }
+
+        .tree li:last-child::after {
+            border-top: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 2px solid #c19a6b;
+            border-radius: 0 6px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 6px 0 0 0;
+        }
+
+        /* 父节点底部到子分支的竖线 */
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 2px solid #c19a6b;
+            width: 0;
+            height: 26px;
+        }
+
+        .tree li.root::before,
+        .tree li.root::after {
+            display: none;
+        }
+
+        .tree li.root {
+            padding-top: 0;
+        }
+
+        .node {
+            min-width: 150px;
+            max-width: 176px;
+            background: #fdf8f0;
+            border: 2px solid #c19a6b;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+            z-index: 1;
+        }
+
+        .node:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            transform: translateY(-2px);
+        }
+
+        .node.root {
+            background: linear-gradient(135deg, #8B4513, #a0522d);
+            border-color: #654321;
+            color: #fff;
+            min-width: 260px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .node.hub {
+            background: #fdf3e3;
+            border-width: 3px;
+            box-shadow: 0 0 0 2px rgba(193,154,107,0.35);
+        }
+
+        .node.ning {
+            border-color: #8fa8b8;
+            background: #f3f7f9;
+        }
+
+        .node.ning .node-name {
+            color: #37505f;
+        }
+
+        .node.ning .node-spouse {
+            color: #4a6274;
+            border-color: #c3d2dc;
+        }
+
+        .node-name {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #6b3a12;
+            margin-bottom: 2px;
+        }
+
+        .node.root .node-name {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .node.root .age {
+            background-color: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+
+        .node-role {
+            font-size: 0.76rem;
+            color: #8a7a68;
+            line-height: 1.45;
+        }
+
+        .node.root .node-role {
+            color: #f3e6d8;
+        }
+
+        .node-spouse {
+            font-size: 0.78rem;
+            color: #a0522d;
+            margin-top: 5px;
+            padding-top: 4px;
+            border-top: 1px dashed #d9c4a5;
+        }
+
+        .node.hub .node-spouse {
+            color: #8B4513;
+            font-weight: bold;
+        }
+
+        /* ========== 分组卡片 ========== */
+        .group-panel {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #c19a6b;
+            padding: 20px;
+            margin-bottom: 40px;
         }
 
         .family-section {
-            margin-bottom: 40px;
+            margin-bottom: 34px;
         }
 
         .family-section:last-child {
@@ -110,19 +382,17 @@
         }
 
         .family-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #8B4513;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #c19a6b;
+            margin-bottom: 6px;
         }
 
-        .family-title.jia { color: #3498db; border-color: #3498db; }
-        .family-title.xue { color: #2ecc71; border-color: #2ecc71; }
-        .family-title.shi { color: #f39c12; border-color: #f39c12; }
-        .family-title.wang { color: #9b59b6; border-color: #9b59b6; }
-        .family-title.core { color: #e74c3c; border-color: #e74c3c; }
+        .family-desc {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 14px;
+        }
 
         .characters-grid {
             display: flex;
@@ -134,9 +404,9 @@
             background-color: #fafafa;
             border: 2px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
+            padding: 14px 15px;
             min-width: 200px;
-            max-width: 280px;
+            max-width: 300px;
             flex: 1;
         }
 
@@ -145,30 +415,39 @@
             transform: translateY(-2px);
         }
 
-        .character-card.jia { border-color: #3498db; background-color: #f5f9ff; }
+        .character-card.wang { border-color: #9b59b6; background-color: #faf5ff; }
         .character-card.xue { border-color: #2ecc71; background-color: #f5fff5; }
         .character-card.shi { border-color: #f39c12; background-color: #fff9f5; }
-        .character-card.wang { border-color: #9b59b6; background-color: #faf5ff; }
-        .character-card.other { border-color: #95a5a6; background-color: #f5f5f5; }
-        .character-card.core { border-color: #e74c3c; background-color: #fef5f5; }
+        .character-card.ning { border-color: #8fa8b8; background-color: #f3f7f9; }
+        .character-card.friend { border-color: #95a5a6; background-color: #f5f5f5; }
 
         .character-name {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+        }
+
+        .character-name .badge {
+            background-color: #eee;
+            color: #666;
+            font-weight: normal;
         }
 
         .character-info {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #666;
             margin-bottom: 5px;
         }
 
-        .character-relations {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #ccc;
+        .relation-chain {
+            font-size: 0.82rem;
+            color: #8B4513;
+            background: #f8f0e3;
+            border-radius: 4px;
+            padding: 3px 8px;
+            display: inline-block;
+            margin: 6px 0 4px;
         }
 
         .relation-item {
@@ -186,68 +465,34 @@
             color: #c19a6b;
         }
 
-        .legend {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: rgba(255,255,255,0.9);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .legend h3 {
-            color: #8B4513;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .legend-items {
+        /* 丫鬟小卡 */
+        .chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px;
         }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
+        .chip {
+            background: #fdf8f0;
+            border: 1px solid #d9c4a5;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            min-width: 150px;
+            flex: 1;
+            max-width: 320px;
         }
 
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            margin-right: 8px;
+        .chip b {
+            color: #6b3a12;
         }
 
-        .legend-text {
-            font-size: 0.9rem;
-        }
-
-        .relationship-diagram {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #c19a6b;
-        }
-
-        .relationship-diagram h3 {
-            color: #8B4513;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .diagram-svg {
-            width: 100%;
-            height: auto;
-            min-height: 400px;
+        .chip span {
+            color: #777;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 768px) {
-            .character-card {
-                min-width: 100%;
-            }
-
             .nav-menu {
                 flex-wrap: wrap;
             }
@@ -262,466 +507,490 @@
     <div class="container">
         <header>
             <h1>红楼梦人物关系图</h1>
-            <p class="subtitle">120回本人物关系详解</p>
+            <p class="subtitle">宁荣两府合谱 · 五代同堂 ｜ 年龄基准：林黛玉进贾府之年（黛玉 6 岁）</p>
         </header>
 
         <a href="../index.html" class="back-btn">返回主页</a>
 
         <nav class="nav-menu">
-            <div class="nav-item">
-                <a href="#overview" class="nav-link active">人物总览</a>
-            </div>
-            <div class="nav-item">
-                <a href="#diagram" class="nav-link">关系图</a>
-            </div>
+            <div class="nav-item"><a href="#guide" class="nav-link active">读图说明</a></div>
+            <div class="nav-item"><a href="#hezupu" class="nav-link">贾府合谱</a></div>
+            <div class="nav-item"><a href="#relatives" class="nav-link">外戚与姻亲</a></div>
+            <div class="nav-item"><a href="#servants" class="nav-link">丫鬟与仆佣</a></div>
         </nav>
 
-        <div class="graph-container" id="overview">
-            <div class="family-section">
-                <h2 class="family-title core">核心人物 · 木石前盟 & 金玉良缘</h2>
-                <div class="characters-grid">
-                    <div class="character-card core">
-                        <div class="character-name">贾宝玉</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">家族：贾家</div>
-                        <div class="character-info">描述：神瑛侍者转世，与林黛玉有木石前盟</div>
-                        <div class="character-relations">
-                            <div class="relation-item">林黛玉 — 表兄妹/恋人</div>
-                            <div class="relation-item">薛宝钗 — 妻子</div>
-                            <div class="relation-item">贾政 — 父亲</div>
-                            <div class="relation-item">王夫人 — 母亲</div>
-                            <div class="relation-item">贾母 — 祖母</div>
-                        </div>
-                    </div>
-                    <div class="character-card core">
-                        <div class="character-name">林黛玉</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">家族：贾家（外孙女）</div>
-                        <div class="character-info">描述：绛珠仙草转世，为还泪而来</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 表兄妹/恋人</div>
-                            <div class="relation-item">贾母 — 外祖母</div>
-                            <div class="relation-item">紫鹃 — 丫鬟</div>
-                        </div>
-                    </div>
-                    <div class="character-card core">
-                        <div class="character-name">薛宝钗</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">家族：薛家</div>
-                        <div class="character-info">描述：与贾宝玉有金玉良缘之说</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 丈夫</div>
-                            <div class="relation-item">薛姨妈 — 母亲</div>
-                            <div class="relation-item">薛蟠 — 哥哥</div>
-                            <div class="relation-item">王夫人 — 姨妈</div>
-                        </div>
-                    </div>
+        <div class="guide-box" id="guide">
+            <h3>读图说明</h3>
+            <ul>
+                <li><strong>合谱两支</strong>：全谱自始祖"宁国公贾演 & 荣国公贾源"（一母同胞兄弟）向下分出宁、荣两支。<strong>横向同层即同辈</strong>——第一代（水字辈：演、源）→ 第二代（代字辈）→ 第三代（文字辈）→ 第四代（玉字辈）→ 第五代（草字辈），一眼可辨辈分高下。</li>
+                <li>婚姻关系写在人物卡片内：<strong>「配」= 原配正妻，「娶 / 嫁」= 婚配对象，「妾」= 侧室</strong>。</li>
+                <li>徽章：<span class="badge">庶</span> = 妾室所生；<span class="badge">养</span> = 养女／养子；<span class="badge">早逝</span> = 书中较早亡故。</li>
+                <li><strong>年龄标注</strong>：以<strong>林黛玉进贾府之年为基准</strong>（黛玉 6 岁，红学界通行取法）。原著对部分人物有明确年龄（如贾蓉十六、贾琏二十来岁、薛蟠十五、贾兰五岁、妙玉十八等），据此推算；其余为通行推算的约数（<strong>"约"</strong>，存在 ±1~3 岁浮动）；已故者标「已故」并注明卒时情形。贾母（史太君）卡片为荣府实际最高家长，加框突出。</li>
+                <li>树外的外戚、丫鬟、仆佣与世交，按"与贾家某人的具体关系"分组标注；年龄仅标注有原文依据可推算者。远房支脉（贾代儒、贾瑞、贾芸、贾蔷等）不入主谱，见"世交朋友"组。</li>
+            </ul>
+        </div>
+
+        <!-- ================= 贾府合谱 ================= -->
+        <div class="tree-panel" id="hezupu">
+            <h2>贾府合族族谱（宁荣两府 · 五代）</h2>
+            <p class="tree-note">辈分总览：① 水字辈（演、源）→ ② 代字辈 → ③ 文字辈 → ④ 玉字辈 → ⑤ 草字辈 ｜ 年龄基准：黛玉进府之年（黛玉 6 岁）</p>
+            <div class="tree-scroll">
+                <div class="tree">
+                    <ul>
+                        <li class="root">
+                            <div class="node root">
+                                <div class="node-name">贾府始祖</div>
+                                <div class="node-role">第一代（水字辈）· 宁国公贾演 & 荣国公贾源——一母同胞兄弟，以军功封爵，分建宁、荣二府</div>
+                            </div>
+                            <ul>
+                                <!-- 宁国府长支 -->
+                                <li>
+                                    <div class="node ning">
+                                        <div class="node-name">贾演<span class="age dead">已故</span></div>
+                                        <div class="node-role">宁国公 · 长支 · 宁府始祖</div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="node ning">
+                                                <div class="node-name">贾代化<span class="age dead">已故</span></div>
+                                                <div class="node-role">贾演长子 · 代字辈 · 袭爵 · 京营节度使</div>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node ning">
+                                                        <div class="node-name">贾敷<span class="age dead">已故</span></div>
+                                                        <div class="node-role">贾代化长子 · 文字辈 · 八九岁上夭亡</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="node ning">
+                                                        <div class="node-name">贾敬<span class="age">约 50 余</span></div>
+                                                        <div class="node-role">贾代化次子 · 文字辈 · 袭爵后弃家，一味好道炼丹，后服丹而亡</div>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="node ning">
+                                                                <div class="node-name">贾珍<span class="age">约 33</span></div>
+                                                                <div class="node-role">贾敬之子 · 玉字辈 · 袭三品爵威烈将军 · 贾氏族长</div>
+                                                                <div class="node-spouse">配：尤氏（继室，约 30 岁）</div>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="node ning">
+                                                                        <div class="node-name">贾蓉<span class="age">约 17</span></div>
+                                                                        <div class="node-role">贾珍之子 · 草字辈 · 捐五品龙禁尉</div>
+                                                                        <div class="node-spouse">娶：秦可卿（秦业养女<span class="badge">养</span>，约 20 岁，早逝）</div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node ning">
+                                                                <div class="node-name">惜春<span class="age">约 5</span></div>
+                                                                <div class="node-role">贾敬之女 · 玉字辈 · 四小姐 · 母早亡，养于荣府，后出家</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 荣国府次支 -->
+                                <li>
+                                    <div class="node">
+                                        <div class="node-name">贾源<span class="age dead">已故</span></div>
+                                        <div class="node-role">荣国公 · 次支 · 荣府始祖</div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="node hub">
+                                                <div class="node-name">贾代善<span class="age dead">已故</span></div>
+                                                <div class="node-role">贾源之子 · 代字辈 · 袭荣国公爵</div>
+                                                <div class="node-spouse">配：贾母（史太君，约 60 岁）——史侯家小姐，荣府在世最高家长</div>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node">
+                                                        <div class="node-name">贾赦<span class="age">约 46</span></div>
+                                                        <div class="node-role">贾母长子 · 文字辈 · 袭一等将军</div>
+                                                        <div class="node-spouse">配：邢夫人（续弦，约 45 岁，非琏母）</div>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">贾琏<span class="age">约 21</span></div>
+                                                                <div class="node-role">贾赦之子 · 玉字辈 · 捐同知 · 协理府务</div>
+                                                                <div class="node-spouse">娶：王熙凤（王夫人内侄女，约 19 岁，总理府务）</div>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="node">
+                                                                        <div class="node-name">巧姐<span class="age">约 1</span></div>
+                                                                        <div class="node-role">贾琏与王熙凤之女 · 草字辈 · 襁褓之中</div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">迎春<span class="age">约 11</span></div>
+                                                                <div class="node-role">贾赦之女 · 玉字辈 · 二小姐 · 懦弱"二木头"<span class="badge">庶</span></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="node">
+                                                        <div class="node-name">贾政<span class="age">约 40</span></div>
+                                                        <div class="node-role">贾母次子 · 文字辈 · 工部员外郎 · 端方迂腐</div>
+                                                        <div class="node-spouse">配：王夫人（约 40 岁）｜ 妾：赵姨娘（约 30 岁）、周姨娘</div>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">贾珠<span class="age dead">已故</span></div>
+                                                                <div class="node-role">贾政长子 · 玉字辈 · 十四岁进学，不到二十岁一病而亡</div>
+                                                                <div class="node-spouse">娶：李纨（国子监祭酒李守中之女，约 23 岁，孀居守子）</div>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="node">
+                                                                        <div class="node-name">贾兰<span class="age">约 5</span></div>
+                                                                        <div class="node-role">贾珠与李纨之子 · 草字辈 · 幼年入学，后中举</div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">元春<span class="age">约 17</span></div>
+                                                                <div class="node-role">贾政长女 · 玉字辈 · 入宫封贤德妃，省亲建大观园</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">贾宝玉<span class="age">约 7</span></div>
+                                                                <div class="node-role">贾政次子 · 玉字辈 · 衔玉而生 · 贾母溺爱</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">探春<span class="age">约 8</span></div>
+                                                                <div class="node-role">贾政之女 · 玉字辈 · 三小姐 · 精明"玫瑰花"<span class="badge">庶</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">贾环<span class="age">约 6</span></div>
+                                                                <div class="node-role">贾政三子 · 玉字辈 · 形貌猥琐<span class="badge">庶</span></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="node">
+                                                        <div class="node-name">贾敏<span class="age dead">已故（卒年约三十余）</span></div>
+                                                        <div class="node-role">贾母幼女 · 文字辈 · 上有三个姐姐</div>
+                                                        <div class="node-spouse">嫁：林如海（前科探花 · 巡盐御史，约 41 岁）</div>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="node">
+                                                                <div class="node-name">林黛玉<span class="age base">6 岁 · 基准</span></div>
+                                                                <div class="node-role">贾敏与林如海之女 · 母丧后寄居贾府 · 外祖母最疼</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
+        <!-- ================= 外戚与姻亲 ================= -->
+        <div class="group-panel" id="relatives">
             <div class="family-section">
-                <h2 class="family-title jia">贾家 · 宁荣二府</h2>
+                <h2 class="family-title">王家（贾母两房儿媳的内家）</h2>
+                <p class="family-desc">王夫人是贾政之妻，王熙凤是贾琏之妻——妯娌姑侄同嫁贾府，故王家势力最盛。</p>
                 <div class="characters-grid">
-                    <div class="character-card jia">
-                        <div class="character-name">贾政</div>
-                        <div class="character-info">身份：贾宝玉父亲</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 儿子</div>
-                            <div class="relation-item">王夫人 — 妻子</div>
-                            <div class="relation-item">贾母 — 母亲</div>
-                            <div class="relation-item">贾元春 — 女儿</div>
-                            <div class="relation-item">贾探春 — 女儿</div>
-                        </div>
+                    <div class="character-card wang">
+                        <div class="character-name">王子腾</div>
+                        <div class="character-info">身份：王夫人与薛姨妈之兄</div>
+                        <div class="relation-chain">贾政的内兄 · 王熙凤的伯父</div>
+                        <div class="relation-item">初任京营节度使，后升九省统制</div>
+                        <div class="relation-item">贾府政治靠山之一</div>
                     </div>
-                    <div class="character-card jia">
-                        <div class="character-name">贾母</div>
-                        <div class="character-info">身份：贾府最高长辈</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 孙子</div>
-                            <div class="relation-item">林黛玉 — 外孙女</div>
-                            <div class="relation-item">史湘云 — 侄孙女</div>
-                            <div class="relation-item">贾赦 — 儿子</div>
-                            <div class="relation-item">贾政 — 儿子</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">王夫人</div>
-                        <div class="character-info">身份：贾政妻子</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 儿子</div>
-                            <div class="relation-item">贾元春 — 女儿</div>
-                            <div class="relation-item">贾探春 — 女儿</div>
-                            <div class="relation-item">王熙凤 — 侄女</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">贾元春</div>
-                        <div class="character-info">身份：贾宝玉姐姐/贵妃</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 弟弟</div>
-                            <div class="relation-item">贾政 — 父亲</div>
-                            <div class="relation-item">王夫人 — 母亲</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">贾探春</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 妹妹</div>
-                            <div class="relation-item">贾政 — 父亲</div>
-                            <div class="relation-item">赵姨娘 — 生母</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">贾迎春</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾赦 — 父亲</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">贾惜春</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾珍 — 哥哥</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">李纨</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾珠 — 丈夫</div>
-                        </div>
-                    </div>
-                    <div class="character-card jia">
-                        <div class="character-name">秦可卿</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾蓉 — 丈夫</div>
-                            <div class="relation-item">贾珍 — 公公</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="family-section">
-                <h2 class="family-title xue">薛家 · 皇商世家</h2>
-                <div class="characters-grid">
-                    <div class="character-card xue">
-                        <div class="character-name">薛宝钗</div>
-                        <div class="character-info">详见核心人物</div>
-                    </div>
-                    <div class="character-card xue">
+                    <div class="character-card wang">
                         <div class="character-name">薛姨妈</div>
-                        <div class="character-info">身份：王夫人妹妹</div>
-                        <div class="character-relations">
-                            <div class="relation-item">薛宝钗 — 女儿</div>
-                            <div class="relation-item">薛蟠 — 儿子</div>
-                            <div class="relation-item">王夫人 — 姐姐</div>
-                        </div>
+                        <div class="character-info">身份：王夫人之妹</div>
+                        <div class="relation-chain">贾政的姨妹 · 薛蟠、薛宝钗之母</div>
+                        <div class="relation-item">携子女寄居荣府梨香院</div>
+                        <div class="relation-item">力促成"金玉良缘"</div>
                     </div>
-                    <div class="character-card xue">
-                        <div class="character-name">薛蟠</div>
-                        <div class="character-info">身份：薛宝钗哥哥</div>
-                        <div class="character-relations">
-                            <div class="relation-item">薛宝钗 — 妹妹</div>
-                            <div class="relation-item">薛姨妈 — 母亲</div>
-                            <div class="relation-item">香菱 — 小妾</div>
-                        </div>
-                    </div>
-                    <div class="character-card xue">
-                        <div class="character-name">香菱</div>
-                        <div class="character-info">类别：金陵十二钗副册</div>
-                        <div class="character-relations">
-                            <div class="relation-item">甄士隐 — 父亲</div>
-                            <div class="relation-item">薛蟠 — 主人</div>
-                        </div>
+                    <div class="character-card wang">
+                        <div class="character-name">刘姥姥</div>
+                        <div class="character-info">身份：狗儿之岳母，狗儿祖上与王家连宗</div>
+                        <div class="relation-chain">与王夫人"沾亲" · 借此两进荣国府</div>
+                        <div class="relation-item">一进打抽丰，二进游大观园逗乐贾母</div>
+                        <div class="relation-item">巧姐日后获救的恩人</div>
                     </div>
                 </div>
             </div>
 
             <div class="family-section">
-                <h2 class="family-title shi">史家 · 保龄侯府</h2>
+                <h2 class="family-title">薛家（皇商 · 寄居荣府的姻亲）</h2>
+                <p class="family-desc">薛姨妈是王夫人之妹，薛家进京（黛玉进府次年）后长住贾府，宝钗最终嫁宝玉，完成"金玉良缘"。</p>
+                <div class="characters-grid">
+                    <div class="character-card xue">
+                        <div class="character-name">薛宝钗<span class="age">约 10</span></div>
+                        <div class="character-info">身份：薛姨妈之女 · 薛蟠之妹</div>
+                        <div class="relation-chain">王夫人的外甥女 · 后嫁贾宝玉为妻</div>
+                        <div class="relation-item">丰肌秀骨、博学端正，佩金锁</div>
+                        <div class="relation-item">与宝玉"金玉良缘"，婚后宝玉出家</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">薛蟠<span class="age">约 15</span></div>
+                        <div class="character-info">身份：薛姨妈之子 · 薛宝钗之兄</div>
+                        <div class="relation-chain">王夫人的外甥 · "呆霸王"</div>
+                        <div class="relation-item">为争香菱打死冯渊</div>
+                        <div class="relation-item">娶夏金桂（泼妒"河东狮"），纳香菱为妾</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">香菱（甄英莲）<span class="age">约 12</span></div>
+                        <div class="character-info">身份：甄士隐独女 · 幼时被拐</div>
+                        <div class="relation-chain">薛蟠之妾 · 与贾府众人同住</div>
+                        <div class="relation-item">慕雅学诗，拜黛玉为师</div>
+                        <div class="relation-item">判词入"金陵十二钗副册"之首</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">薛蝌</div>
+                        <div class="character-info">身份：薛蟠的堂弟 · 薛宝琴之兄</div>
+                        <div class="relation-chain">王夫人的外甥辈 · 后娶邢岫烟</div>
+                        <div class="relation-item">进京送妹待嫁，端正面重</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">薛宝琴</div>
+                        <div class="character-info">身份：薛蝌之妹</div>
+                        <div class="relation-chain">薛姨妈的侄女 · 贾母认作干孙女</div>
+                        <div class="relation-item">已许梅翰林之子</div>
+                        <div class="relation-item">抱红梅立雪，才貌冠群芳</div>
+                    </div>
+                    <div class="character-card xue">
+                        <div class="character-name">邢岫烟</div>
+                        <div class="character-info">身份：邢夫人的侄女</div>
+                        <div class="relation-chain">贾赦内侄女 · 随家投靠荣府 · 后许薛蝌</div>
+                        <div class="relation-item">家贫寄人篱下而不卑不亢</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title">史家（贾母的娘家）</h2>
+                <p class="family-desc">贾母出身金陵史侯家，史家与贾府世代姻亲往来。</p>
                 <div class="characters-grid">
                     <div class="character-card shi">
-                        <div class="character-name">史湘云</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">身份：贾母侄孙女</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾母 — 姑奶奶</div>
-                            <div class="relation-item">贾宝玉 — 表哥</div>
-                        </div>
+                        <div class="character-name">史湘云<span class="age">约 6</span></div>
+                        <div class="character-info">身份：贾母娘家侄孙女 · 父母早亡，依叔婶（史鼐、史鼎）生活</div>
+                        <div class="relation-chain">贾母的侄孙女 · 常来贾府小住</div>
+                        <div class="relation-item">与宝玉以"爱哥哥"相称，豪爽洒脱</div>
+                        <div class="relation-item">醉眠芍药裀，偶拾金麒麟</div>
+                    </div>
+                    <div class="character-card shi">
+                        <div class="character-name">史鼐 / 史鼎</div>
+                        <div class="character-info">身份：贾母娘家侄辈 · 保龄侯 / 忠靖侯</div>
+                        <div class="relation-chain">湘云的叔父 · 贾母娘家晚辈</div>
+                        <div class="relation-item">两家世代侯门世交</div>
                     </div>
                 </div>
             </div>
 
             <div class="family-section">
-                <h2 class="family-title wang">王家 · 都太尉统制县</h2>
+                <h2 class="family-title">林家与江南甄家</h2>
+                <p class="family-desc">林家是贾敏的夫家（黛玉一门），甄家是与贾府"老亲"世交的江南望族。</p>
                 <div class="characters-grid">
-                    <div class="character-card wang">
-                        <div class="character-name">王熙凤</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">身份：贾琏妻子/管家</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾琏 — 丈夫</div>
-                            <div class="relation-item">王夫人 — 姑妈</div>
-                            <div class="relation-item">平儿 — 丫鬟</div>
-                        </div>
+                    <div class="character-card ning">
+                        <div class="character-name">林如海<span class="age">约 41</span></div>
+                        <div class="character-info">身份：贾敏之夫 · 黛玉之父 · 前科探花 · 兰台寺大夫 · 巡盐御史</div>
+                        <div class="relation-chain">贾母的女婿 · 委托黛玉进京依傍外祖母</div>
+                        <div class="relation-item">数年后病故扬州，黛玉从此长住贾府</div>
                     </div>
-                    <div class="character-card wang">
-                        <div class="character-name">王夫人</div>
-                        <div class="character-info">详见贾家</div>
+                    <div class="character-card ning">
+                        <div class="character-name">甄宝玉</div>
+                        <div class="character-info">身份：江南甄家（甄应嘉）公子</div>
+                        <div class="relation-chain">甄家与贾府为老亲世交 · 与贾宝玉容貌相仿</div>
+                        <div class="relation-item">书中"真假"对应的镜像人物</div>
                     </div>
                 </div>
             </div>
 
             <div class="family-section">
-                <h2 class="family-title">其他重要人物</h2>
+                <h2 class="family-title">尤氏姐妹与秦氏一门（宁府相关）</h2>
+                <p class="family-desc">尤二姐、尤三姐是尤氏继母带来的异母妹；秦可卿、秦钟出自营缮郎秦业家。</p>
                 <div class="characters-grid">
-                    <div class="character-card">
-                        <div class="character-name">妙玉</div>
-                        <div class="character-info">类别：金陵十二钗正册</div>
-                        <div class="character-info">身份：带发修行尼姑</div>
+                    <div class="character-card ning">
+                        <div class="character-name">尤老娘</div>
+                        <div class="character-info">身份：尤氏的继母</div>
+                        <div class="relation-chain">贾珍续弦尤氏的继母</div>
+                        <div class="relation-item">携前夫之女二姐、三姐依附宁府</div>
                     </div>
-                    <div class="character-card">
-                        <div class="character-name">袭人</div>
-                        <div class="character-info">类别：金陵十二钗又副册</div>
-                        <div class="character-info">身份：贾宝玉丫鬟</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 主仆</div>
-                            <div class="relation-item">蒋玉函 — 丈夫</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-name">晴雯</div>
-                        <div class="character-info">类别：金陵十二钗又副册</div>
-                        <div class="character-info">身份：贾宝玉丫鬟</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾宝玉 — 主仆</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-name">紫鹃</div>
-                        <div class="character-info">身份：林黛玉丫鬟</div>
-                        <div class="character-relations">
-                            <div class="relation-item">林黛玉 — 主仆</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-name">平儿</div>
-                        <div class="character-info">身份：王熙凤丫鬟</div>
-                        <div class="character-relations">
-                            <div class="relation-item">王熙凤 — 主仆</div>
-                            <div class="relation-item">贾琏 — 通房丫头</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-name">蒋玉函</div>
-                        <div class="character-info">身份：戏子</div>
-                        <div class="character-relations">
-                            <div class="relation-item">袭人 — 丈夫</div>
-                            <div class="relation-item">贾宝玉 — 好友</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
-                        <div class="character-name">柳湘莲</div>
-                        <div class="character-info">身份：江湖游侠</div>
-                        <div class="character-relations">
-                            <div class="relation-item">尤三姐 — 恋人</div>
-                        </div>
-                    </div>
-                    <div class="character-card">
+                    <div class="character-card ning">
                         <div class="character-name">尤二姐</div>
-                        <div class="character-info">身份：贾琏二房</div>
-                        <div class="character-relations">
-                            <div class="relation-item">贾琏 — 丈夫</div>
-                        </div>
+                        <div class="character-info">身份：尤老娘前夫之女 · 尤氏异母妹</div>
+                        <div class="relation-chain">被贾琏偷娶为二房 · 后被王熙凤设计吞金而逝</div>
+                        <div class="relation-item">"花为肠肚雪作肌肤"，性情软弱</div>
                     </div>
-                    <div class="character-card">
+                    <div class="character-card ning">
                         <div class="character-name">尤三姐</div>
-                        <div class="character-info">身份：尤二姐妹妹</div>
-                        <div class="character-relations">
-                            <div class="relation-item">柳湘莲 — 恋人</div>
-                        </div>
+                        <div class="character-info">身份：尤二姐之妹</div>
+                        <div class="relation-chain">尤氏异母妹 · 自许柳湘莲为妻</div>
+                        <div class="relation-item">刚烈自守，因柳湘莲退婚自刎明志</div>
                     </div>
-                    <div class="character-card">
-                        <div class="character-name">甄士隐</div>
-                        <div class="character-info">身份：香菱父亲</div>
-                        <div class="character-relations">
-                            <div class="relation-item">香菱 — 女儿</div>
-                            <div class="relation-item">贾雨村 — 好友</div>
-                        </div>
+                    <div class="character-card ning">
+                        <div class="character-name">秦业</div>
+                        <div class="character-info">身份：营缮郎 · 秦可卿养父 · 秦钟生父</div>
+                        <div class="relation-chain">秦可卿为养生堂抱来后认作养女<span class="badge">养</span></div>
+                        <div class="relation-item">可卿嫁贾蓉后，秦业与贾府结亲</div>
                     </div>
-                    <div class="character-card">
+                    <div class="character-card ning">
+                        <div class="character-name">秦钟<span class="age">约 7</span></div>
+                        <div class="character-info">身份：秦业之子 · 秦可卿之弟</div>
+                        <div class="relation-chain">贾蓉的小舅子 · 与宝玉同入家塾 · 挚友</div>
+                        <div class="relation-item">"情种"早夭，临别遗言劝宝玉立志功名</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title">世交朋友与其他要角</h2>
+                <p class="family-desc">与贾府或宝玉、凤姐等有直接往来的人物。远房支脉在此标明辈分。</p>
+                <div class="characters-grid">
+                    <div class="character-card friend">
+                        <div class="character-name">妙玉<span class="age">约 13</span></div>
+                        <div class="character-info">身份：苏州人氏 · 带发修行的尼姑</div>
+                        <div class="relation-chain">王夫人下帖子请入栊翠庵 · 元春省亲时随喜</div>
+                        <div class="relation-item">"太高人愈妒，过洁世同嫌"</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">贾芸<span class="age">约 10</span></div>
+                        <div class="character-info">身份：西廊下五嫂子之子 · 贾府远房（草字辈）</div>
+                        <div class="relation-chain">认宝玉作干爹 · 种树大观园</div>
+                        <div class="relation-item">与丫鬟小红互遗手帕有情</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">贾蔷<span class="age">约 12</span></div>
+                        <div class="character-info">身份：宁府正派玄孙（草字辈）</div>
+                        <div class="relation-chain">贾珍养子般的近支 · 领办梨香院戏班</div>
+                        <div class="relation-item">与优伶龄官相恋，"蔷"字痴写</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">贾代儒 / 贾瑞<span class="age">瑞约 17</span></div>
+                        <div class="character-info">身份：代儒为贾家塾师（代字辈远房）· 贾瑞（玉字辈）为其孙</div>
+                        <div class="relation-chain">家塾设于贾府 · 贾瑞觊觎王熙凤</div>
+                        <div class="relation-item">贾瑞中"风月宝鉴"之局，殒命</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">柳湘莲</div>
+                        <div class="character-info">身份：破落世家的江湖游侠</div>
+                        <div class="relation-chain">与宝玉交好 · 尤三姐之未婚夫</div>
+                        <div class="relation-item">痛打薛蟠后远走；三姐殒后随道士出家</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">蒋玉菡</div>
+                        <div class="character-info">身份：忠顺王府戏班优伶 · 艺名"琪官"</div>
+                        <div class="relation-chain">与宝玉互换汗巾 · 袭人日后的丈夫</div>
+                        <div class="relation-item">藏于紫檀堡，引发忠顺王府问罪</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">北静王水溶</div>
+                        <div class="character-info">身份：世袭北静王 · 年未弱冠</div>
+                        <div class="relation-chain">四王路祭时结识宝玉 · 赠鹡鸰香串</div>
+                        <div class="relation-item">贾府政治圈中的清贵盟友</div>
+                    </div>
+                    <div class="character-card friend">
                         <div class="character-name">贾雨村</div>
-                        <div class="character-info">身份：林黛玉老师</div>
-                        <div class="character-relations">
-                            <div class="relation-item">甄士隐 — 好友</div>
-                            <div class="relation-item">林黛玉 — 老师</div>
-                        </div>
+                        <div class="character-info">身份：葫芦庙穷儒出身 · 后任知府、大司马参赞</div>
+                        <div class="relation-chain">黛玉的塾师 · 护送黛玉进京 · 借贾府之力起复</div>
+                        <div class="relation-item">"乱判葫芦案"攀附四大家族</div>
+                        <div class="relation-item">贾府败落时落井下石</div>
+                    </div>
+                    <div class="character-card friend">
+                        <div class="character-name">甄士隐</div>
+                        <div class="character-info">身份：姑苏乡宦 · 香菱（英莲）之父</div>
+                        <div class="relation-chain">贾雨村的恩人 · 女儿与薛家、贾府间接相连</div>
+                        <div class="relation-item">注解《好了歌》，点破全书主旨</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="relationship-diagram" id="diagram">
-            <h3>人物关系简图</h3>
-            <svg class="diagram-svg" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
-                <!-- 核心三角关系 -->
-                <g id="core-triangle">
-                    <circle cx="600" cy="100" r="40" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
-                    <text x="600" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">贾宝玉</text>
-                    
-                    <circle cx="450" cy="250" r="35" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
-                    <text x="450" y="255" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">林黛玉</text>
-                    
-                    <circle cx="750" cy="250" r="35" fill="#fef5f5" stroke="#e74c3c" stroke-width="3"/>
-                    <text x="750" y="255" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">薛宝钗</text>
-                    
-                    <!-- 连线 -->
-                    <line x1="585" y1="120" x2="465" y2="220" stroke="#c19a6b" stroke-width="2"/>
-                    <text x="510" y="160" text-anchor="middle" font-size="12" fill="#666">表兄妹/恋人</text>
-                    
-                    <line x1="615" y1="120" x2="735" y2="220" stroke="#c19a6b" stroke-width="2"/>
-                    <text x="690" y="160" text-anchor="middle" font-size="12" fill="#666">妻子</text>
-                    
-                    <line x1="480" y1="260" x2="720" y2="260" stroke="#c19a6b" stroke-width="2" stroke-dasharray="5,5"/>
-                    <text x="600" y="280" text-anchor="middle" font-size="12" fill="#666">金玉良缘 vs 木石前盟</text>
-                </g>
-
-                <!-- 贾家 -->
-                <g id="jia-family">
-                    <rect x="50" y="350" width="150" height="220" fill="#f5f9ff" stroke="#3498db" stroke-width="2" rx="10"/>
-                    <text x="125" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#3498db">贾家</text>
-                    
-                    <circle cx="125" cy="420" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
-                    <text x="125" y="425" text-anchor="middle" font-size="12" fill="#333">贾政</text>
-                    
-                    <circle cx="125" cy="480" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
-                    <text x="125" y="485" text-anchor="middle" font-size="12" fill="#333">贾母</text>
-                    
-                    <circle cx="125" cy="540" r="25" fill="white" stroke="#3498db" stroke-width="2"/>
-                    <text x="125" y="545" text-anchor="middle" font-size="12" fill="#333">王夫人</text>
-                    
-                    <!-- 连线到宝玉 -->
-                    <line x1="150" y1="420" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
-                    <line x1="150" y1="480" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
-                    <line x1="150" y1="540" x2="560" y2="120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
-                </g>
-
-                <!-- 薛家 -->
-                <g id="xue-family">
-                    <rect x="250" y="350" width="150" height="180" fill="#f5fff5" stroke="#2ecc71" stroke-width="2" rx="10"/>
-                    <text x="325" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#2ecc71">薛家</text>
-                    
-                    <circle cx="325" cy="420" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
-                    <text x="325" y="425" text-anchor="middle" font-size="12" fill="#333">薛姨妈</text>
-                    
-                    <circle cx="325" cy="480" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
-                    <text x="325" y="485" text-anchor="middle" font-size="12" fill="#333">薛蟠</text>
-                    
-                    <circle cx="325" cy="540" r="25" fill="white" stroke="#2ecc71" stroke-width="2"/>
-                    <text x="325" y="545" text-anchor="middle" font-size="12" fill="#333">香菱</text>
-                    
-                    <!-- 连线到宝钗 -->
-                    <line x1="355" y1="420" x2="715" y2="265" stroke="#2ecc71" stroke-width="1" stroke-dasharray="3,3"/>
-                    <line x1="355" y1="480" x2="715" y2="265" stroke="#2ecc71" stroke-width="1" stroke-dasharray="3,3"/>
-                </g>
-
-                <!-- 王家 -->
-                <g id="wang-family">
-                    <rect x="450" y="350" width="150" height="150" fill="#faf5ff" stroke="#9b59b6" stroke-width="2" rx="10"/>
-                    <text x="525" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#9b59b6">王家</text>
-                    
-                    <circle cx="525" cy="420" r="25" fill="white" stroke="#9b59b6" stroke-width="2"/>
-                    <text x="525" y="425" text-anchor="middle" font-size="12" fill="#333">王熙凤</text>
-                    
-                    <circle cx="525" cy="480" r="25" fill="white" stroke="#9b59b6" stroke-width="2"/>
-                    <text x="525" y="485" text-anchor="middle" font-size="12" fill="#333">平儿</text>
-                </g>
-
-                <!-- 史家 -->
-                <g id="shi-family">
-                    <rect x="650" y="350" width="150" height="100" fill="#fff9f5" stroke="#f39c12" stroke-width="2" rx="10"/>
-                    <text x="725" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#f39c12">史家</text>
-                    
-                    <circle cx="725" cy="420" r="25" fill="white" stroke="#f39c12" stroke-width="2"/>
-                    <text x="725" y="425" text-anchor="middle" font-size="12" fill="#333">史湘云</text>
-                </g>
-
-                <!-- 其他 -->
-                <g id="other">
-                    <rect x="850" y="350" width="300" height="220" fill="#f5f5f5" stroke="#95a5a6" stroke-width="2" rx="10"/>
-                    <text x="1000" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#95a5a6">其他人物</text>
-                    
-                    <circle cx="920" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="920" y="425" text-anchor="middle" font-size="11" fill="#333">袭人</text>
-                    
-                    <circle cx="1000" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1000" y="425" text-anchor="middle" font-size="11" fill="#333">晴雯</text>
-                    
-                    <circle cx="1080" cy="420" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1080" y="425" text-anchor="middle" font-size="11" fill="#333">紫鹃</text>
-                    
-                    <circle cx="920" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="920" y="485" text-anchor="middle" font-size="11" fill="#333">蒋玉函</text>
-                    
-                    <circle cx="1000" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1000" y="485" text-anchor="middle" font-size="11" fill="#333">柳湘莲</text>
-                    
-                    <circle cx="1080" cy="480" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1080" y="485" text-anchor="middle" font-size="11" fill="#333">尤三姐</text>
-                    
-                    <circle cx="920" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="920" y="545" text-anchor="middle" font-size="11" fill="#333">甄士隐</text>
-                    
-                    <circle cx="1000" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1000" y="545" text-anchor="middle" font-size="11" fill="#333">贾雨村</text>
-                    
-                    <circle cx="1080" cy="540" r="20" fill="white" stroke="#95a5a6" stroke-width="2"/>
-                    <text x="1080" y="545" text-anchor="middle" font-size="11" fill="#333">妙玉</text>
-                </g>
-
-                <!-- 关系说明 -->
-                <g id="legend" transform="translate(50, 20)">
-                    <rect x="0" y="0" width="200" height="120" fill="white" stroke="#c19a6b" stroke-width="1" rx="5"/>
-                    <text x="100" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4513">图例</text>
-                    <line x1="20" y1="45" x2="60" y2="45" stroke="#c19a6b" stroke-width="2"/>
-                    <text x="70" y="50" font-size="11" fill="#333">家族/婚姻关系</text>
-                    <line x1="20" y1="70" x2="60" y2="70" stroke="#c19a6b" stroke-width="2" stroke-dasharray="5,5"/>
-                    <text x="70" y="75" font-size="11" fill="#333">主仆/其他关系</text>
-                    <circle cx="40" cy="95" r="8" fill="#fef5f5" stroke="#e74c3c" stroke-width="2"/>
-                    <text x="70" y="100" font-size="11" fill="#333">核心人物</text>
-                </g>
-            </svg>
-        </div>
-
-        <div class="legend">
-            <h3>家族图例</h3>
-            <div class="legend-items">
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #e74c3c;"></div>
-                    <div class="legend-text">核心人物（宝黛钗）</div>
+        <!-- ================= 丫鬟与仆佣 ================= -->
+        <div class="group-panel" id="servants">
+            <div class="family-section">
+                <h2 class="family-title">丫鬟（按所侍主子分房）</h2>
+                <p class="family-desc">大观园与荣府各房的首席丫鬟——她们的主仆归属是关系图的重要一条线。年龄仅标可考者。</p>
+                <div class="family-title" style="font-size:1rem;">贾母房</div>
+                <div class="chips" style="margin-bottom:14px;">
+                    <div class="chip"><b>鸳鸯</b> <span>——贾母首席大丫鬟，誓死抗婚（拒贾赦纳妾）</span></div>
+                    <div class="chip"><b>琥珀</b> <span>——贾母身边老资格丫鬟</span></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #3498db;"></div>
-                    <div class="legend-text">贾家</div>
+                <div class="family-title" style="font-size:1rem;">宝玉房（怡红院）</div>
+                <div class="chips" style="margin-bottom:14px;">
+                    <div class="chip"><b>袭人</b><span class="age">约 9</span> <span>——首席大丫鬟，比宝玉大两岁，温柔和顺，后嫁蒋玉菡</span></div>
+                    <div class="chip"><b>晴雯</b><span class="age">约 6</span> <span>——风流灵巧，撕扇补裘，被逐屈亡（卒年十六）</span></div>
+                    <div class="chip"><b>麝月</b> <span>——袭人之后留侍宝玉者</span></div>
+                    <div class="chip"><b>秋纹</b> <span>——怡红院大丫鬟</span></div>
+                    <div class="chip"><b>小红（林红玉）</b> <span>——林之孝之女，后调凤姐处，与贾芸有情</span></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #2ecc71;"></div>
-                    <div class="legend-text">薛家</div>
+                <div class="family-title" style="font-size:1rem;">黛玉房（潇湘馆）</div>
+                <div class="chips" style="margin-bottom:14px;">
+                    <div class="chip"><b>紫鹃</b><span class="age">约 6</span> <span>——贾母拨与黛玉，情同姐妹</span></div>
+                    <div class="chip"><b>雪雁</b> <span>——黛玉自苏州带来的小丫鬟</span></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #f39c12;"></div>
-                    <div class="legend-text">史家</div>
+                <div class="family-title" style="font-size:1rem;">宝钗房与凤姐房</div>
+                <div class="chips" style="margin-bottom:14px;">
+                    <div class="chip"><b>莺儿</b> <span>——宝钗丫鬟，"黄金莺"巧打络子</span></div>
+                    <div class="chip"><b>平儿</b><span class="age">约 18</span> <span>——凤姐陪嫁兼贾琏通房，"俏平儿"软语救贾琏</span></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #9b59b6;"></div>
-                    <div class="legend-text">王家</div>
+                <div class="family-title" style="font-size:1rem;">王夫人房</div>
+                <div class="chips" style="margin-bottom:14px;">
+                    <div class="chip"><b>金钏</b> <span>——王夫人丫鬟，被撵后投井</span></div>
+                    <div class="chip"><b>玉钏</b> <span>——金钏之妹，续侍王夫人</span></div>
+                    <div class="chip"><b>彩云</b> <span>——王夫人房丫鬟，与贾环有牵连</span></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #95a5a6;"></div>
-                    <div class="legend-text">其他</div>
+                <div class="family-title" style="font-size:1rem;">众小姐房</div>
+                <div class="chips">
+                    <div class="chip"><b>司棋</b> <span>——迎春丫鬟，刚烈殉情</span></div>
+                    <div class="chip"><b>侍书</b> <span>——探春丫鬟</span></div>
+                    <div class="chip"><b>入画</b> <span>——惜春丫鬟，被惜春弃逐</span></div>
+                    <div class="chip"><b>素云</b> <span>——李纨丫鬟</span></div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title">仆佣管家</h2>
+                <p class="family-desc">荣宁二府的管家与老仆，见证两府兴衰。</p>
+                <div class="chips">
+                    <div class="chip"><b>赖嬷嬷</b> <span>——荣府老仆，其子赖大任大总管，孙赖尚荣捐县官</span></div>
+                    <div class="chip"><b>林之孝夫妇</b> <span>——荣府管家，女即小红</span></div>
+                    <div class="chip"><b>周瑞夫妇</b> <span>——王夫人陪房，其女送宫花牵出诸芳</span></div>
+                    <div class="chip"><b>焦大</b> <span>——宁府老仆，曾救主性命，醉骂"爬灰养小叔子"</span></div>
+                    <div class="chip"><b>李嬷嬷</b> <span>——宝玉乳母，惯吃袭人的酥酪</span></div>
+                </div>
+            </div>
+
+            <div class="family-section">
+                <h2 class="family-title">三条命运主线（图外备注）</h2>
+                <div class="chips">
+                    <div class="chip"><b>木石前盟</b> <span>——宝玉与黛玉：神瑛侍者甘露之惠，绛珠仙草还泪之约</span></div>
+                    <div class="chip"><b>金玉良缘</b> <span>——宝玉与宝钗：金锁与通灵玉的世俗姻缘</span></div>
+                    <div class="chip"><b>判词体系</b> <span>——十二钗正册：元春、迎春、探春、惜春、黛玉、宝钗、湘云、妙玉、李纨、凤姐、巧姐、可卿</span></div>
                 </div>
             </div>
         </div>
