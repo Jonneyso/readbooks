@@ -102,6 +102,11 @@
             border-left: 3px solid #c41e3a;
         }
         
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+        }
+        
         .question-block {
             margin-bottom: 25px;
             padding: 20px;
@@ -218,17 +223,138 @@
 <body>
     <div class="container">
         <header>
-            <h1>历年高考《红楼梦》经典试题</h1>
-            <p class="subtitle">来源：理型语文（微信公众号）</p>
+            <h1>《红楼梦》高考备考</h1>
+            <p class="subtitle">考纲考点梳理 · 历年真题精解</p>
         </header>
         
         <nav class="nav-menu">
             <a href="../index.html" class="nav-link">返回主页</a>
+            <a href="javascript:showTab('kaogang')" class="nav-link tab-link" id="tab-kaogang">考纲考点</a>
+            <a href="javascript:showTab('zhenti')" class="nav-link tab-link" id="tab-zhenti">历年真题</a>
         </nav>
-        
-        <div class="exam-paper">
-            <div class="paper-header">
-                <h2 class="paper-title">2024年普通高等学校招生全国统一考试（北京卷）</h2>
+
+        <div id="kaogang" class="tab-content">
+            <div class="exam-paper">
+                <div class="paper-header">
+                    <h2 class="paper-title">考纲要求与核心考点梳理</h2>
+                    <p class="paper-info">先明确"为什么考、考什么"，再做真题</p>
+                </div>
+
+                <div class="section">
+                <h3 class="section-title">一、为什么要求高中生读全本《红楼梦》</h3>
+                <p>《红楼梦》是统编版高中语文必修下册第七单元的指定整本书阅读作品，对应《普通高中语文课程标准》中"整本书阅读与研讨"学习任务群。考纲要求读全本，目的不在于让学生成为红学家，而在于：</p>
+                <ul style="margin:15px 0 15px 25px; line-height:2;">
+                    <li><strong>建构长篇小说阅读经验</strong>：学会通读百万字巨著的方法——梳理人物关系、划分情节阶段、把握整体架构，而非碎片化地读几个回目。</li>
+                    <li><strong>提升阅读鉴赏能力</strong>：在精读、略读、浏览中把握文本丰富内涵，体会人物性格的多样性与复杂性。</li>
+                    <li><strong>理解中华优秀传统文化</strong>：从衣食住行、诗词曲赋、礼仪习俗中感受中国古代社会的文化图景。</li>
+                    <li><strong>形成正确的世界观人生观价值观</strong>：从家族兴衰与人物命运中思考人生与社会。</li>
+                </ul>
+                <p>简言之，考纲考察的是"读懂这本书"的能力，而非红学研究。命题围绕<strong>人物、情节、主题、艺术</strong>四大维度展开，要求学生对全书有整体把握。</p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">二、高考考察目标与命题方向</h3>
+                <p>从近年高考真题（北京卷为主）及考纲分析看，《红楼梦》考察呈现以下特点：</p>
+                <ul style="margin:15px 0 15px 25px; line-height:2;">
+                    <li><strong>以人物形象分析为核心</strong>，兼及情节、环境、诗词判词、艺术特色。</li>
+                    <li><strong>注重整本书的整体性</strong>，考查对全书脉络的把握而非单个回目的孤立记忆。</li>
+                    <li><strong>强调人物性格的复杂性</strong>，反对"好人完全好、坏人完全坏"的脸谱化解读。鲁迅评价《红楼梦》"其要点在敢于如实描写，并无讳饰……叙好人完全是好，坏人完全是坏的，大不相同"。</li>
+                    <li><strong>分值逐年提高</strong>（北京卷 2022 年增至 10 分），题型涵盖选择题、填空题、简答题、微写作、大作文。</li>
+                </ul>
+                <p>教材规定的六个学习任务点即核心命题点：①把握人物关系；②体会人物性格的多样性和复杂性；③品味日常生活描写的文化内涵；④欣赏人物创作的诗词；⑤设想主要人物的命运或结局；⑥体会小说主题。</p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">三、核心考点：人物形象（性格复杂性）</h3>
+
+                <div class="question-block">
+                    <div class="question-title">贾宝玉：叛逆多情 vs 软弱逃避</div>
+                    <div class="answer-content">
+                        <strong>叛逆</strong>——鄙视科举仕途，称追求功名利禄者为"禄蠹"；否定男尊女卑，说"女儿是水做的骨肉，男子是泥做的骨肉"。<br>
+                        <strong>多情</strong>——对黛玉真情，对晴雯、香菱等女儿充满同情与尊重。<br>
+                        <strong>软弱</strong>——面对家族压力无力抗争，最终出家逃避。
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">林黛玉：敏感孤傲 vs 真诚率真</div>
+                    <div class="answer-content">
+                        <strong>敏感</strong>——寄人篱下，"步步留心，时时在意"，常因小事落泪。<br>
+                        <strong>孤傲</strong>——才情出众，诗作夺魁，不肯随俗。<br>
+                        <strong>真诚</strong>——对宝玉感情真挚直率，不似宝钗藏愚守拙。其"葬花"行为既是伤春悲秋，也是"质本洁来还洁去"的人格宣言。
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">薛宝钗：端庄贤淑 vs 城府深隐</div>
+                    <div class="answer-content">
+                        <strong>贤淑</strong>——待人宽厚、随分从时，协助探春理家。<br>
+                        <strong>城府</strong>——"罕言寡语，人谓藏愚；安分随时，自云守拙"，劝宝玉走仕途经济，最终在掉包计中成为宝二奶奶。<br>
+                        她的"无情"中也有"动人"之处（如对黛玉的劝诫、对香菱的照顾）。
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">王熙凤：精明强干 vs 贪婪狠毒</div>
+                    <div class="answer-content">
+                        <strong>才干</strong>——协理宁国府立规矩、定岗责，把丧事办得井井有条。<br>
+                        <strong>狠毒</strong>——弄权铁槛寺逼死张金哥、毒设相思局害死贾瑞、设计折磨尤二姐。<br>
+                        <strong>诙谐</strong>——口才出众，是贾母的"开心果"。其"机关算尽太聪明，反算了卿卿性命"的结局，是才干与贪婪的悲剧。
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">贾探春：精明果敢 vs 悲剧宿命</div>
+                    <div class="answer-content">
+                        <strong>才干</strong>——理家时兴利除弊、实行承包制。<br>
+                        <strong>刚烈</strong>——抄检大观园时怒打王善保家的，痛陈"百足之虫，死而不僵""必须先从家里自杀自灭起来，才能一败涂地"。<br>
+                        <strong>宿命</strong>——才自精明志自高，却生于末世，最终远嫁。
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">四、核心考点：典型情节</h3>
+                <p>以下情节是高考高频考点，需掌握时间、地点、人物、起因经过结果及意义：</p>
+                <ul style="margin:15px 0 15px 25px; line-height:2.2;">
+                    <li><strong>前五回（纲领）</strong>：甄士隐出家、冷子兴演说荣国府、黛玉进府、护官符、宝玉梦游太虚幻境（金陵十二钗判词）——前五回是全书总纲，预示所有主要人物结局。</li>
+                    <li><strong>宝黛初见</strong>：两人似曾相识，宝玉摔玉，"木石前盟"的现世开端。</li>
+                    <li><strong>王熙凤协理宁国府</strong>：展现凤姐治家才干与狠辣手段。</li>
+                    <li><strong>元妃省亲</strong>：贾府由盛转衰的顶点，"烈火烹油、鲜花着锦"背后是"盛筵必散"。</li>
+                    <li><strong>黛玉葬花</strong>：《葬花吟》"质本洁来还洁去"，黛玉人格与命运的象征。</li>
+                    <li><strong>宝玉挨打</strong>：父子冲突、礼教与叛逆的正面碰撞，钗黛探伤展现不同性格。</li>
+                    <li><strong>海棠诗社/菊花诗会</strong>：大观园繁华顶点，群芳各展才华。</li>
+                    <li><strong>探春理家</strong>：挽救贾府经济颓势的最后努力，已无力回天。</li>
+                    <li><strong>抄检大观园</strong>：贾府内部自杀自灭的开始，晴雯被逐、司棋被撵，大观园理想破灭。</li>
+                    <li><strong>黛死钗嫁</strong>：全书最高潮，一边鼓乐喧天一边黛玉泪尽，"一悲一喜"的强烈对比。</li>
+                    <li><strong>抄家败落</strong>：锦衣军查抄宁国府，贾府轰然倒塌。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">五、核心考点：判词与诗词</h3>
+                <p>第五回的判词和《红楼梦》曲是高考重点，需将判词与人物命运对应：</p>
+                <ul style="margin:15px 0 15px 25px; line-height:2;">
+                    <li><strong>黛玉宝钗（合判）</strong>："可叹停机德，堪怜咏絮才。玉带林中挂，金簪雪里埋。"——"停机德"指宝钗（乐羊子妻典故），"咏絮才"指黛玉（谢道韫典故）；"玉带林"倒读为"林黛玉"，"雪"谐音"薛"。</li>
+                    <li><strong>王熙凤</strong>："凡鸟偏从末世来，都知爱慕此生才。一从二令三人木，哭向金陵事更哀。"——"凡鸟"合为"凤"，"人木"合为"休"，暗示被休弃。</li>
+                    <li><strong>探春</strong>："才自精明志自高，生于末世运偏消。清明涕送江边望，千里东风一梦遥。"——暗示远嫁。</li>
+                    <li><strong>晴雯</strong>（又副册）："霁月难逢，彩云易散。心比天高，身为下贱。风流灵巧招人怨。寿夭多因毁谤生。"——2020 北京卷曾以此设题，要求举情节印证。</li>
+                </ul>
+                <p>书中诗词还需关注：《葬花吟》《枉凝眉》《好了歌》及注、大观园各处题额对联等，它们既增文采，又暗示人物命运与主题。</p>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">六、核心考点：主题与艺术特色</h3>
+                <p><strong>三大主题</strong>：①宝黛钗爱情婚姻悲剧——封建礼教对真情的扼杀；②四大家族兴衰史——封建制度必然灭亡的历史趋势；③大观园女儿悲剧——对女性美好人格的赞美与对其被摧残命运的同情。</p>
+                <p style="margin-top:15px;"><strong>四大艺术特色</strong>：①网状结构——多条线索交织，人物事件相互勾连；②草蛇灰线、伏脉千里——判词、灯谜、花签、戏文处处伏笔；③日常细节见深刻——衣食住行、宴饮诗社中暗藏家族命运与人物性格；④诗化叙事——诗词曲赋与情节人物融为一体。</p>
+            </div>
+            </div>
+        </div>
+
+        <div id="zhenti" class="tab-content" style="display:none;">
+            <div class="exam-paper">
+                <div class="paper-header">
+                    <h2 class="paper-title">2024年普通高等学校招生全国统一考试（北京卷）</h2>
                 <p class="paper-info">语文 2024年6月</p>
             </div>
             
@@ -658,6 +784,66 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
+
+    <script>
+        function showTab(tabId) {
+            var contents = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            document.getElementById(tabId).style.display = 'block';
+
+            var links = document.querySelectorAll('.tab-link');
+            for (var j = 0; j < links.length; j++) {
+                links[j].style.backgroundColor = '';
+            }
+            document.getElementById('tab-' + tabId).style.backgroundColor = '#a01830';
+        }
+
+        function toggleContent(el) {
+            var parent = el.parentElement;
+            var children = parent.children;
+            var willExpand = false;
+            for (var i = 0; i < children.length; i++) {
+                if (children[i] !== el) {
+                    if (children[i].style.display === 'none') {
+                        children[i].style.display = '';
+                        willExpand = true;
+                    } else {
+                        children[i].style.display = 'none';
+                    }
+                }
+            }
+            if (willExpand) {
+                el.classList.add('expanded');
+            } else {
+                el.classList.remove('expanded');
+            }
+        }
+
+        // 初始化折叠功能（默认全部折叠）
+        function initCollapsible() {
+            function collapseAll(els) {
+                for (var i = 0; i < els.length; i++) {
+                    els[i].classList.add('collapsible');
+                    els[i].onclick = function() { toggleContent(this); };
+                    var siblings = els[i].parentElement.children;
+                    for (var k = 0; k < siblings.length; k++) {
+                        if (siblings[k] !== els[i]) {
+                            siblings[k].style.display = 'none';
+                        }
+                    }
+                }
+            }
+            collapseAll(document.querySelectorAll('#kaogang .section-title'));
+            collapseAll(document.querySelectorAll('#zhenti .paper-header'));
+        }
+
+        // 默认显示考纲考点
+        showTab('kaogang');
+        initCollapsible();
+    </script>
 </body>
 </html>
